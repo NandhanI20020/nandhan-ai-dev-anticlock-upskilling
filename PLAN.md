@@ -15,20 +15,22 @@ The secondary goal is to experience Claude Code's advanced features in context: 
 ## Phase 1: Environment Setup
 
 ### 1a. Configure Playwright MCP
-- Install: `npm install -g @playwright/mcp`
-- Add to `C:\Users\<you>\.claude\settings.json`:
+- Install: `npm install -g @playwright/mcp` ✅ done (v0.0.76)
+- Add to `C:\Users\<you>\.claude\settings.json` ✅ done:
   ```json
   {
     "mcpServers": {
       "playwright": {
         "command": "npx",
-        "args": ["@playwright/mcp", "--headful"],
+        "args": ["@playwright/mcp", "--browser", "chrome", "--caps", "vision", "--save-session", "--output-dir", "<project>/PRDs/screenshots"],
         "type": "stdio"
       }
     }
   }
   ```
-- `--headful` flag keeps the browser visible so user can log in manually to Pipedrive.
+- Headed (visible browser) is the **default** — no extra flag needed.
+- `--caps vision` enables screenshot capture so Claude can see the browser.
+- `--save-session` persists the Pipedrive login across Claude Code sessions.
 
 ### 1b. Initialize Project Structure
 ```
