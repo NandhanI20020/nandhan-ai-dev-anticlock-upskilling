@@ -1,0 +1,104 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "Pipedrive" [ref=e6] [cursor=pointer]:
+          - /url: https://www.pipedrive.com
+          - img "Pipedrive" [ref=e7]:
+            - img [ref=e8]
+        - generic [ref=e12]:
+          - generic [ref=e13]: Not a Pipedrive user?
+          - link "Try it free" [ref=e14] [cursor=pointer]:
+            - /url: /register
+            - generic [ref=e15]: Try it free
+    - generic [ref=e18]:
+      - generic [ref=e20]:
+        - heading "Log in" [level=3] [ref=e21]
+        - paragraph [ref=e23]: Please log in to continue
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e26]:
+              - textbox "Email" [ref=e27]:
+                - /placeholder: " "
+              - generic [ref=e28]: Email
+              - img [ref=e29]
+            - status
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - textbox "Password" [ref=e33]:
+                - /placeholder: " "
+              - generic [ref=e34]: Password
+              - img [ref=e35]
+            - status
+          - button "Log in" [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: Log in
+          - generic [ref=e39]:
+            - generic [ref=e40] [cursor=pointer]:
+              - checkbox "Remember me" [ref=e41]
+              - img [ref=e42]
+              - generic [ref=e44]:
+                - generic [ref=e45]: Remember me
+                - status
+            - link "Forgot password?" [ref=e46] [cursor=pointer]:
+              - /url: /auth/login/forgot_password
+          - generic [ref=e47]:
+            - generic [ref=e49]: or access quickly
+            - generic [ref=e50]:
+              - link "Google" [ref=e52] [cursor=pointer]:
+                - /url: /auth/google/login
+                - img [ref=e53]
+                - generic [ref=e58]: Google
+              - link "SSO" [ref=e60] [cursor=pointer]:
+                - /url: /auth/sso
+                - img [ref=e61]
+                - generic [ref=e63]: SSO
+      - generic [ref=e65]:
+        - link "Don't have an account?" [ref=e66] [cursor=pointer]:
+          - /url: /register
+        - link "Having issues logging in?" [ref=e67] [cursor=pointer]:
+          - /url: "#"
+  - contentinfo [ref=e68]:
+    - generic [ref=e70]:
+      - generic [ref=e71]:
+        - combobox "Choose language" [ref=e73]:
+          - generic [ref=e74] [cursor=pointer]:
+            - img [ref=e75]
+            - generic [ref=e77]: English (US)
+            - img [ref=e78]
+        - generic [ref=e80]:
+          - link "facebook" [ref=e82] [cursor=pointer]:
+            - /url: https://www.facebook.com/pipedrive
+            - img [ref=e83]
+          - link "instagram" [ref=e87] [cursor=pointer]:
+            - /url: https://www.instagram.com/pipedrive
+            - img [ref=e88]
+          - link "twitter" [ref=e91] [cursor=pointer]:
+            - /url: https://twitter.com/pipedrive
+            - img [ref=e92]
+          - link "linkedin" [ref=e94] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/pipedrive
+            - img [ref=e95]
+      - generic [ref=e97]:
+        - generic [ref=e98]:
+          - generic [ref=e99]: © 2026 Pipedrive
+          - link "Terms of Service" [ref=e100] [cursor=pointer]:
+            - /url: https://www.pipedrive.com/en/terms-of-service
+          - link "Privacy Policy" [ref=e101] [cursor=pointer]:
+            - /url: https://www.pipedrive.com/en/privacy
+        - generic [ref=e102]: Pipedrive is a Web-based Sales CRM.
+  - dialog "Privacy" [ref=e104]:
+    - generic [ref=e106]:
+      - generic [ref=e109]:
+        - text: "This website uses cookies and other tracking technologies to enhance user experience and to analyze performance and traffic on our website. We also share information about your use of our site with our social media, advertising and analytics partners. Further information is available in our:"
+        - link "More information about your privacy, opens in a new tab" [ref=e110] [cursor=pointer]:
+          - /url: https://www.pipedrive.com/en/cookie-notice
+          - text: Cookie Notice
+        - link "Legal Information, opens in a new tab" [ref=e111] [cursor=pointer]:
+          - /url: https://www.pipedrive.com/en/privacy
+          - text: Privacy Notice
+      - button "Accept All Cookies" [ref=e114] [cursor=pointer]
+    - button "Close" [ref=e116] [cursor=pointer]
+  - iframe [ref=e119]:
+    - generic [ref=f5e6]:
+      - text: protected by
+      - strong [ref=f5e7]: reCAPTCHA

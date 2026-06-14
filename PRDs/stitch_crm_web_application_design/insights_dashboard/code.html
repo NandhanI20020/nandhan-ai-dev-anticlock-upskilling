@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SalesKit CRM | Insights Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#b1b2fd",
+                        "tertiary": "#a13742",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#c1c1ff",
+                        "on-tertiary-fixed": "#40000b",
+                        "secondary-fixed": "#e1dfff",
+                        "on-secondary-fixed": "#111055",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#63dd97",
+                        "on-secondary-container": "#414285",
+                        "tertiary-fixed": "#ffdada",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#c04f59",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#56579c",
+                        "rotten": "#FB923C",
+                        "warning": "#F59E0B",
+                        "lost": "#DC2626",
+                        "on-tertiary-fixed-variant": "#84222e",
+                        "on-surface-variant": "#3d4a40",
+                        "surface": "#fcf9f8",
+                        "won": "#16A34A",
+                        "on-background": "#1c1b1b",
+                        "primary-container": "#00864f",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#63dd97",
+                        "on-primary-container": "#f6fff5",
+                        "outline-variant": "#bccabd",
+                        "tertiary-fixed-dim": "#ffb3b5",
+                        "link": "#226FCA",
+                        "border": "#E5E5E5",
+                        "surface-tint": "#006d3f",
+                        "outline": "#6d7a6f",
+                        "primary-hover": "#088A52",
+                        "banner": "#F0EFFF",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#80fab1",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#006a3e",
+                        "on-primary-fixed": "#002110",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3e3f82",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0eded",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "surface-subtle": "#F5F5F5",
+                        "sidebar-active": "#6F6EE8",
+                        "on-error": "#ffffff",
+                        "danger": "#E15A51",
+                        "surface-container-highest": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fffbff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "sidebar-width": "60px",
+                        "gap-md": "12px",
+                        "subnav-width": "220px",
+                        "kanban-col-min": "220px",
+                        "gap-xs": "4px",
+                        "base": "4px",
+                        "gap-lg": "16px",
+                        "kanban-col-max": "260px",
+                        "gap-sm": "8px",
+                        "section": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-h1": ["Inter"],
+                        "headline-h2": ["Inter"],
+                        "meta-sm": ["Inter"],
+                        "headline-h3": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-h1": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-h2": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "meta-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-h3": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .chart-bar { transition: height 1s ease-out; }
+        .donut-segment { transition: stroke-dasharray 0.5s ease-in-out; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E5E5E5; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #d1d1d1; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased overflow-hidden h-screen flex">
+<!-- SideNavBar (Authority: JSON + Design System) -->
+<aside class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<nav class="flex flex-col gap-gap-md flex-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Pipeline">
+<span class="material-symbols-outlined">view_kanban</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Deals">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Contacts">
+<span class="material-symbols-outlined">group</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Forecast">
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+<!-- Reports/Insights is Active -->
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-secondary bg-sidebar-active scale-95 active:scale-90" title="Reports">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</nav>
+<div class="flex flex-col gap-gap-md pt-4 border-t border-white/10">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Help">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[60px] flex flex-col h-screen">
+<!-- TopNavBar (Authority: JSON + Design System) -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 flex justify-between items-center px-margin-page border-b border-border bg-surface z-40">
+<div class="flex items-center gap-gap-lg">
+<h1 class="font-headline-h2 text-headline-h2 text-on-surface font-bold">Insights Dashboard</h1>
+<div class="hidden md:flex items-center bg-surface-container-low px-3 py-1.5 rounded-lg border border-border">
+<span class="material-symbols-outlined text-outline text-[18px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md font-label-md w-64 px-2" placeholder="Search analytics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-lg">
+<div class="flex gap-gap-sm">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all">
+<span class="material-symbols-outlined">apps</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded hover:bg-primary-hover transition-all flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Deal
+                </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-border cursor-pointer">
+<img alt="Current User Avatar" data-alt="A professional corporate headshot of a smiling male executive with clean-cut hair and a modern business casual attire. The lighting is bright and airy, reflecting a high-end office environment with soft-focus background elements. The overall aesthetic is clean, professional, and trustworthy, matching the modern CRM interface design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFI5PzjLLzv_QjqwkPfdi7n0HNa66xPxi-fq5jAlvhdcT0A3HOmn5QoJadlMm_7m9Xy0t2927hKhlls6W3fe8jcHAUH9wDOvgBVpnuP_n_oYLZa0WdONx7tVfgMllMYQo4ObNApu5jzx_AwmtlWRBhRlb1tcdwnoZwZxew66-aoZLqe8tL-G8I_kpwB_YHZ4P9wJ-hPNCdkyiGZ3eyPKpB_kcri5PN-pA-CCkpqIFHhXvXtz-M_uJ1mfR66NGl6aA4Vh7kbm-MLkM"/>
+</div>
+</div>
+</header>
+<!-- Dashboard Body -->
+<div class="mt-14 p-margin-page flex-1 overflow-y-auto custom-scrollbar bg-background">
+<!-- Filters & Timeframe Row -->
+<div class="flex justify-between items-center mb-6">
+<div>
+<p class="font-meta-sm text-meta-sm text-on-surface-variant">Real-time sales performance overview</p>
+</div>
+<div class="flex items-center gap-gap-sm">
+<div class="flex bg-surface-container rounded-lg p-0.5 border border-border">
+<button class="px-3 py-1 text-label-md font-label-md bg-white shadow-sm rounded-md text-primary">Last 30 Days</button>
+<button class="px-3 py-1 text-label-md font-label-md text-on-surface-variant hover:text-on-surface">This Quarter</button>
+<button class="px-3 py-1 text-label-md font-label-md text-on-surface-variant hover:text-on-surface">Yearly</button>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-1.5 border border-border rounded-lg bg-white text-label-md font-label-md hover:bg-surface-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filters
+                    </button>
+</div>
+</div>
+<!-- KPI Tiles Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gap-lg mb-8">
+<!-- Open Deals Value -->
+<div class="bg-white p-5 border border-border rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="p-2 bg-secondary/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined">payments</span>
+</span>
+<div class="flex items-center gap-0.5 text-won font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                            12.5%
+                        </div>
+</div>
+<h3 class="font-meta-sm text-meta-sm text-on-surface-variant mb-1">Open Deals Value</h3>
+<div class="font-headline-h1 text-headline-h1 text-on-surface">$2,450,800</div>
+<div class="mt-4 h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-3/4 rounded-full"></div>
+</div>
+</div>
+<!-- Won This Month -->
+<div class="bg-white p-5 border border-border rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="p-2 bg-won/10 rounded-lg text-won">
+<span class="material-symbols-outlined">emoji_events</span>
+</span>
+<div class="flex items-center gap-0.5 text-won font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+                            8.2%
+                        </div>
+</div>
+<h3 class="font-meta-sm text-meta-sm text-on-surface-variant mb-1">Won This Month</h3>
+<div class="font-headline-h1 text-headline-h1 text-on-surface">$842,000</div>
+<p class="font-meta-sm text-meta-sm text-outline mt-1">42 deals closed in June</p>
+</div>
+<!-- Activities Today -->
+<div class="bg-white p-5 border border-border rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined">bolt</span>
+</span>
+<div class="flex items-center gap-0.5 text-lost font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+                            3%
+                        </div>
+</div>
+<h3 class="font-meta-sm text-meta-sm text-on-surface-variant mb-1">Activities Today</h3>
+<div class="font-headline-h1 text-headline-h1 text-on-surface">156</div>
+<div class="flex gap-1 mt-2">
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-primary rounded-full"></div>
+<div class="h-1 flex-1 bg-surface-container rounded-full"></div>
+</div>
+</div>
+<!-- Avg Deal Age -->
+<div class="bg-white p-5 border border-border rounded-lg shadow-[0_4px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.06)] transition-all">
+<div class="flex justify-between items-start mb-2">
+<span class="p-2 bg-rotten/10 rounded-lg text-rotten">
+<span class="material-symbols-outlined">schedule</span>
+</span>
+<div class="flex items-center gap-0.5 text-won font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px]">arrow_downward</span>
+                            4 days
+                        </div>
+</div>
+<h3 class="font-meta-sm text-meta-sm text-on-surface-variant mb-1">Avg Deal Age</h3>
+<div class="font-headline-h1 text-headline-h1 text-on-surface">22 Days</div>
+<p class="font-meta-sm text-meta-sm text-outline mt-1">Faster than last month</p>
+</div>
+</div>
+<!-- Charts Main Area -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gap-lg h-full max-h-[500px]">
+<!-- Deals by Stage Bar Chart -->
+<div class="lg:col-span-2 bg-white border border-border rounded-lg p-6 flex flex-col shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-headline-h2 text-headline-h2">Deals by Stage</h2>
+<button class="text-on-surface-variant hover:text-on-surface">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="flex-1 flex items-end justify-between gap-gap-lg relative pb-8 pt-4">
+<!-- Y-Axis labels (simulated) -->
+<div class="absolute inset-0 flex flex-col justify-between pointer-events-none text-meta-sm text-outline pr-4 border-r border-transparent">
+<div class="border-b border-surface-subtle w-full text-right pr-2">1M</div>
+<div class="border-b border-surface-subtle w-full text-right pr-2">750k</div>
+<div class="border-b border-surface-subtle w-full text-right pr-2">500k</div>
+<div class="border-b border-surface-subtle w-full text-right pr-2">250k</div>
+<div class="text-right pr-2">0</div>
+</div>
+<!-- Bars -->
+<div class="flex-1 flex items-end justify-around h-full ml-10">
+<div class="group relative flex flex-col items-center gap-2 w-full max-w-[60px]">
+<div class="chart-bar w-full bg-surface-container-high rounded-t-sm" style="height: 85%;"></div>
+<span class="font-meta-sm text-meta-sm text-on-surface-variant absolute -bottom-6">Qualified</span>
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 bg-on-surface text-white text-badge-xs px-2 py-1 rounded transition-opacity">$920k</div>
+</div>
+<div class="group relative flex flex-col items-center gap-2 w-full max-w-[60px]">
+<div class="chart-bar w-full bg-secondary-container rounded-t-sm" style="height: 65%;"></div>
+<span class="font-meta-sm text-meta-sm text-on-surface-variant absolute -bottom-6">Discovery</span>
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 bg-on-surface text-white text-badge-xs px-2 py-1 rounded transition-opacity">$680k</div>
+</div>
+<div class="group relative flex flex-col items-center gap-2 w-full max-w-[60px]">
+<div class="chart-bar w-full bg-secondary rounded-t-sm" style="height: 45%;"></div>
+<span class="font-meta-sm text-meta-sm text-on-surface-variant absolute -bottom-6">Proposal</span>
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 bg-on-surface text-white text-badge-xs px-2 py-1 rounded transition-opacity">$420k</div>
+</div>
+<div class="group relative flex flex-col items-center gap-2 w-full max-w-[60px]">
+<div class="chart-bar w-full bg-primary-container rounded-t-sm" style="height: 30%;"></div>
+<span class="font-meta-sm text-meta-sm text-on-surface-variant absolute -bottom-6">Negotia.</span>
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 bg-on-surface text-white text-badge-xs px-2 py-1 rounded transition-opacity">$210k</div>
+</div>
+<div class="group relative flex flex-col items-center gap-2 w-full max-w-[60px]">
+<div class="chart-bar w-full bg-won rounded-t-sm" style="height: 55%;"></div>
+<span class="font-meta-sm text-meta-sm text-on-surface-variant absolute -bottom-6">Closing</span>
+<div class="opacity-0 group-hover:opacity-100 absolute -top-8 bg-on-surface text-white text-badge-xs px-2 py-1 rounded transition-opacity">$540k</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Win/Loss Ratio Donut -->
+<div class="bg-white border border-border rounded-lg p-6 flex flex-col shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+<div class="mb-6">
+<h2 class="font-headline-h2 text-headline-h2">Win/Loss Ratio</h2>
+<p class="font-meta-sm text-meta-sm text-outline">Across all pipelines</p>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center relative">
+<svg class="w-48 h-48 -rotate-90">
+<!-- Background Circle -->
+<circle class="text-surface-container" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="20"></circle>
+<!-- Lost Segment -->
+<circle class="donut-segment text-lost" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="20" style="stroke-dasharray: 502.4; stroke-dashoffset: 150.72;"></circle>
+<!-- Won Segment -->
+<circle class="donut-segment text-won" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="20" style="stroke-dasharray: 502.4; stroke-dashoffset: 351.68;"></circle>
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="font-headline-h1 text-headline-h1">72%</span>
+<span class="font-meta-sm text-meta-sm text-outline">Win Rate</span>
+</div>
+</div>
+<div class="mt-6 flex justify-between px-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-won"></div>
+<div class="flex flex-col">
+<span class="font-meta-sm text-meta-sm text-outline">Won</span>
+<span class="font-label-md text-label-md">142</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-lost"></div>
+<div class="flex flex-col">
+<span class="font-meta-sm text-meta-sm text-outline">Lost</span>
+<span class="font-label-md text-label-md">54</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-surface-container"></div>
+<div class="flex flex-col">
+<span class="font-meta-sm text-meta-sm text-outline">Other</span>
+<span class="font-label-md text-label-md">12</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Activities Completed -->
+<div class="mt-gap-lg grid grid-cols-1 gap-gap-lg">
+<div class="bg-white border border-border rounded-lg p-6 shadow-[0_4px_12px_rgba(0,0,0,0.03)]">
+<div class="flex justify-between items-center mb-6">
+<div>
+<h2 class="font-headline-h2 text-headline-h2">Activities Completed</h2>
+<p class="font-meta-sm text-meta-sm text-outline">Sales velocity by activity type</p>
+</div>
+<div class="flex gap-gap-sm">
+<span class="flex items-center gap-1.5 font-meta-sm text-meta-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Calls
+                            </span>
+<span class="flex items-center gap-1.5 font-meta-sm text-meta-sm">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Meetings
+                            </span>
+<span class="flex items-center gap-1.5 font-meta-sm text-meta-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-container"></span> Emails
+                            </span>
+</div>
+</div>
+<div class="h-48 flex items-end gap-1 px-4">
+<!-- Activity Bars (Day by Day) -->
+<script>
+                            const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+                            document.write(days.map((day, i) => `
+                                <div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+                                    <div class="flex flex-col w-full max-w-[24px] gap-[2px]">
+                                        <div class="bg-secondary rounded-t-sm" style="height: ${Math.floor(Math.random() * 40) + 20}px"></div>
+                                        <div class="bg-primary-container" style="height: ${Math.floor(Math.random() * 30) + 15}px"></div>
+                                        <div class="bg-tertiary-container rounded-b-sm" style="height: ${Math.floor(Math.random() * 20) + 10}px"></div>
+                                    </div>
+                                    <span class="font-meta-sm text-meta-sm text-outline">${day}</span>
+                                </div>
+                            `).join(''));
+                        </script>
+</div>
+</div>
+</div>
+</div>
+<!-- Float FAB Contextual Action (Suppressed on Insights usually, but keeping for UX as per rule check) -->
+<!-- Based on instruction: "You MUST suppress the FAB on Settings, Profile, Details, and Transactional screens." -->
+<!-- Insights is considered "Dashboard", so we can show a tailored FAB if aligned. -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-sidebar-active text-white rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-[28px]">insights</span>
+</button>
+</main>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('.chart-bar').forEach(bar => {
+            bar.addEventListener('mouseenter', () => {
+                bar.style.opacity = '0.8';
+            });
+            bar.addEventListener('mouseleave', () => {
+                bar.style.opacity = '1';
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[placeholder="Search analytics..."]');
+        const searchContainer = searchInput.parentElement;
+        searchInput.addEventListener('focus', () => {
+            searchContainer.classList.add('ring-2', 'ring-secondary-container', 'border-secondary-container');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchContainer.classList.remove('ring-2', 'ring-secondary-container', 'border-secondary-container');
+        });
+    </script>
+</body></html>

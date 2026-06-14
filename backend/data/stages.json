@@ -1,0 +1,12 @@
+[
+  { "id": "stage-001", "name": "Qualified",       "order": 1, "pipelineId": "pipeline-001", "rottingDays": 14 },
+  { "id": "stage-002", "name": "Demo Scheduled",  "order": 2, "pipelineId": "pipeline-001", "rottingDays": 10 },
+  { "id": "stage-003", "name": "Proposal Made",   "order": 3, "pipelineId": "pipeline-001", "rottingDays": 7  },
+  { "id": "stage-004", "name": "Negotiations",    "order": 4, "pipelineId": "pipeline-001", "rottingDays": 5  },
+  { "id": "stage-005", "name": "Contract Signed", "order": 5, "pipelineId": "pipeline-001", "rottingDays": null },
+  { "id": "stage-006", "name": "Lead In",         "order": 1, "pipelineId": "pipeline-002", "rottingDays": 21 },
+  { "id": "stage-007", "name": "Contact Made",    "order": 2, "pipelineId": "pipeline-002", "rottingDays": 14 },
+  { "id": "stage-008", "name": "Proposal Made",   "order": 3, "pipelineId": "pipeline-002", "rottingDays": 10 },
+  { "id": "stage-009", "name": "Negotiation",     "order": 4, "pipelineId": "pipeline-002", "rottingDays": 7  },
+  { "id": "stage-010", "name": "Closing",         "order": 5, "pipelineId": "pipeline-002", "rottingDays": null }
+]

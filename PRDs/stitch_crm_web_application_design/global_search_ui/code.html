@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SalesKit CRM - Global Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .search-backdrop {
+            backdrop-filter: blur(4px);
+            background-color: rgba(28, 27, 27, 0.2);
+            transition: opacity 0.3s ease;
+        }
+        .chevron-stage {
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+        }
+        .chevron-stage:first-child {
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+        }
+    </style>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#eae7e7",
+                      "secondary-container": "#b1b2fd",
+                      "tertiary": "#a13742",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed-dim": "#c1c1ff",
+                      "on-tertiary-fixed": "#40000b",
+                      "secondary-fixed": "#e1dfff",
+                      "on-secondary-fixed": "#111055",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#63dd97",
+                      "on-secondary-container": "#414285",
+                      "tertiary-fixed": "#ffdada",
+                      "on-primary-fixed-variant": "#00522e",
+                      "tertiary-container": "#c04f59",
+                      "inverse-surface": "#313030",
+                      "surface-variant": "#e5e2e1",
+                      "secondary": "#56579c",
+                      "rotten": "#FB923C",
+                      "warning": "#F59E0B",
+                      "lost": "#DC2626",
+                      "on-tertiary-fixed-variant": "#84222e",
+                      "on-surface-variant": "#3d4a40",
+                      "surface": "#fcf9f8",
+                      "won": "#16A34A",
+                      "on-background": "#1c1b1b",
+                      "primary-container": "#00864f",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#63dd97",
+                      "on-primary-container": "#f6fff5",
+                      "outline-variant": "#bccabd",
+                      "tertiary-fixed-dim": "#ffb3b5",
+                      "link": "#226FCA",
+                      "border": "#E5E5E5",
+                      "surface-tint": "#006d3f",
+                      "outline": "#6d7a6f",
+                      "primary-hover": "#088A52",
+                      "banner": "#F0EFFF",
+                      "background": "#fcf9f8",
+                      "primary-fixed": "#80fab1",
+                      "surface-bright": "#fcf9f8",
+                      "primary": "#006a3e",
+                      "on-primary-fixed": "#002110",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#3e3f82",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-container": "#f0eded",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary": "#ffffff",
+                      "surface-subtle": "#F5F5F5",
+                      "sidebar-active": "#6F6EE8",
+                      "on-error": "#ffffff",
+                      "danger": "#E15A51",
+                      "surface-container-highest": "#e5e2e1",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#fffbff",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-page": "32px",
+                      "sidebar-width": "60px",
+                      "gap-md": "12px",
+                      "subnav-width": "220px",
+                      "kanban-col-min": "220px",
+                      "gap-xs": "4px",
+                      "base": "4px",
+                      "gap-lg": "16px",
+                      "kanban-col-max": "260px",
+                      "gap-sm": "8px",
+                      "section": "24px"
+              },
+              "fontFamily": {
+                      "headline-h1": ["Inter"],
+                      "headline-h2": ["Inter"],
+                      "meta-sm": ["Inter"],
+                      "badge-xs": ["Inter"],
+                      "headline-h3": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "badge-xs": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-hidden">
+<!-- Sidebar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<nav class="flex flex-col gap-gap-sm">
+<button class="w-10 h-10 flex items-center justify-center text-on-secondary bg-sidebar-active rounded-lg transition-all duration-200 scale-95 active:scale-90" title="Pipeline">
+<span class="material-symbols-outlined">view_kanban</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Deals">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Contacts">
+<span class="material-symbols-outlined">group</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Forecast">
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Reports">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</nav>
+<div class="mt-auto flex flex-col gap-gap-sm">
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors" title="Help">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</aside>
+<!-- Top Bar (Shared Component) -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 border-b border-border bg-surface flex justify-between items-center px-margin-page z-40">
+<div class="flex items-center gap-gap-lg flex-1">
+<div class="relative w-full max-w-xl group">
+<div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+</div>
+<input autofocus="" class="w-full h-9 pl-10 pr-4 bg-surface-container-low border border-border rounded-lg text-body-md focus:outline-none focus:ring-2 focus:ring-sidebar-active transition-all" id="main-search-input" placeholder="Search deals, people, or organizations..." type="text" value="Acme"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-md ml-margin-page">
+<button class="flex items-center gap-2 bg-primary hover:bg-primary-hover text-on-primary h-9 px-4 rounded-lg font-label-md transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add Deal
+            </button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-border cursor-pointer">
+<img alt="Current User Avatar" class="w-full h-full object-cover" data-alt="A professional headshot of a smiling business executive with warm, cinematic studio lighting. The background is a clean, out-of-focus modern office environment that aligns with the corporate aesthetic. The overall mood is approachable, trustworthy, and high-performance, fitting for a CRM platform user profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-N7jko-5YC91qcXWOV-t1rRQ-5GYUTeAlZ4QVcLbwNvZaiBJxBUsvABVz1hrDKOv00oDe2A4rkvMMMdmImIVQzFPz8gXaosGuVnwvfH4gSresmjfAVsrXaKJgFlqQAGjG4FTCCMM278hFDgCgduA5wwlgCa4-X_8I4Oz8w_FYiE0JesyK0LOexDHGS7qJnwzT0vS5UxXx3g00sPSSYhGOZfnDSYCfRPerTF6a1jG3fT28P5_8DeN1Rv_hWBXLoCZJe_raWVpct_E"/>
+</div>
+</div>
+</header>
+<!-- Dimmed Background Overlay -->
+<div class="fixed inset-0 top-14 left-[60px] search-backdrop z-20" id="search-overlay"></div>
+<!-- Search Dropdown UI -->
+<main class="fixed top-14 right-0 w-[calc(100%-60px)] z-30 flex justify-center pt-gap-sm px-margin-page pointer-events-none">
+<div class="w-full max-w-xl bg-surface-container-lowest shadow-2xl rounded-xl border border-border overflow-hidden pointer-events-auto flex flex-col max-h-[870px]">
+<!-- Filter Tabs -->
+<div class="flex border-b border-border px-gap-sm bg-surface-subtle">
+<button class="px-4 py-3 text-primary font-bold border-b-2 border-primary text-label-md">All Results</button>
+<button class="px-4 py-3 text-on-surface-variant hover:text-on-surface text-label-md transition-colors">Deals</button>
+<button class="px-4 py-3 text-on-surface-variant hover:text-on-surface text-label-md transition-colors">People</button>
+<button class="px-4 py-3 text-on-surface-variant hover:text-on-surface text-label-md transition-colors">Organizations</button>
+</div>
+<!-- Results Scroll Area -->
+<div class="overflow-y-auto p-2 space-y-gap-lg">
+<!-- Recently Viewed -->
+<section>
+<h3 class="px-2 pb-2 text-meta-sm font-bold text-on-surface-variant uppercase tracking-wider">Recently Viewed</h3>
+<div class="space-y-1">
+<div class="flex items-center gap-gap-md p-2 hover:bg-surface-subtle rounded-lg cursor-pointer group transition-colors">
+<div class="w-9 h-9 flex items-center justify-center rounded-lg bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-on-surface">Acme Corp - Enterprise Expansion</div>
+<div class="text-meta-sm text-on-surface-variant">$45,000 • Acme Corporation</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</div>
+</div>
+</section>
+<!-- Deals Section -->
+<section>
+<h3 class="px-2 pb-2 text-meta-sm font-bold text-on-surface-variant uppercase tracking-wider">Deals</h3>
+<div class="space-y-1">
+<div class="flex items-center gap-gap-md p-2 hover:bg-surface-subtle rounded-lg cursor-pointer group transition-colors">
+<div class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-on-surface">Acme Global HR Audit</div>
+<div class="text-meta-sm text-on-surface-variant">$12,500 • <span class="text-won font-medium">Won</span></div>
+</div>
+</div>
+<div class="flex items-center gap-gap-md p-2 hover:bg-surface-subtle rounded-lg cursor-pointer group transition-colors">
+<div class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed border-l-4 border-rotten">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-on-surface">Acme Logistics Integration</div>
+<div class="text-meta-sm text-on-surface-variant">$8,200 • <span class="text-rotten font-medium">Rotten (2 days)</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- People Section -->
+<section>
+<h3 class="px-2 pb-2 text-meta-sm font-bold text-on-surface-variant uppercase tracking-wider">People</h3>
+<div class="space-y-1">
+<div class="flex items-center gap-gap-md p-2 hover:bg-surface-subtle rounded-lg cursor-pointer group transition-colors">
+<div class="w-9 h-9 rounded-full overflow-hidden">
+<img alt="Person" class="w-full h-full object-cover" data-alt="A focused portrait of a male tech professional wearing modern glasses and a simple navy shirt. The lighting is crisp and cool, casting soft shadows against a blurred office window background. The visual style is consistent with a high-end corporate directory, emphasizing professionalism and clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHZjfXQIRrFWFRlTtxTbu84oChsmALmSDP_KJinp2QFbdivZGwZbfHDe1DTCS8ZURwd2FujNNC1KOLp8XeS4R8hkheaePc909wJ37pq6M3-O3XBEagdVJefVhs_fCB2KAnKHcrZ7d0C_hVasQ3oDoWb5wZvYsTBPJ8E77VkvJUcp9HIXESx7wmSlYwL4YdOUQgabIZqnmPPBRG3kThbF5x78qGu9wXMQX8CiN4GO0s-Sj9TvIQBbi3yvHVISsbi99t_x3Q6yYGPwI"/>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-on-surface">David Acme</div>
+<div class="text-meta-sm text-on-surface-variant">CTO • Acme Corporation</div>
+</div>
+</div>
+<div class="flex items-center gap-gap-md p-2 hover:bg-surface-subtle rounded-lg cursor-pointer group transition-colors">
+<div class="w-9 h-9 rounded-full overflow-hidden">
+<img alt="Person" class="w-full h-full object-cover" data-alt="A professional headshot of a female sales director with a friendly expression. She is in a bright, airy workspace with soft morning sunlight creating a warm, approachable atmosphere. The image uses a natural color palette that complements the clean white and navy tones of the CRM design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFF36dDsUrQFiV_INUNkjT6FBe9gL9Fv3iPEOBKZ--F04gKPZxtmM_oN1CIaW8U1jPVsu70TIQw5eSN7nv-ezRDf79e4HFbM8SZvo-WD11Sm2XBfRENAuMutGeLzxVGRfbtqQJe0_htCw2H3auppXluJg8g8zq3GlI6SsZhQE32stGkigAjVzr6jNBwGIAADMqZCfZOgvS4llMh0OX_qh5Cd5QOQh14gOh4SGSlfBYL8V59hNqAlRfQlo2iRMsIVPPPPWxzZK55bg"/>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-on-surface">Sarah McAcme</div>
+<div class="text-meta-sm text-on-surface-variant">Procurement Head • Global Industries</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Organizations Section -->
+<section>
+<h3 class="px-2 pb-2 text-meta-sm font-bold text-on-surface-variant uppercase tracking-wider">Organizations</h3>
+<div class="space-y-1">
+<div class="flex items-center gap-gap-md p-2 hover:bg-surface-subtle rounded-lg cursor-pointer group transition-colors">
+<div class="w-9 h-9 flex items-center justify-center rounded-lg bg-surface-container-high border border-border">
+<span class="material-symbols-outlined text-secondary">domain</span>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-on-surface">Acme Corporation</div>
+<div class="text-meta-sm text-on-surface-variant">Enterprise • 5 active deals</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer / Keyboard Shortcuts -->
+<div class="p-3 bg-surface border-t border-border flex justify-between items-center text-meta-sm text-on-surface-variant">
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 bg-surface-container-high border border-outline-variant rounded text-[10px]">↑↓</kbd>
+                        to navigate
+                    </span>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 bg-surface-container-high border border-outline-variant rounded text-[10px]">ENTER</kbd>
+                        to select
+                    </span>
+</div>
+<span class="flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 bg-surface-container-high border border-outline-variant rounded text-[10px]">ESC</kbd>
+                    to close
+                </span>
+</div>
+</div>
+</main>
+<!-- Page Content (Background Content) -->
+<div class="pl-[60px] pt-14 h-screen w-full overflow-hidden bg-background">
+<div class="p-margin-page h-full">
+<header class="mb-section flex justify-between items-end">
+<div>
+<h1 class="font-headline-h1 text-headline-h1">Pipeline</h1>
+<p class="text-on-surface-variant">Manage your active sales opportunities</p>
+</div>
+</header>
+<div class="flex gap-gap-lg h-[calc(100%-80px)] overflow-x-auto pb-4">
+<!-- Column 1 -->
+<div class="flex-shrink-0 w-kanban-col-min flex flex-col gap-gap-md">
+<div class="flex items-center justify-between px-2">
+<h2 class="font-headline-h2 text-headline-h2">Qualified</h2>
+<span class="bg-surface-container-high px-2 py-0.5 rounded-full text-badge-xs">4</span>
+</div>
+<div class="bg-surface-subtle p-gap-sm rounded-lg flex-1 border border-border flex flex-col gap-gap-sm">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-3 rounded shadow-sm border border-border cursor-pointer hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="font-headline-h3 text-on-surface mb-1">Acme Expansion</div>
+<div class="text-meta-sm text-on-surface-variant mb-3">$45,000</div>
+<div class="flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface-container-lowest overflow-hidden">
+<img alt="Owner" data-alt="A portrait of a male sales executive in his early 30s, professional and confident. He is set against a clean, minimalistic architectural background with soft shadows and high-key lighting. The overall style is modern and polished, fitting for a corporate software persona." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPmY5FMOfT_hdgs7Nb6Y4h_pqsuViLHLsFGv3UZKlnAuwfU6NyKJuRx1s8ofvGDrhOi-JUKC_pbotnl8YH34wIsk4F30uptxAtocFD5G6EgBpYGci84zqYik7oSf2HPJBTKI8HyOwRARHWqSBwsXKAZA6-grY0T3pZQj_O9If3PYlIh3hOR2X4JLlz15va7jah-xCeKoZfiT651DIGUb1z7U5tSmW7xJejioqsNZjCsmEHHI5MH_a5NsMcOljPzwCX58a6CbOUlhc"/>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] text-warning">warning</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Column 2 -->
+<div class="flex-shrink-0 w-kanban-col-min flex flex-col gap-gap-md opacity-50 grayscale">
+<div class="flex items-center justify-between px-2">
+<h2 class="font-headline-h2 text-headline-h2">Contact Made</h2>
+<span class="bg-surface-container-high px-2 py-0.5 rounded-full text-badge-xs">2</span>
+</div>
+<div class="bg-surface-subtle p-gap-sm rounded-lg flex-1 border border-border"></div>
+</div>
+<!-- Column 3 -->
+<div class="flex-shrink-0 w-kanban-col-min flex flex-col gap-gap-md opacity-50 grayscale">
+<div class="flex items-center justify-between px-2">
+<h2 class="font-headline-h2 text-headline-h2">Demo Scheduled</h2>
+<span class="bg-surface-container-high px-2 py-0.5 rounded-full text-badge-xs">1</span>
+</div>
+<div class="bg-surface-subtle p-gap-sm rounded-lg flex-1 border border-border"></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interactions for Search UI
+        const searchInput = document.getElementById('main-search-input');
+        const overlay = document.getElementById('search-overlay');
+        const dropdown = document.querySelector('main');
+
+        searchInput.addEventListener('focus', () => {
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
+            dropdown.style.opacity = '1';
+            dropdown.style.pointerEvents = 'auto';
+        });
+
+        overlay.addEventListener('click', () => {
+            searchInput.blur();
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+            dropdown.style.opacity = '0';
+            dropdown.style.pointerEvents = 'none';
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchInput.blur();
+                overlay.style.opacity = '0';
+                overlay.style.pointerEvents = 'none';
+                dropdown.style.opacity = '0';
+                dropdown.style.pointerEvents = 'none';
+            }
+        });
+    </script>
+</body></html>

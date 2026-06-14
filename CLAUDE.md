@@ -63,7 +63,7 @@ cd frontend && npm run dev
 
 ## Claude Code features in use
 
-- **Playwright MCP** — browser automation for Pipedrive research + E2E tests
+- **Playwright** — browser automation for Pipedrive research + E2E tests
 - **Hooks** — `.claude/settings.json` pre-commit runs ESLint; post-edit runs affected tests
 - **Skills** — `/generate-mock-data` creates realistic JSON fixtures; `/speckit.specify` generates spec files
 - **Memory** — design decisions and component patterns persisted across sessions

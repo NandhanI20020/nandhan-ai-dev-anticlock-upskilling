@@ -10,13 +10,6 @@ specs/
 │   ├── spec.md          ← functional spec (WHAT + WHY)
 │   ├── plan.md          ← technical plan (HOW)
 │   ├── tasks.md         ← actionable task list
-│   ├── research.md      ← decisions and rationale
-│   ├── data-model.md    ← entity definitions
-│   ├── quickstart.md    ← end-to-end validation guide
-│   └── contracts/
-│       └── api.md       ← REST API spec for this feature
-├── 002-deal-detail/
-│   └── ...
 └── ...
 ```
 
@@ -41,7 +34,7 @@ specs/
 
 Then follow the chain:
 ```
-/speckit.plan   → generates plan.md, research.md, data-model.md, contracts/
+/speckit.plan   → generates plan.md
 /speckit.tasks  → generates tasks.md
 /speckit.implement → executes tasks phase by phase
 ```

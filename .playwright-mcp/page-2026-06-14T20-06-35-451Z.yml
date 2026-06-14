@@ -1,0 +1,367 @@
+- generic [active]:
+  - generic [ref=e1]:
+    - navigation [ref=e3]:
+      - menu [ref=e4]:
+        - menuitem "home" [ref=e5] [cursor=pointer]:
+          - link "home" [ref=e6]:
+            - /url: /setup-guide
+            - img [ref=e7]
+        - menuitem "Setup guide" [ref=e9] [cursor=pointer]:
+          - link "Setup guide" [ref=e10]:
+            - /url: /setup-guide
+            - generic [ref=e11]: Setup guide
+            - img [ref=e12]
+        - menuitem "Contacts" [ref=e14] [cursor=pointer]:
+          - link "Contacts" [ref=e15]:
+            - /url: /persons/list/user/everyone
+            - generic [ref=e16]: Contacts
+            - img [ref=e17]
+        - menuitem "Activities" [ref=e20] [cursor=pointer]:
+          - link "Activities" [ref=e21]:
+            - /url: /activities/list/user/everyone
+            - generic [ref=e22]: Activities
+            - generic [ref=e92]: "1"
+            - img [ref=e23]
+        - menuitem "Deals" [ref=e25] [cursor=pointer]:
+          - link "Deals" [ref=e26]:
+            - /url: /pipeline/2/user/everyone
+            - generic [ref=e27]: Deals
+            - img [ref=e28]
+        - menuitem "Leads" [ref=e30] [cursor=pointer]:
+          - link "Leads" [ref=e31]:
+            - /url: /leads/inbox
+            - generic [ref=e32]: Leads
+            - img [ref=e33]
+        - menuitem "Insights" [ref=e36] [cursor=pointer]:
+          - link "Insights" [ref=e37]:
+            - /url: /progress/insights
+            - generic [ref=e38]: Insights
+            - img [ref=e39]
+        - menuitem "Sales Inbox" [ref=e41] [cursor=pointer]:
+          - link "Sales Inbox" [ref=e42]:
+            - /url: /mail
+            - generic [ref=e43]: Sales Inbox
+            - img [ref=e44]
+        - menuitem "More" [ref=e47] [cursor=pointer]:
+          - button "More" [ref=e48]:
+            - img [ref=e49]
+    - generic [ref=e51]:
+      - generic [ref=e99]:
+        - generic [ref=e102]:
+          - text: Hi, Nandhan Venkadesh, you can change plans to explore different features and find your ideal fit.
+          - generic [ref=e103] [cursor=pointer]: Compare plans
+        - button [ref=e105] [cursor=pointer]:
+          - img [ref=e106]
+      - banner [ref=e52]:
+        - generic [ref=e53]:
+          - heading "Deals" [level=1] [ref=e55]
+          - img "Info" [ref=e108]
+        - generic [ref=e56]:
+          - generic [ref=e112]:
+            - textbox "Search Pipedrive" [ref=e113]
+            - img
+          - button "Quick add" [ref=e60] [cursor=pointer]:
+            - img [ref=e61]
+          - button [ref=e115] [cursor=pointer]:
+            - img [ref=e117]
+        - generic [ref=e68]:
+          - list [ref=e121]:
+            - listitem [ref=e122] [cursor=pointer]:
+              - button [ref=e124]:
+                - img [ref=e125]
+          - button "Quick Help" [ref=e126] [cursor=pointer]:
+            - img [ref=e127]
+          - button "Notifications" [ref=e131] [cursor=pointer]:
+            - img [ref=e132]
+          - button "NV" [ref=e82] [cursor=pointer]:
+            - generic [ref=e83]: NV
+      - main [ref=e85]:
+        - generic [ref=e135]:
+          - generic [ref=e137]:
+            - generic [ref=e139]:
+              - generic [ref=e144]:
+                - heading "[Sample] Tony Turner IT Infrastructure Security Deal" [level=1] [ref=e145]:
+                  - textbox "[Sample] Tony Turner IT Infrastructure Security Deal" [ref=e146]
+                - heading "[Sample]_Tony_Turner_IT_Infrastructure_Security_Deal" [level=1] [ref=e147]
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - img [ref=e151]
+                  - generic [ref=e153]:
+                    - link "Nandhan Venkadesh" [ref=e156] [cursor=pointer]:
+                      - /url: /users/details/31973949
+                    - generic [ref=e157]: Owner
+                  - button "Transfer ownership" [ref=e158] [cursor=pointer]:
+                    - img [ref=e159]
+                - button "1 follower" [ref=e160] [cursor=pointer]:
+                  - generic [ref=e161]: 1 follower
+                  - img [ref=e162]
+                - generic [ref=e163]:
+                  - generic [ref=e166]:
+                    - button "Won" [ref=e167] [cursor=pointer]:
+                      - generic [ref=e168]: Won
+                    - button "Options" [ref=e169] [cursor=pointer]:
+                      - img [ref=e170]
+                  - button "Lost" [ref=e172] [cursor=pointer]:
+                    - generic [ref=e173]: Lost
+                - button [ref=e177] [cursor=pointer]:
+                  - img [ref=e178]
+                  - img [ref=e179]
+                - button [ref=e181] [cursor=pointer]:
+                  - img [ref=e182]
+            - generic [ref=e184]:
+              - listbox [ref=e186]:
+                - option "0 days" [selected] [ref=e187] [cursor=pointer]:
+                  - generic [ref=e188]: 0 days
+                - option "0 days" [ref=e189] [cursor=pointer]:
+                  - generic [ref=e190]: 0 days
+                - option "0 days" [ref=e191] [cursor=pointer]:
+                  - generic [ref=e192]: 0 days
+                - option "0 days" [ref=e193] [cursor=pointer]:
+                  - generic [ref=e194]: 0 days
+                - option "0 days" [ref=e195] [cursor=pointer]:
+                  - generic [ref=e196]: 0 days
+                - option "0 days" [ref=e197] [cursor=pointer]:
+                  - generic [ref=e198]: 0 days
+              - button "Sales pipeline Qualified" [ref=e201] [cursor=pointer]:
+                - generic [ref=e202]: Sales pipeline
+                - img [ref=e203]
+                - generic [ref=e204]: Qualified
+          - generic [ref=e205]:
+            - generic [ref=e206]:
+              - generic [ref=e208]:
+                - generic [ref=e209]:
+                  - button "Summary" [ref=e211] [cursor=pointer]:
+                    - img [ref=e212]
+                    - generic [ref=e213]: Summary
+                  - button [ref=e217] [cursor=pointer]:
+                    - img [ref=e218]
+                - generic [ref=e219]:
+                  - generic [ref=e223] [cursor=pointer]:
+                    - img [ref=e224]
+                    - generic [ref=e226]: Scores
+                  - generic [ref=e228]:
+                    - generic [ref=e229]:
+                      - img [ref=e231]
+                      - generic [ref=e237]: ₹30,000
+                    - button "Products" [ref=e240] [cursor=pointer]:
+                      - img [ref=e241]
+                      - generic [ref=e242]: Products
+                  - button "[Sample] MoveEr Tech Group" [ref=e245]:
+                    - img [ref=e246]
+                    - link "[Sample] MoveEr Tech Group" [ref=e250] [cursor=pointer]:
+                      - /url: /organization/2
+                  - generic [ref=e252]:
+                    - button "[Sample] Tony Turner" [ref=e255]:
+                      - img [ref=e256]
+                      - link "[Sample] Tony Turner" [ref=e260] [cursor=pointer]:
+                        - /url: /person/1
+                    - button "Participants" [ref=e263] [cursor=pointer]:
+                      - img [ref=e264]
+                      - generic [ref=e265]: Participants
+                  - generic [ref=e267]:
+                    - img [ref=e269]
+                    - generic [ref=e272]: Add labels
+                  - generic [ref=e274]:
+                    - img [ref=e276]
+                    - generic [ref=e281]: June 17, 2026
+                  - link "Opens /pulse/sequences in same tab" [ref=e283] [cursor=pointer]:
+                    - /url: /pulse/sequences
+                    - generic [ref=e284]:
+                      - img [ref=e286]
+                      - generic [ref=e287]: Add sequence
+                  - button "Project" [ref=e289]:
+                    - img [ref=e290]
+                    - generic [ref=e292] [cursor=pointer]: Project
+              - button "Details" [ref=e297] [cursor=pointer]:
+                - img [ref=e298]
+                - generic [ref=e299]: Details
+              - generic [ref=e302]:
+                - generic [ref=e303]:
+                  - button "Source" [ref=e304] [cursor=pointer]:
+                    - img [ref=e305]
+                    - generic [ref=e306]: Source
+                  - generic [ref=e308]: BETA
+                - button "Source details" [ref=e309] [cursor=pointer]:
+                  - img [ref=e310]
+              - generic [ref=e313]:
+                - button "Person" [ref=e315] [cursor=pointer]:
+                  - img [ref=e316]
+                  - generic [ref=e317]: Person
+                - button [ref=e321] [cursor=pointer]:
+                  - img [ref=e322]
+              - generic [ref=e325]:
+                - button "Participants" [ref=e327] [cursor=pointer]:
+                  - img [ref=e328]
+                  - generic [ref=e329]: Participants
+                - generic [ref=e332]: "1"
+                - button [ref=e335] [cursor=pointer]:
+                  - img [ref=e336]
+              - generic [ref=e339]:
+                - button "Organization" [ref=e341] [cursor=pointer]:
+                  - img [ref=e342]
+                  - generic [ref=e343]: Organization
+                - generic [ref=e345]:
+                  - button "Enrich" [ref=e348] [cursor=pointer]:
+                    - img [ref=e349]
+                  - button [ref=e351] [cursor=pointer]:
+                    - img [ref=e352]
+              - button "Products" [ref=e359] [cursor=pointer]:
+                - img [ref=e360]
+                - generic [ref=e361]: Products
+              - generic [ref=e364]:
+                - button "Overview" [ref=e366] [cursor=pointer]:
+                  - img [ref=e367]
+                  - generic [ref=e368]: Overview
+                - button "Refresh" [ref=e370] [cursor=pointer]:
+                  - img [ref=e371]
+              - button "Smart Bcc" [ref=e375] [cursor=pointer]:
+                - img [ref=e376]
+                - generic [ref=e377]: Smart Bcc
+              - generic [ref=e381]:
+                - generic [ref=e382]:
+                  - button "Projects" [ref=e384] [cursor=pointer]:
+                    - img [ref=e385]
+                    - generic [ref=e386]: Projects
+                  - img "Info" [ref=e389]
+                - generic [ref=e391]:
+                  - button "Project" [ref=e392] [cursor=pointer]:
+                    - img [ref=e393]
+                    - generic [ref=e394]: Project
+                  - button "Link project" [ref=e395] [cursor=pointer]:
+                    - img [ref=e396]
+                    - generic [ref=e397]: Link project
+              - generic [ref=e399]:
+                - generic [ref=e400]:
+                  - generic [ref=e401]: "Updated:"
+                  - generic [ref=e402]: Monday, June 15, 2026 12:27 AM
+                - generic [ref=e403]:
+                  - generic [ref=e404]: "Created:"
+                  - generic [ref=e405]: Monday, June 15, 2026 12:27 AM
+            - generic [ref=e408]:
+              - list [ref=e412]:
+                - generic [ref=e415]:
+                  - listitem [ref=e416] [cursor=pointer]:
+                    - img [ref=e417]
+                    - generic [ref=e418]: Activity
+                  - listitem [ref=e419] [cursor=pointer]:
+                    - img [ref=e420]
+                    - generic [ref=e421]: Notes
+                  - listitem [ref=e422]:
+                    - listitem [ref=e424] [cursor=pointer]:
+                      - img [ref=e425]
+                      - generic [ref=e426]: Meeting scheduler
+                  - listitem [ref=e427] [cursor=pointer]:
+                    - img [ref=e428]
+                    - generic [ref=e429]: Call
+                  - listitem [ref=e430] [cursor=pointer]:
+                    - img [ref=e431]
+                    - generic [ref=e432]: Email
+                  - listitem [ref=e433] [cursor=pointer]:
+                    - img [ref=e434]
+                    - generic [ref=e435]: Files
+                  - listitem [ref=e436] [cursor=pointer]:
+                    - img [ref=e437]
+                    - generic [ref=e438]: Documents
+                  - listitem [ref=e439]:
+                    - listitem [ref=e441] [cursor=pointer]:
+                      - img [ref=e442]
+                      - generic [ref=e443]: Invoice
+                - generic [ref=e445] [cursor=pointer]: Click here to add an activity...
+              - generic [ref=e447]:
+                - generic [ref=e448]:
+                  - button "Focus" [ref=e449] [cursor=pointer]:
+                    - generic [ref=e450]: Focus
+                    - img [ref=e451]
+                  - generic [ref=e453]:
+                    - switch "Expand all items" [ref=e454]
+                    - generic [ref=e455] [cursor=pointer]:
+                      - img
+                    - generic [ref=e456] [cursor=pointer]: Expand all items
+                - generic [ref=e458]:
+                  - img [ref=e461]
+                  - generic [ref=e468]:
+                    - generic [ref=e469]:
+                      - generic [ref=e472]:
+                        - generic [ref=e473]:
+                          - checkbox [ref=e474]
+                          - img [ref=e475] [cursor=pointer]
+                        - generic [ref=e476] [cursor=pointer]: "[[Sample] Infrastructure Security Planning Session"
+                      - button "More actions" [ref=e478] [cursor=pointer]:
+                        - img [ref=e479]
+                    - generic [ref=e480]:
+                      - generic [ref=e481]: Tomorrow
+                      - generic [ref=e482]: ·
+                      - generic [ref=e483]: Nandhan Venkadesh
+                      - generic [ref=e484]:
+                        - img [ref=e485]
+                        - link "[Sample] Tony Turner" [ref=e487] [cursor=pointer]:
+                          - /url: /person/1
+                          - generic [ref=e489]: "[Sample] Tony Turner"
+                      - link "[Sample] MoveEr Tech Group" [ref=e492] [cursor=pointer]:
+                        - /url: /organization/2
+                        - img [ref=e493]
+                        - generic [ref=e495]: "[Sample] MoveEr Tech Group"
+              - generic [ref=e497]:
+                - button "History" [ref=e499] [cursor=pointer]:
+                  - generic [ref=e500]: History
+                  - img [ref=e501]
+                - list [ref=e502]:
+                  - listitem [ref=e503]:
+                    - button "All" [ref=e505] [cursor=pointer]:
+                      - generic [ref=e506]: All
+                  - listitem [ref=e507]:
+                    - button "Activities (0)" [ref=e509] [cursor=pointer]:
+                      - generic [ref=e510]: Activities (0)
+                  - listitem [ref=e511]:
+                    - button "Notes (1)" [ref=e513] [cursor=pointer]:
+                      - generic [ref=e514]: Notes (1)
+                  - listitem [ref=e515]:
+                    - button "Emails" [ref=e517] [cursor=pointer]:
+                      - generic [ref=e518]: Emails
+                  - listitem [ref=e519]:
+                    - button "Files" [ref=e521] [cursor=pointer]:
+                      - generic [ref=e522]: Files
+                  - listitem [ref=e523]:
+                    - button "Documents" [ref=e525] [cursor=pointer]:
+                      - generic [ref=e526]: Documents
+                  - listitem [ref=e527]:
+                    - button "Invoices" [ref=e529] [cursor=pointer]:
+                      - generic [ref=e530]: Invoices
+                  - listitem [ref=e531]:
+                    - button "Changelog" [ref=e533] [cursor=pointer]:
+                      - generic [ref=e534]: Changelog
+                - generic [ref=e535]:
+                  - generic [ref=e536]:
+                    - img [ref=e539]
+                    - generic [ref=e545]:
+                      - generic [ref=e547]:
+                        - generic [ref=e549]:
+                          - text: Today at 12:27 AM
+                          - generic [ref=e550]: ·
+                          - generic [ref=e552]: Nandhan Venkadesh
+                          - text: (API)
+                        - generic [ref=e553]:
+                          - button "Expand" [ref=e554] [cursor=pointer]:
+                            - img [ref=e555]
+                          - button "Add a comment" [ref=e558] [cursor=pointer]:
+                            - generic [ref=e559]: Add a comment
+                          - button "Pin this note" [ref=e560] [cursor=pointer]:
+                            - img [ref=e561]
+                          - button "More actions" [ref=e562] [cursor=pointer]:
+                            - img [ref=e563]
+                      - generic [ref=e565]: "[Sample] Assessing secure infrastructure solutions to improve data protection across departments."
+                  - generic [ref=e566]:
+                    - img [ref=e569]
+                    - generic [ref=e574]:
+                      - generic [ref=e575]:
+                        - generic [ref=e576]: Deal created
+                        - generic [ref=e578]:
+                          - text: ":"
+                          - time [ref=e579]: Today at 12:27 AM
+                      - generic [ref=e580]:
+                        - generic [ref=e581]: Today at 12:27 AM
+                        - generic [ref=e582]: ·
+                        - text: Nandhan Venkadesh (API)
+  - img
+  - iframe [ref=e584]:
+    

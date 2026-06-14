@@ -1,0 +1,91 @@
+[
+  { "id": "ste-001", "dealId": "deal-001", "stageId": "stage-001", "enteredAt": "2026-05-01T00:00:00Z", "exitedAt": null },
+
+  { "id": "ste-002", "dealId": "deal-002", "stageId": "stage-001", "enteredAt": "2026-05-05T00:00:00Z", "exitedAt": "2026-05-20T10:00:00Z" },
+  { "id": "ste-003", "dealId": "deal-002", "stageId": "stage-002", "enteredAt": "2026-05-20T10:00:00Z", "exitedAt": null },
+
+  { "id": "ste-004", "dealId": "deal-003", "stageId": "stage-001", "enteredAt": "2026-04-15T00:00:00Z", "exitedAt": "2026-04-25T14:00:00Z" },
+  { "id": "ste-005", "dealId": "deal-003", "stageId": "stage-002", "enteredAt": "2026-04-25T14:00:00Z", "exitedAt": "2026-05-08T09:00:00Z" },
+  { "id": "ste-006", "dealId": "deal-003", "stageId": "stage-003", "enteredAt": "2026-05-08T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-007", "dealId": "deal-004", "stageId": "stage-001", "enteredAt": "2026-05-20T00:00:00Z", "exitedAt": "2026-05-28T09:00:00Z" },
+  { "id": "ste-008", "dealId": "deal-004", "stageId": "stage-002", "enteredAt": "2026-05-28T09:00:00Z", "exitedAt": "2026-06-05T11:00:00Z" },
+  { "id": "ste-009", "dealId": "deal-004", "stageId": "stage-003", "enteredAt": "2026-06-05T11:00:00Z", "exitedAt": "2026-06-10T09:00:00Z" },
+  { "id": "ste-010", "dealId": "deal-004", "stageId": "stage-004", "enteredAt": "2026-06-10T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-011", "dealId": "deal-005", "stageId": "stage-001", "enteredAt": "2026-05-25T00:00:00Z", "exitedAt": null },
+
+  { "id": "ste-012", "dealId": "deal-006", "stageId": "stage-001", "enteredAt": "2026-05-10T00:00:00Z", "exitedAt": "2026-05-25T13:00:00Z" },
+  { "id": "ste-013", "dealId": "deal-006", "stageId": "stage-002", "enteredAt": "2026-05-25T13:00:00Z", "exitedAt": null },
+
+  { "id": "ste-014", "dealId": "deal-007", "stageId": "stage-001", "enteredAt": "2026-04-20T00:00:00Z", "exitedAt": "2026-05-01T10:00:00Z" },
+  { "id": "ste-015", "dealId": "deal-007", "stageId": "stage-002", "enteredAt": "2026-05-01T10:00:00Z", "exitedAt": "2026-05-18T14:00:00Z" },
+  { "id": "ste-016", "dealId": "deal-007", "stageId": "stage-003", "enteredAt": "2026-05-18T14:00:00Z", "exitedAt": null },
+
+  { "id": "ste-017", "dealId": "deal-008", "stageId": "stage-001", "enteredAt": "2026-05-01T00:00:00Z", "exitedAt": "2026-05-10T09:00:00Z" },
+  { "id": "ste-018", "dealId": "deal-008", "stageId": "stage-002", "enteredAt": "2026-05-10T09:00:00Z", "exitedAt": "2026-05-22T11:00:00Z" },
+  { "id": "ste-019", "dealId": "deal-008", "stageId": "stage-003", "enteredAt": "2026-05-22T11:00:00Z", "exitedAt": "2026-06-01T09:00:00Z" },
+  { "id": "ste-020", "dealId": "deal-008", "stageId": "stage-004", "enteredAt": "2026-06-01T09:00:00Z", "exitedAt": "2026-06-08T14:00:00Z" },
+  { "id": "ste-021", "dealId": "deal-008", "stageId": "stage-005", "enteredAt": "2026-06-08T14:00:00Z", "exitedAt": null },
+
+  { "id": "ste-022", "dealId": "deal-009", "stageId": "stage-001", "enteredAt": "2026-06-01T00:00:00Z", "exitedAt": null },
+
+  { "id": "ste-023", "dealId": "deal-010", "stageId": "stage-001", "enteredAt": "2026-04-01T00:00:00Z", "exitedAt": "2026-04-18T10:00:00Z" },
+  { "id": "ste-024", "dealId": "deal-010", "stageId": "stage-002", "enteredAt": "2026-04-18T10:00:00Z", "exitedAt": "2026-05-05T09:00:00Z" },
+  { "id": "ste-025", "dealId": "deal-010", "stageId": "stage-003", "enteredAt": "2026-05-05T09:00:00Z", "exitedAt": "2026-05-28T11:00:00Z" },
+  { "id": "ste-026", "dealId": "deal-010", "stageId": "stage-004", "enteredAt": "2026-05-28T11:00:00Z", "exitedAt": null },
+
+  { "id": "ste-027", "dealId": "deal-011", "stageId": "stage-001", "enteredAt": "2026-05-15T00:00:00Z", "exitedAt": "2026-06-01T10:00:00Z" },
+  { "id": "ste-028", "dealId": "deal-011", "stageId": "stage-002", "enteredAt": "2026-06-01T10:00:00Z", "exitedAt": null },
+
+  { "id": "ste-029", "dealId": "deal-012", "stageId": "stage-001", "enteredAt": "2026-05-22T00:00:00Z", "exitedAt": "2026-06-01T09:00:00Z" },
+  { "id": "ste-030", "dealId": "deal-012", "stageId": "stage-002", "enteredAt": "2026-06-01T09:00:00Z", "exitedAt": "2026-06-08T11:00:00Z" },
+  { "id": "ste-031", "dealId": "deal-012", "stageId": "stage-003", "enteredAt": "2026-06-08T11:00:00Z", "exitedAt": null },
+
+  { "id": "ste-032", "dealId": "deal-013", "stageId": "stage-001", "enteredAt": "2026-06-05T00:00:00Z", "exitedAt": null },
+
+  { "id": "ste-033", "dealId": "deal-014", "stageId": "stage-001", "enteredAt": "2026-05-28T00:00:00Z", "exitedAt": "2026-06-02T10:00:00Z" },
+  { "id": "ste-034", "dealId": "deal-014", "stageId": "stage-002", "enteredAt": "2026-06-02T10:00:00Z", "exitedAt": "2026-06-07T09:00:00Z" },
+  { "id": "ste-035", "dealId": "deal-014", "stageId": "stage-003", "enteredAt": "2026-06-07T09:00:00Z", "exitedAt": "2026-06-11T10:00:00Z" },
+  { "id": "ste-036", "dealId": "deal-014", "stageId": "stage-004", "enteredAt": "2026-06-11T10:00:00Z", "exitedAt": null },
+
+  { "id": "ste-037", "dealId": "deal-015", "stageId": "stage-001", "enteredAt": "2026-05-18T00:00:00Z", "exitedAt": "2026-06-03T09:00:00Z" },
+  { "id": "ste-038", "dealId": "deal-015", "stageId": "stage-002", "enteredAt": "2026-06-03T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-039", "dealId": "deal-016", "stageId": "stage-001", "enteredAt": "2026-04-25T00:00:00Z", "exitedAt": "2026-05-10T10:00:00Z" },
+  { "id": "ste-040", "dealId": "deal-016", "stageId": "stage-002", "enteredAt": "2026-05-10T10:00:00Z", "exitedAt": "2026-05-28T09:00:00Z" },
+  { "id": "ste-041", "dealId": "deal-016", "stageId": "stage-003", "enteredAt": "2026-05-28T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-042", "dealId": "deal-017", "stageId": "stage-001", "enteredAt": "2026-06-01T00:00:00Z", "exitedAt": null },
+
+  { "id": "ste-043", "dealId": "deal-018", "stageId": "stage-001", "enteredAt": "2026-04-10T00:00:00Z", "exitedAt": "2026-04-22T10:00:00Z" },
+  { "id": "ste-044", "dealId": "deal-018", "stageId": "stage-002", "enteredAt": "2026-04-22T10:00:00Z", "exitedAt": "2026-05-07T11:00:00Z" },
+  { "id": "ste-045", "dealId": "deal-018", "stageId": "stage-003", "enteredAt": "2026-05-07T11:00:00Z", "exitedAt": "2026-05-24T09:00:00Z" },
+  { "id": "ste-046", "dealId": "deal-018", "stageId": "stage-004", "enteredAt": "2026-05-24T09:00:00Z", "exitedAt": "2026-06-05T14:00:00Z" },
+  { "id": "ste-047", "dealId": "deal-018", "stageId": "stage-005", "enteredAt": "2026-06-05T14:00:00Z", "exitedAt": null },
+
+  { "id": "ste-048", "dealId": "deal-019", "stageId": "stage-001", "enteredAt": "2026-05-12T00:00:00Z", "exitedAt": "2026-05-28T09:00:00Z" },
+  { "id": "ste-049", "dealId": "deal-019", "stageId": "stage-002", "enteredAt": "2026-05-28T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-050", "dealId": "deal-020", "stageId": "stage-001", "enteredAt": "2026-05-30T00:00:00Z", "exitedAt": "2026-06-03T10:00:00Z" },
+  { "id": "ste-051", "dealId": "deal-020", "stageId": "stage-002", "enteredAt": "2026-06-03T10:00:00Z", "exitedAt": "2026-06-07T09:00:00Z" },
+  { "id": "ste-052", "dealId": "deal-020", "stageId": "stage-003", "enteredAt": "2026-06-07T09:00:00Z", "exitedAt": "2026-06-10T11:00:00Z" },
+  { "id": "ste-053", "dealId": "deal-020", "stageId": "stage-004", "enteredAt": "2026-06-10T11:00:00Z", "exitedAt": "2026-06-12T14:00:00Z" },
+  { "id": "ste-054", "dealId": "deal-020", "stageId": "stage-005", "enteredAt": "2026-06-12T14:00:00Z", "exitedAt": null },
+
+  { "id": "ste-055", "dealId": "deal-021", "stageId": "stage-001", "enteredAt": "2026-03-15T00:00:00Z", "exitedAt": "2026-04-02T09:00:00Z" },
+  { "id": "ste-056", "dealId": "deal-021", "stageId": "stage-002", "enteredAt": "2026-04-02T09:00:00Z", "exitedAt": "2026-05-03T10:00:00Z" },
+  { "id": "ste-057", "dealId": "deal-021", "stageId": "stage-003", "enteredAt": "2026-05-03T10:00:00Z", "exitedAt": "2026-06-02T09:00:00Z" },
+  { "id": "ste-058", "dealId": "deal-021", "stageId": "stage-004", "enteredAt": "2026-06-02T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-059", "dealId": "deal-022", "stageId": "stage-001", "enteredAt": "2026-04-18T00:00:00Z", "exitedAt": "2026-05-02T10:00:00Z" },
+  { "id": "ste-060", "dealId": "deal-022", "stageId": "stage-002", "enteredAt": "2026-05-02T10:00:00Z", "exitedAt": "2026-06-02T09:00:00Z" },
+  { "id": "ste-061", "dealId": "deal-022", "stageId": "stage-003", "enteredAt": "2026-06-02T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-062", "dealId": "deal-023", "stageId": "stage-001", "enteredAt": "2026-06-05T00:00:00Z", "exitedAt": null },
+
+  { "id": "ste-063", "dealId": "deal-024", "stageId": "stage-001", "enteredAt": "2026-04-01T00:00:00Z", "exitedAt": "2026-04-20T09:00:00Z" },
+  { "id": "ste-064", "dealId": "deal-024", "stageId": "stage-002", "enteredAt": "2026-04-20T09:00:00Z", "exitedAt": null },
+
+  { "id": "ste-065", "dealId": "deal-025", "stageId": "stage-001", "enteredAt": "2026-03-20T00:00:00Z", "exitedAt": null }
+]

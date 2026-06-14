@@ -1,0 +1,330 @@
+- generic:
+  - generic [ref=e1]:
+    - navigation [ref=e3]:
+      - menu [ref=e4]:
+        - menuitem "home" [ref=e5] [cursor=pointer]:
+          - link "home" [ref=e6]:
+            - /url: /setup-guide
+            - img [ref=e7]
+        - menuitem "Setup guide" [ref=e9] [cursor=pointer]:
+          - link "Setup guide" [ref=e10]:
+            - /url: /setup-guide
+            - generic [ref=e11]: Setup guide
+            - img [ref=e12]
+        - menuitem "Contacts" [ref=e14] [cursor=pointer]:
+          - link "Contacts" [ref=e15]:
+            - /url: /organizations/list/user/everyone
+            - generic [ref=e16]: Contacts
+            - img [ref=e17]
+        - menuitem "Activities" [ref=e20] [cursor=pointer]:
+          - link "Activities" [ref=e21]:
+            - /url: /activities/list/user/everyone
+            - generic [ref=e22]: Activities
+            - generic [ref=e91]: "1"
+            - img [ref=e23]
+        - menuitem "Deals" [ref=e25] [cursor=pointer]:
+          - link "Deals" [ref=e26]:
+            - /url: /pipeline/2/user/everyone
+            - generic [ref=e27]: Deals
+            - img [ref=e28]
+        - menuitem "Leads" [ref=e30] [cursor=pointer]:
+          - link "Leads" [ref=e31]:
+            - /url: /leads/inbox
+            - generic [ref=e32]: Leads
+            - img [ref=e33]
+        - menuitem "Insights" [ref=e36] [cursor=pointer]:
+          - link "Insights" [ref=e37]:
+            - /url: /progress/insights
+            - generic [ref=e38]: Insights
+            - img [ref=e39]
+        - menuitem "Sales Inbox" [ref=e41] [cursor=pointer]:
+          - link "Sales Inbox" [ref=e42]:
+            - /url: /mail
+            - generic [ref=e43]: Sales Inbox
+            - img [ref=e44]
+        - menuitem "More" [ref=e47] [cursor=pointer]:
+          - button "More" [ref=e48]:
+            - img [ref=e49]
+    - generic [ref=e51]:
+      - generic [ref=e95]:
+        - generic [ref=e98]:
+          - text: Hi, Nandhan Venkadesh, you can change plans to explore different features and find your ideal fit.
+          - generic [ref=e99] [cursor=pointer]: Compare plans
+        - button [ref=e101] [cursor=pointer]:
+          - img [ref=e102]
+      - banner [ref=e52]:
+        - generic [ref=e53]:
+          - heading "Deals" [level=1] [ref=e55]
+          - img "Info" [ref=e104]
+        - generic [ref=e56]:
+          - generic [ref=e108]:
+            - textbox "Search Pipedrive" [ref=e109]
+            - img
+          - button "Quick add" [ref=e60] [cursor=pointer]:
+            - img [ref=e61]
+          - button [ref=e111] [cursor=pointer]:
+            - img [ref=e113]
+        - generic [ref=e68]:
+          - list [ref=e120]:
+            - listitem [ref=e121] [cursor=pointer]:
+              - button [ref=e123]:
+                - img [ref=e124]
+          - button "Quick Help" [ref=e125] [cursor=pointer]:
+            - img [ref=e126]
+          - button "Notifications" [ref=e130] [cursor=pointer]:
+            - img [ref=e131]
+          - button "NV" [ref=e82] [cursor=pointer]:
+            - generic [ref=e83]: NV
+      - main [ref=e85]:
+        - generic [ref=e140]:
+          - generic [ref=e144]:
+            - generic [ref=e145]:
+              - generic [ref=e146]:
+                - button "animation" [ref=e147]:
+                  - img [ref=e148]
+                - generic [ref=e166]:
+                  - generic [ref=e167]: Import your contact and sales data
+                  - generic [ref=e168]: Bring in your data to streamline your operations. Unlock the full potential of what Pipedrive can do for your business.
+              - button "Import data" [ref=e170] [cursor=pointer]:
+                - img [ref=e171]
+                - generic [ref=e172]: Import data
+            - button "Dismiss" [ref=e173] [cursor=pointer]:
+              - img [ref=e174]
+          - generic [ref=e176]:
+            - generic [ref=e177]:
+              - generic [ref=e178]:
+                - generic [ref=e180]:
+                  - link "Pipeline" [ref=e181] [cursor=pointer]:
+                    - /url: /pipeline
+                    - img [ref=e182]
+                  - link "List" [ref=e183] [cursor=pointer]:
+                    - /url: /deals
+                    - img [ref=e184]
+                  - link "Forecast" [ref=e185] [cursor=pointer]:
+                    - /url: /timeline
+                    - img [ref=e186]
+                  - link "Archive" [ref=e187] [cursor=pointer]:
+                    - /url: /deals/archived
+                    - img [ref=e188]
+                - generic "Add deal" [ref=e190]:
+                  - button "Deal" [ref=e191] [cursor=pointer]:
+                    - img [ref=e192]
+                    - generic [ref=e193]: Deal
+                  - button "Add deal options" [ref=e194] [cursor=pointer]:
+                    - img [ref=e195]
+              - generic [ref=e208]:
+                - generic [ref=e209]: 1 deal
+                - button "Show deals total value" [ref=e210] [cursor=pointer]:
+                  - img [ref=e211]
+              - generic [ref=e212]:
+                - generic [ref=e218]:
+                  - button "Sales pipeline" [ref=e219] [cursor=pointer]:
+                    - img [ref=e220]
+                    - generic [ref=e221]: Sales pipeline
+                    - img [ref=e222]
+                  - button "Edit pipeline" [ref=e223] [cursor=pointer]:
+                    - img [ref=e224]
+                - button "Filter" [ref=e228] [cursor=pointer]:
+                  - img [ref=e229]
+                  - generic [ref=e230]: Filter
+                  - img [ref=e231]
+                - button "Actions" [ref=e232] [cursor=pointer]:
+                  - img [ref=e233]
+            - generic [ref=e234]:
+              - generic [ref=e239]:
+                - button "Add condition" [ref=e241] [cursor=pointer]:
+                  - img [ref=e242]
+                  - generic [ref=e243]: Add condition
+                - img "Info" [ref=e245]
+              - generic [ref=e247]:
+                - button "Change order" [ref=e248] [cursor=pointer]:
+                  - img [ref=e249]
+                - 'button "Sort by: Next activity" [ref=e250] [cursor=pointer]':
+                  - generic [ref=e251]: "Sort by:"
+                  - generic [ref=e252]: Next activity
+                  - img [ref=e253]
+          - generic [ref=e255]:
+            - generic [ref=e256]:
+              - generic [ref=e259]:
+                - generic [ref=e261]: Qualified
+                - generic:
+                  - generic:
+                    - generic: ₹30,000·1 deal
+              - generic [ref=e262]:
+                - button "[Sample] Tony Turner IT Infrastructure Security Deal [Sample] MoveEr Tech Group [Sample] Tony Turner ₹30,000" [ref=e266]:
+                  - generic [ref=e271] [cursor=pointer]:
+                    - link "[Sample] Tony Turner IT Infrastructure Security Deal [Sample] MoveEr Tech Group [Sample] Tony Turner ₹30,000" [ref=e272]:
+                      - /url: /deal/1
+                      - text: "[Sample] Tony Turner IT Infrastructure Security Deal"
+                      - generic [ref=e273]:
+                        - generic [ref=e274]: "[Sample] MoveEr Tech Group"
+                        - generic [ref=e275]: "[Sample] Tony Turner"
+                      - generic [ref=e277]: ₹30,000
+                    - generic [ref=e278]:
+                      - link [ref=e279]:
+                        - /url: /deal/1
+                        - img [ref=e281]
+                      - img [ref=e285]
+                - button [ref=e288] [cursor=pointer]:
+                  - img [ref=e289]
+            - generic [ref=e290]:
+              - generic [ref=e293]:
+                - generic [ref=e295]: Demo Scheduled
+                - generic:
+                  - generic: ₹0
+              - button [ref=e299] [cursor=pointer]:
+                - img [ref=e300]
+            - generic [ref=e301]:
+              - generic [ref=e304]:
+                - generic [ref=e306]: Demo Completed
+                - generic:
+                  - generic: ₹0
+              - button [ref=e310] [cursor=pointer]:
+                - img [ref=e311]
+            - generic [ref=e312]:
+              - generic [ref=e315]:
+                - generic [ref=e317]: Proposal Made
+                - generic:
+                  - generic: ₹0
+              - button [ref=e321] [cursor=pointer]:
+                - img [ref=e322]
+            - generic [ref=e323]:
+              - generic [ref=e326]:
+                - generic [ref=e328]: Negotiations
+                - generic:
+                  - generic: ₹0
+              - button [ref=e332] [cursor=pointer]:
+                - img [ref=e333]
+            - generic [ref=e334]:
+              - generic [ref=e337]:
+                - generic [ref=e339]: Contract Signed
+                - generic:
+                  - generic: ₹0
+              - button [ref=e343] [cursor=pointer]:
+                - img [ref=e344]
+          - status [ref=e345]
+  - img
+  - dialog [ref=e347]:
+    - button [ref=e348]
+    - generic [ref=e349]:
+      - banner [ref=e350]:
+        - button "Close" [ref=e351] [cursor=pointer]:
+          - img [ref=e352]
+        - heading "Add deal" [level=3] [ref=e353]
+      - generic [ref=e355]:
+        - generic [ref=e359]:
+          - generic [ref=e361]:
+            - generic [ref=e362]:
+              - generic [ref=e363]:
+                - text: Contact person
+                - img "Info" [ref=e366]
+              - combobox [ref=e369]:
+                - generic [ref=e374]:
+                  - textbox [active] [ref=e375]
+                  - img [ref=e376]
+            - generic [ref=e377]:
+              - generic [ref=e378]:
+                - text: Organization
+                - img "Info" [ref=e381]
+              - combobox [ref=e384]:
+                - generic [ref=e389]:
+                  - textbox [ref=e390]
+                  - img [ref=e391]
+            - generic [ref=e392]:
+              - generic [ref=e393]: Title
+              - textbox [ref=e397]
+            - generic [ref=e398]:
+              - generic [ref=e399]:
+                - text: Value
+                - img "Info" [ref=e402]
+              - generic [ref=e404]:
+                - textbox [ref=e408]
+                - combobox [ref=e409]:
+                  - button "open menu" [ref=e410] [cursor=pointer]:
+                    - generic [ref=e411]: Indian Rupee (INR)
+                    - img [ref=e412]
+              - button "Add products" [ref=e414] [cursor=pointer]:
+                - generic [ref=e415]: Add products
+            - generic [ref=e416]:
+              - generic [ref=e417]: Pipeline
+              - generic [ref=e419]:
+                - combobox [ref=e420]:
+                  - button "open menu" [ref=e421] [cursor=pointer]:
+                    - generic [ref=e424]: Sales pipeline
+                    - img [ref=e425]
+                - generic [ref=e426]:
+                  - generic [ref=e427]: Pipeline stage
+                  - generic [ref=e428]: This pipeline has no stages.
+            - generic [ref=e429]:
+              - generic [ref=e430]:
+                - text: Label
+                - img "Info" [ref=e433]
+              - generic [ref=e436] [cursor=pointer]:
+                - generic [ref=e437]: Add labels
+                - img [ref=e438]
+            - generic [ref=e439]:
+              - generic [ref=e440]:
+                - text: Expected close date
+                - img "Info" [ref=e443]
+              - textbox "MM/DD/YYYY" [ref=e450]
+            - generic [ref=e451]:
+              - generic [ref=e452]: Owner
+              - combobox [ref=e454]:
+                - button "open menu" [ref=e455] [cursor=pointer]:
+                  - generic [ref=e458]: Nandhan Venkadesh (You)
+                  - img [ref=e459]
+            - generic [ref=e460]:
+              - generic [ref=e461]: Source channel
+              - combobox [ref=e464]:
+                - button "open menu" [ref=e465] [cursor=pointer]:
+                  - img [ref=e466]
+            - generic [ref=e467]:
+              - generic [ref=e468]: Source channel ID
+              - textbox [ref=e472]
+            - generic [ref=e473]:
+              - generic [ref=e474]: Visible to
+              - button "Item owner’s visibility group" [ref=e475] [cursor=pointer]:
+                - img [ref=e476]
+                - generic [ref=e477]: Item owner’s visibility group
+                - img [ref=e478]
+          - generic [ref=e481]:
+            - button "PERSON" [ref=e483]:
+              - generic [ref=e484]: PERSON
+            - generic [ref=e485]:
+              - generic [ref=e487]:
+                - generic [ref=e488]: Phone
+                - generic [ref=e492]:
+                  - generic [ref=e497]:
+                    - textbox [disabled] [ref=e501]
+                    - combobox [ref=e502]:
+                      - generic [ref=e503]:
+                        - generic [ref=e504]: Work
+                        - img [ref=e505]
+                  - link "+ Add phone" [ref=e507]:
+                    - /url: "#"
+              - generic [ref=e509]:
+                - generic [ref=e510]: Email
+                - generic [ref=e514]:
+                  - generic [ref=e519]:
+                    - textbox [disabled] [ref=e523]
+                    - combobox [ref=e524]:
+                      - button "open menu" [ref=e525] [cursor=pointer]:
+                        - generic [ref=e526]: Work
+                        - img [ref=e527]
+                  - link "+ Add email" [ref=e529]:
+                    - /url: "#"
+        - contentinfo [ref=e530]:
+          - generic [ref=e531]:
+            - button "Import" [ref=e532] [cursor=pointer]:
+              - img [ref=e533]
+              - generic [ref=e534]: Import
+            - generic [ref=e535]:
+              - generic [ref=e536]:
+                - text: 1/15,000
+                - img "Info" [ref=e538]
+              - button "Cancel" [ref=e539] [cursor=pointer]:
+                - generic [ref=e540]: Cancel
+              - button "Save" [ref=e542] [cursor=pointer]:
+                - generic [ref=e543]: Save
+  - iframe [ref=e346]:
+    

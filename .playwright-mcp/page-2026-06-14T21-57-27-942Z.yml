@@ -1,0 +1,105 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]: S
+    - navigation [ref=e7]:
+      - link "Pipeline" [ref=e8] [cursor=pointer]:
+        - /url: /pipeline
+        - img [ref=e9]
+      - link "Deals" [ref=e14] [cursor=pointer]:
+        - /url: /deals
+        - img [ref=e15]
+      - link "People" [ref=e16] [cursor=pointer]:
+        - /url: /contacts
+        - img [ref=e17]
+      - link "Organizations" [ref=e22] [cursor=pointer]:
+        - /url: /organizations
+        - img [ref=e23]
+      - link "Activities" [ref=e27] [cursor=pointer]:
+        - /url: /activities
+        - img [ref=e28]
+      - link "Leads" [ref=e30] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e31]
+      - link "Insights" [ref=e34] [cursor=pointer]:
+        - /url: /insights
+        - img [ref=e35]
+      - link "Forecast" [ref=e36] [cursor=pointer]:
+        - /url: /forecast
+        - img [ref=e37]
+      - link "Archive" [ref=e40] [cursor=pointer]:
+        - /url: /archive
+        - img [ref=e41]
+  - main [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - heading "Pipeline" [level=1] [ref=e47]
+        - generic [ref=e48]:
+          - button "Sales Pipeline" [ref=e49] [cursor=pointer]
+          - button "Enterprise Pipeline" [ref=e50] [cursor=pointer]
+        - generic [ref=e52]:
+          - img [ref=e53]
+          - textbox "Search deals..." [ref=e56]
+        - button "Add Deal" [ref=e57] [cursor=pointer]:
+          - img [ref=e58]
+          - text: Add Deal
+      - generic [ref=e59]:
+        - generic [ref=e544]:
+          - generic [ref=e545]:
+            - generic [ref=e547]:
+              - text: Lead In
+              - generic [ref=e548]: 0 · $0
+            - generic [ref=e549]:
+              - paragraph [ref=e550]: No deals
+              - button "+ Add deal" [ref=e551] [cursor=pointer]
+          - generic [ref=e552]:
+            - generic [ref=e554]:
+              - text: Contact Made
+              - generic [ref=e555]: 0 · $0
+            - generic [ref=e556]:
+              - paragraph [ref=e557]: No deals
+              - button "+ Add deal" [ref=e558] [cursor=pointer]
+          - generic [ref=e559]:
+            - generic [ref=e561]:
+              - text: Proposal Made
+              - generic [ref=e562]: 0 · $0
+            - generic [ref=e563]:
+              - paragraph [ref=e564]: No deals
+              - button "+ Add deal" [ref=e565] [cursor=pointer]
+          - generic [ref=e566]:
+            - generic [ref=e568]:
+              - text: Negotiation
+              - generic [ref=e569]: 0 · $0
+            - generic [ref=e570]:
+              - paragraph [ref=e571]: No deals
+              - button "+ Add deal" [ref=e572] [cursor=pointer]
+          - generic [ref=e573]:
+            - generic [ref=e575]:
+              - text: Closing
+              - generic [ref=e576]: 0 · $0
+            - generic [ref=e577]:
+              - paragraph [ref=e578]: No deals
+              - button "+ Add deal" [ref=e579] [cursor=pointer]
+        - status [ref=e580]
+      - generic [ref=e582]:
+        - generic [ref=e583]:
+          - heading "Add Deal" [level=2] [ref=e584]
+          - button [ref=e585] [cursor=pointer]:
+            - img [ref=e586]
+        - generic [ref=e589]:
+          - generic [ref=e590]:
+            - generic [ref=e591]: Deal title *
+            - textbox "e.g. Acme Corp — Enterprise License" [active] [ref=e592]
+          - generic [ref=e593]:
+            - generic [ref=e594]: Value (USD)
+            - spinbutton [ref=e595]
+          - generic [ref=e596]:
+            - generic [ref=e597]: Stage
+            - combobox [ref=e598]:
+              - option "Lead In" [selected]
+              - option "Contact Made"
+              - option "Proposal Made"
+              - option "Negotiation"
+              - option "Closing"
+          - generic [ref=e599]:
+            - button "Cancel" [ref=e600] [cursor=pointer]
+            - button "Add Deal" [ref=e601] [cursor=pointer]

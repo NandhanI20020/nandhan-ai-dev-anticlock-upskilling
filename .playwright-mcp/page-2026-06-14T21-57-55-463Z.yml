@@ -1,0 +1,371 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e6]: S
+    - navigation [ref=e7]:
+      - link "Pipeline" [ref=e8] [cursor=pointer]:
+        - /url: /pipeline
+        - img [ref=e9]
+      - link "Deals" [ref=e14] [cursor=pointer]:
+        - /url: /deals
+        - img [ref=e15]
+      - link "People" [ref=e16] [cursor=pointer]:
+        - /url: /contacts
+        - img [ref=e17]
+      - link "Organizations" [ref=e22] [cursor=pointer]:
+        - /url: /organizations
+        - img [ref=e23]
+      - link "Activities" [ref=e27] [cursor=pointer]:
+        - /url: /activities
+        - img [ref=e28]
+      - link "Leads" [ref=e30] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e31]
+      - link "Insights" [ref=e34] [cursor=pointer]:
+        - /url: /insights
+        - img [ref=e35]
+      - link "Forecast" [ref=e36] [cursor=pointer]:
+        - /url: /forecast
+        - img [ref=e37]
+      - link "Archive" [ref=e40] [cursor=pointer]:
+        - /url: /archive
+        - img [ref=e41]
+  - main [ref=e44]:
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - heading "Pipeline" [level=1] [ref=e47]
+        - generic [ref=e48]:
+          - button "Sales Pipeline" [active] [ref=e49] [cursor=pointer]
+          - button "Enterprise Pipeline" [ref=e50] [cursor=pointer]
+        - generic [ref=e52]:
+          - img [ref=e53]
+          - textbox "Search deals..." [ref=e56]
+        - button "Add Deal" [ref=e57] [cursor=pointer]:
+          - img [ref=e58]
+          - text: Add Deal
+      - generic [ref=e59]:
+        - generic [ref=e544]:
+          - generic [ref=e614]:
+            - generic [ref=e616]:
+              - text: Qualified
+              - generic [ref=e617]: 7 · $289K
+            - generic [ref=e618]:
+              - button "Acme Corp — Enterprise License Acme Corp $48K AJ 4d ago" [ref=e619]:
+                - paragraph [ref=e620]: Acme Corp — Enterprise License
+                - paragraph [ref=e621]: Acme Corp
+                - paragraph [ref=e622]: $48K
+                - generic [ref=e623]:
+                  - generic [ref=e624]:
+                    - generic "Alice Johnson" [ref=e625]: AJ
+                    - generic [ref=e626]:
+                      - img [ref=e627]
+                      - generic [ref=e629]: 4d ago
+                  - button [ref=e631] [cursor=pointer]:
+                    - img [ref=e632]
+              - button "NexGen Labs — Startup Deal NexGen Labs $15K BS 3d ago" [ref=e636]:
+                - paragraph [ref=e637]: NexGen Labs — Startup Deal
+                - paragraph [ref=e638]: NexGen Labs
+                - paragraph [ref=e639]: $15K
+                - generic [ref=e640]:
+                  - generic [ref=e641]:
+                    - generic "Bob Smith" [ref=e642]: BS
+                    - generic [ref=e643]:
+                      - img [ref=e644]
+                      - generic [ref=e649]: 3d ago
+                  - button [ref=e651] [cursor=pointer]:
+                    - img [ref=e652]
+              - button "CloudScale — Scale-Up Package CloudScale Ltd $32K BS 4d ago" [ref=e656]:
+                - paragraph [ref=e657]: CloudScale — Scale-Up Package
+                - paragraph [ref=e658]: CloudScale Ltd
+                - paragraph [ref=e659]: $32K
+                - generic [ref=e660]:
+                  - generic [ref=e661]:
+                    - generic "Bob Smith" [ref=e662]: BS
+                    - generic [ref=e663]:
+                      - img [ref=e664]
+                      - generic [ref=e667]: 4d ago
+                  - button [ref=e669] [cursor=pointer]:
+                    - img [ref=e670]
+              - button "NexGen Labs — R&D Platform NexGen Labs $28K AJ 6d ago" [ref=e674]:
+                - paragraph [ref=e675]: NexGen Labs — R&D Platform
+                - paragraph [ref=e676]: NexGen Labs
+                - paragraph [ref=e677]: $28K
+                - generic [ref=e678]:
+                  - generic [ref=e679]:
+                    - generic "Alice Johnson" [ref=e680]: AJ
+                    - generic [ref=e681]:
+                      - img [ref=e682]
+                      - generic [ref=e684]: 6d ago
+                  - button [ref=e686] [cursor=pointer]:
+                    - img [ref=e687]
+              - button "Pinnacle Systems — Managed Services Pinnacle Systems $72K AJ 5d ago" [ref=e691]:
+                - paragraph [ref=e692]: Pinnacle Systems — Managed Services
+                - paragraph [ref=e693]: Pinnacle Systems
+                - paragraph [ref=e694]: $72K
+                - generic [ref=e695]:
+                  - generic [ref=e696]:
+                    - generic "Alice Johnson" [ref=e697]: AJ
+                    - generic [ref=e698]:
+                      - img [ref=e699]
+                      - generic [ref=e702]: 5d ago
+                  - button [ref=e704] [cursor=pointer]:
+                    - img [ref=e705]
+              - button "DataBridge — Data Warehouse DataBridge Co $41K AJ 1w ago" [ref=e709]:
+                - paragraph [ref=e710]: DataBridge — Data Warehouse
+                - paragraph [ref=e711]: DataBridge Co
+                - paragraph [ref=e712]: $41K
+                - generic [ref=e713]:
+                  - generic [ref=e714]:
+                    - generic "Alice Johnson" [ref=e715]: AJ
+                    - generic [ref=e716]:
+                      - img [ref=e717]
+                      - generic [ref=e720]: 1w ago
+                  - button [ref=e722] [cursor=pointer]:
+                    - img [ref=e723]
+              - button "ROTTEN Summit Partners — Rotten Deal B Summit Partners $53K AJ" [ref=e727]:
+                - generic [ref=e728]: ROTTEN
+                - paragraph [ref=e729]: Summit Partners — Rotten Deal B
+                - paragraph [ref=e730]: Summit Partners
+                - paragraph [ref=e731]: $53K
+                - generic [ref=e732]:
+                  - generic "Alice Johnson" [ref=e734]: AJ
+                  - button [ref=e736] [cursor=pointer]:
+                    - img [ref=e737]
+              - button "+ Add deal" [ref=e741] [cursor=pointer]
+          - generic [ref=e742]:
+            - generic [ref=e744]:
+              - text: Demo Scheduled
+              - generic [ref=e745]: 6 · $141K
+            - generic [ref=e746]:
+              - button "TechFlow — Annual SaaS Subscription TechFlow Inc $24K AJ 2d ago" [ref=e747]:
+                - paragraph [ref=e748]: TechFlow — Annual SaaS Subscription
+                - paragraph [ref=e749]: TechFlow Inc
+                - paragraph [ref=e750]: $24K
+                - generic [ref=e751]:
+                  - generic [ref=e752]:
+                    - generic "Alice Johnson" [ref=e753]: AJ
+                    - generic [ref=e754]:
+                      - img [ref=e755]
+                      - generic [ref=e760]: 2d ago
+                  - button [ref=e762] [cursor=pointer]:
+                    - img [ref=e763]
+              - button "Summit Partners — Consulting Retainer Summit Partners $36K AJ 5d ago" [ref=e767]:
+                - paragraph [ref=e768]: Summit Partners — Consulting Retainer
+                - paragraph [ref=e769]: Summit Partners
+                - paragraph [ref=e770]: $36K
+                - generic [ref=e771]:
+                  - generic [ref=e772]:
+                    - generic "Alice Johnson" [ref=e773]: AJ
+                    - generic [ref=e774]:
+                      - img [ref=e775]
+                      - generic [ref=e777]: 5d ago
+                  - button [ref=e779] [cursor=pointer]:
+                    - img [ref=e780]
+              - button "Acme Corp — Support Contract Acme Corp $12K AJ 2d ago" [ref=e784]:
+                - paragraph [ref=e785]: Acme Corp — Support Contract
+                - paragraph [ref=e786]: Acme Corp
+                - paragraph [ref=e787]: $12K
+                - generic [ref=e788]:
+                  - generic [ref=e789]:
+                    - generic "Alice Johnson" [ref=e790]: AJ
+                    - generic [ref=e791]:
+                      - img [ref=e792]
+                      - generic [ref=e794]: 2d ago
+                  - button [ref=e796] [cursor=pointer]:
+                    - img [ref=e797]
+              - button "DataBridge — BI Dashboard DataBridge Co $22K AJ 4d ago" [ref=e801]:
+                - paragraph [ref=e802]: DataBridge — BI Dashboard
+                - paragraph [ref=e803]: DataBridge Co
+                - paragraph [ref=e804]: $22K
+                - generic [ref=e805]:
+                  - generic [ref=e806]:
+                    - generic "Alice Johnson" [ref=e807]: AJ
+                    - generic [ref=e808]:
+                      - img [ref=e809]
+                      - generic [ref=e814]: 4d ago
+                  - button [ref=e816] [cursor=pointer]:
+                    - img [ref=e817]
+              - button "Frontier Dynamics — Analytics Module Frontier Dynamics $18K AJ 3d ago" [ref=e821]:
+                - paragraph [ref=e822]: Frontier Dynamics — Analytics Module
+                - paragraph [ref=e823]: Frontier Dynamics
+                - paragraph [ref=e824]: $18K
+                - generic [ref=e825]:
+                  - generic [ref=e826]:
+                    - generic "Alice Johnson" [ref=e827]: AJ
+                    - generic [ref=e828]:
+                      - img [ref=e829]
+                      - generic [ref=e834]: 3d ago
+                  - button [ref=e836] [cursor=pointer]:
+                    - img [ref=e837]
+              - button "ROTTEN Global Ventures — Rotten Deal A Global Ventures $29K BS" [ref=e841]:
+                - generic [ref=e842]: ROTTEN
+                - paragraph [ref=e843]: Global Ventures — Rotten Deal A
+                - paragraph [ref=e844]: Global Ventures
+                - paragraph [ref=e845]: $29K
+                - generic [ref=e846]:
+                  - generic "Bob Smith" [ref=e848]: BS
+                  - button [ref=e850] [cursor=pointer]:
+                    - img [ref=e851]
+              - button "+ Add deal" [ref=e855] [cursor=pointer]
+          - generic [ref=e856]:
+            - generic [ref=e858]:
+              - text: Proposal Made
+              - generic [ref=e859]: 5 · $293K
+            - generic [ref=e860]:
+              - button "Global Ventures — Platform Deal Global Ventures $120K BS yesterday" [ref=e861]:
+                - paragraph [ref=e862]: Global Ventures — Platform Deal
+                - paragraph [ref=e863]: Global Ventures
+                - paragraph [ref=e864]: $120K
+                - generic [ref=e865]:
+                  - generic [ref=e866]:
+                    - generic "Bob Smith" [ref=e867]: BS
+                    - generic [ref=e868]:
+                      - img [ref=e869]
+                      - generic [ref=e872]: yesterday
+                  - button [ref=e874] [cursor=pointer]:
+                    - img [ref=e875]
+              - button "Pinnacle Systems — Integration Project Pinnacle Systems $55K BS yesterday" [ref=e879]:
+                - paragraph [ref=e880]: Pinnacle Systems — Integration Project
+                - paragraph [ref=e881]: Pinnacle Systems
+                - paragraph [ref=e882]: $55K
+                - generic [ref=e883]:
+                  - generic [ref=e884]:
+                    - generic "Bob Smith" [ref=e885]: BS
+                    - generic [ref=e886]:
+                      - img [ref=e887]
+                      - generic [ref=e892]: yesterday
+                  - button [ref=e894] [cursor=pointer]:
+                    - img [ref=e895]
+              - button "TechFlow — Add-on Modules TechFlow Inc $10K BS 3d ago" [ref=e899]:
+                - paragraph [ref=e900]: TechFlow — Add-on Modules
+                - paragraph [ref=e901]: TechFlow Inc
+                - paragraph [ref=e902]: $10K
+                - generic [ref=e903]:
+                  - generic [ref=e904]:
+                    - generic "Bob Smith" [ref=e905]: BS
+                    - generic [ref=e906]:
+                      - img [ref=e907]
+                      - generic [ref=e912]: 3d ago
+                  - button [ref=e914] [cursor=pointer]:
+                    - img [ref=e915]
+              - button "Global Ventures — Security Audit Global Ventures $45K BS 2d ago" [ref=e919]:
+                - paragraph [ref=e920]: Global Ventures — Security Audit
+                - paragraph [ref=e921]: Global Ventures
+                - paragraph [ref=e922]: $45K
+                - generic [ref=e923]:
+                  - generic [ref=e924]:
+                    - generic "Bob Smith" [ref=e925]: BS
+                    - generic [ref=e926]:
+                      - img [ref=e927]
+                      - generic [ref=e929]: 2d ago
+                  - button [ref=e931] [cursor=pointer]:
+                    - img [ref=e932]
+              - button "TechFlow — White-label Deal TechFlow Inc $63K BS 4d ago" [ref=e936]:
+                - paragraph [ref=e937]: TechFlow — White-label Deal
+                - paragraph [ref=e938]: TechFlow Inc
+                - paragraph [ref=e939]: $63K
+                - generic [ref=e940]:
+                  - generic [ref=e941]:
+                    - generic "Bob Smith" [ref=e942]: BS
+                    - generic [ref=e943]:
+                      - img [ref=e944]
+                      - generic [ref=e949]: 4d ago
+                  - button [ref=e951] [cursor=pointer]:
+                    - img [ref=e952]
+              - button "+ Add deal" [ref=e956] [cursor=pointer]
+          - generic [ref=e957]:
+            - generic [ref=e959]:
+              - text: Negotiations
+              - generic [ref=e960]: 4 · $199K
+            - generic [ref=e961]:
+              - button "Bright Solutions — SMB Package Bright Solutions $9K AJ today" [ref=e962]:
+                - paragraph [ref=e963]: Bright Solutions — SMB Package
+                - paragraph [ref=e964]: Bright Solutions
+                - paragraph [ref=e965]: $9K
+                - generic [ref=e966]:
+                  - generic [ref=e967]:
+                    - generic "Alice Johnson" [ref=e968]: AJ
+                    - generic [ref=e969]:
+                      - img [ref=e970]
+                      - generic [ref=e973]: today
+                  - button [ref=e975] [cursor=pointer]:
+                    - img [ref=e976]
+              - button "Frontier Dynamics — Full Suite Frontier Dynamics $95K AJ yesterday" [ref=e980]:
+                - paragraph [ref=e981]: Frontier Dynamics — Full Suite
+                - paragraph [ref=e982]: Frontier Dynamics
+                - paragraph [ref=e983]: $95K
+                - generic [ref=e984]:
+                  - generic [ref=e985]:
+                    - generic "Alice Johnson" [ref=e986]: AJ
+                    - generic [ref=e987]:
+                      - img [ref=e988]
+                      - generic [ref=e993]: yesterday
+                  - button [ref=e995] [cursor=pointer]:
+                    - img [ref=e996]
+              - button "Summit Partners — Training Package Summit Partners $8K BS yesterday" [ref=e1000]:
+                - paragraph [ref=e1001]: Summit Partners — Training Package
+                - paragraph [ref=e1002]: Summit Partners
+                - paragraph [ref=e1003]: $8K
+                - generic [ref=e1004]:
+                  - generic [ref=e1005]:
+                    - generic "Bob Smith" [ref=e1006]: BS
+                    - generic [ref=e1007]:
+                      - img [ref=e1008]
+                      - generic [ref=e1011]: yesterday
+                  - button [ref=e1013] [cursor=pointer]:
+                    - img [ref=e1014]
+              - button "Acme Corp — Cloud Migration Acme Corp $88K AJ 2d ago" [ref=e1018]:
+                - paragraph [ref=e1019]: Acme Corp — Cloud Migration
+                - paragraph [ref=e1020]: Acme Corp
+                - paragraph [ref=e1021]: $88K
+                - generic [ref=e1022]:
+                  - generic [ref=e1023]:
+                    - generic "Alice Johnson" [ref=e1024]: AJ
+                    - generic [ref=e1025]:
+                      - img [ref=e1026]
+                      - generic [ref=e1028]: 2d ago
+                  - button [ref=e1030] [cursor=pointer]:
+                    - img [ref=e1031]
+              - button "+ Add deal" [ref=e1035] [cursor=pointer]
+          - generic [ref=e1036]:
+            - generic [ref=e1038]:
+              - text: Contract Signed
+              - generic [ref=e1039]: 3 · $62K
+            - generic [ref=e1040]:
+              - button "DataBridge — Data Migration DataBridge Co $19K AJ today" [ref=e1041]:
+                - paragraph [ref=e1042]: DataBridge — Data Migration
+                - paragraph [ref=e1043]: DataBridge Co
+                - paragraph [ref=e1044]: $19K
+                - generic [ref=e1045]:
+                  - generic [ref=e1046]:
+                    - generic "Alice Johnson" [ref=e1047]: AJ
+                    - generic [ref=e1048]:
+                      - img [ref=e1049]
+                      - generic [ref=e1052]: today
+                  - button [ref=e1054] [cursor=pointer]:
+                    - img [ref=e1055]
+              - button "CloudScale — DevOps Platform CloudScale Ltd $38K BS today" [ref=e1059]:
+                - paragraph [ref=e1060]: CloudScale — DevOps Platform
+                - paragraph [ref=e1061]: CloudScale Ltd
+                - paragraph [ref=e1062]: $38K
+                - generic [ref=e1063]:
+                  - generic [ref=e1064]:
+                    - generic "Bob Smith" [ref=e1065]: BS
+                    - generic [ref=e1066]:
+                      - img [ref=e1067]
+                      - generic [ref=e1070]: today
+                  - button [ref=e1072] [cursor=pointer]:
+                    - img [ref=e1073]
+              - button "Bright Solutions — CRM Setup Bright Solutions $5K BS today" [ref=e1077]:
+                - paragraph [ref=e1078]: Bright Solutions — CRM Setup
+                - paragraph [ref=e1079]: Bright Solutions
+                - paragraph [ref=e1080]: $5K
+                - generic [ref=e1081]:
+                  - generic [ref=e1082]:
+                    - generic "Bob Smith" [ref=e1083]: BS
+                    - generic [ref=e1084]:
+                      - img [ref=e1085]
+                      - generic [ref=e1088]: today
+                  - button [ref=e1090] [cursor=pointer]:
+                    - img [ref=e1091]
+              - button "+ Add deal" [ref=e1095] [cursor=pointer]
+        - status [ref=e580]

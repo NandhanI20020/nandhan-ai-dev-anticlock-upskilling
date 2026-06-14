@@ -1,0 +1,23 @@
+[
+  {
+    "id": "view-001",
+    "name": "High Value Q3",
+    "entity": "deals",
+    "filters": { "status": "open", "valueMin": 100000, "closeDateTo": "2026-09-30" },
+    "createdAt": "2026-05-10T10:00:00Z"
+  },
+  {
+    "id": "view-002",
+    "name": "My Won Deals",
+    "entity": "deals",
+    "filters": { "status": "won", "myDeals": true },
+    "createdAt": "2026-05-15T14:00:00Z"
+  },
+  {
+    "id": "view-003",
+    "name": "Qualified Pipeline",
+    "entity": "deals",
+    "filters": { "status": "open", "stageId": "stage-002" },
+    "createdAt": "2026-06-01T09:00:00Z"
+  }
+]

@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Person Detail | SalesKit CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#b1b2fd",
+                        "tertiary": "#a13742",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#c1c1ff",
+                        "on-tertiary-fixed": "#40000b",
+                        "secondary-fixed": "#e1dfff",
+                        "on-secondary-fixed": "#111055",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#63dd97",
+                        "on-secondary-container": "#414285",
+                        "tertiary-fixed": "#ffdada",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#c04f59",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#56579c",
+                        "rotten": "#FB923C",
+                        "warning": "#F59E0B",
+                        "lost": "#DC2626",
+                        "on-tertiary-fixed-variant": "#84222e",
+                        "on-surface-variant": "#3d4a40",
+                        "surface": "#fcf9f8",
+                        "won": "#16A34A",
+                        "on-background": "#1c1b1b",
+                        "primary-container": "#00864f",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#63dd97",
+                        "on-primary-container": "#f6fff5",
+                        "outline-variant": "#bccabd",
+                        "tertiary-fixed-dim": "#ffb3b5",
+                        "link": "#226FCA",
+                        "border": "#E5E5E5",
+                        "surface-tint": "#006d3f",
+                        "outline": "#6d7a6f",
+                        "primary-hover": "#088A52",
+                        "banner": "#F0EFFF",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#80fab1",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#006a3e",
+                        "on-primary-fixed": "#002110",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3e3f82",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0eded",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "surface-subtle": "#F5F5F5",
+                        "sidebar-active": "#6F6EE8",
+                        "on-error": "#ffffff",
+                        "danger": "#E15A51",
+                        "surface-container-highest": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fffbff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "sidebar-width": "60px",
+                        "gap-md": "12px",
+                        "subnav-width": "220px",
+                        "kanban-col-min": "220px",
+                        "gap-xs": "4px",
+                        "base": "4px",
+                        "gap-lg": "16px",
+                        "kanban-col-max": "260px",
+                        "gap-sm": "8px",
+                        "section": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-h1": ["Inter"],
+                        "headline-h2": ["Inter"],
+                        "meta-sm": ["Inter"],
+                        "headline-h1-mobile": ["Inter"],
+                        "badge-xs": ["Inter"],
+                        "headline-h3": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-h1-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "badge-xs": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chevron-bar-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 0;
+            height: 0;
+            border-top: 18px solid transparent;
+            border-bottom: 18px solid transparent;
+            border-left: 10px solid currentColor;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Sidebar Navigation -->
+<nav class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg">
+<span class="material-symbols-outlined">view_kanban</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-on-secondary bg-sidebar-active rounded-lg transition-all active:scale-90">
+<span class="material-symbols-outlined">group</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg">
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<div class="mt-auto flex flex-col gap-gap-lg">
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg">
+<span class="material-symbols-outlined">help</span>
+</button>
+</div>
+</nav>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 flex justify-between items-center px-margin-page border-b border-border bg-surface z-40">
+<div class="flex items-center gap-gap-lg flex-1">
+<span class="font-headline-h2 text-headline-h2 text-on-surface font-bold">SalesKit CRM</span>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-8 pr-4 py-1.5 bg-surface-container-low border border-border rounded-lg text-label-md focus:outline-none focus:ring-2 focus:ring-sidebar-active" placeholder="Search contacts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-md">
+<button class="px-4 py-1.5 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md rounded-lg transition-all">Add Deal</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all"><span class="material-symbols-outlined">apps</span></button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up professional headshot of a sales executive in a modern corporate setting with soft ambient office lighting. The lighting is bright and clean, emphasizing a high-productivity business environment. The style is sharp, focused, and professional, consistent with a high-end corporate CRM application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZo5F_4-wBodfDwyTdIRGzOjVkQ2jXdfI03rEkllPMXTKSh2BrgHz_Ect9gj98DAcJmUiVu6Z9q946qnPZPNpyHThzACrMlEwgCq-qGyIZ9_SDSE3hgExLuMgqxP1Zn0xWjDPyDu6gDdP6S8FGyMpMdeFAzha7eJm_3mmiq_j3BcL8EuvvKv7MAP-A3Y0GQxJSFetpi2zBO_hf7Wpdv5ekiyxe1l6gXbmIo_MhnAYDP1_c8lfEUYWpIeUULqrQlyp0wo2uCrZas4s"/>
+</div>
+</div>
+</header>
+<main class="ml-[60px] mt-14 p-margin-page min-h-[calc(100vh-56px)] bg-background">
+<!-- Detail Header -->
+<div class="flex justify-between items-center mb-8">
+<div class="flex items-center gap-gap-lg">
+<div class="w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[24px] font-bold">
+                    AM
+                </div>
+<div>
+<h1 class="font-headline-h1 text-headline-h1 text-on-surface">Alex Marshall</h1>
+<div class="flex items-center gap-gap-sm mt-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-lg bg-surface-container-high text-on-surface-variant font-label-md text-label-md gap-1">
+<span class="material-symbols-outlined text-[16px]">corporate_fare</span>
+                            Global Synergy Group
+                        </span>
+<span class="text-meta-sm text-on-surface-variant">Senior Procurement Lead</span>
+</div>
+</div>
+</div>
+<div class="flex gap-gap-sm">
+<button class="flex items-center gap-1 px-4 py-2 border border-border bg-surface text-on-surface font-label-md text-label-md rounded-lg hover:bg-surface-subtle transition-all">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                    Edit
+                </button>
+<button class="flex items-center gap-1 px-4 py-2 bg-primary hover:bg-primary-hover text-on-primary font-label-md text-label-md rounded-lg transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Add Deal
+                </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-[400px_1fr] gap-margin-page">
+<!-- Left Panel: Profile Info -->
+<div class="space-y-section">
+<!-- Contact Info Card -->
+<div class="bg-surface-container-lowest border border-border rounded-xl p-gap-lg shadow-sm">
+<h3 class="font-headline-h3 text-headline-h3 mb-gap-lg border-b border-border pb-2">Contact Details</h3>
+<div class="space-y-gap-md">
+<div class="flex flex-col gap-1">
+<label class="text-meta-sm text-on-surface-variant">Email</label>
+<div class="flex items-center gap-2 group">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">mail</span>
+<span class="text-body-md font-body-md text-link cursor-pointer hover:underline">alex.m@globalsynergy.com</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-meta-sm text-on-surface-variant">Phone</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">call</span>
+<span class="text-body-md font-body-md">+1 (555) 982-4412</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-meta-sm text-on-surface-variant">LinkedIn</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">link</span>
+<span class="text-body-md font-body-md text-link cursor-pointer hover:underline">linkedin.com/in/amarshall</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="text-meta-sm text-on-surface-variant">Address</label>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">location_on</span>
+<span class="text-body-md font-body-md">San Francisco, CA</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Linked Deals -->
+<div class="bg-surface-container-lowest border border-border rounded-xl p-gap-lg shadow-sm">
+<div class="flex justify-between items-center mb-gap-lg border-b border-border pb-2">
+<h3 class="font-headline-h3 text-headline-h3">Active Deals</h3>
+<span class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded text-badge-xs font-badge-xs">2 ACTIVE</span>
+</div>
+<div class="space-y-gap-md">
+<!-- Deal Card 1 -->
+<div class="p-3 border border-border rounded-lg bg-surface-subtle hover:border-sidebar-active transition-colors cursor-pointer group relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-won"></div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-h3 text-headline-h3 group-hover:text-link transition-colors">Enterprise Suite Q4</h4>
+<span class="text-label-md font-label-md text-on-surface">$45,000</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-meta-sm text-on-surface-variant">Proposal Sent</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="text-meta-sm text-on-surface-variant">Expected Oct 22</span>
+</div>
+</div>
+<!-- Deal Card 2 -->
+<div class="p-3 border border-border rounded-lg bg-surface-subtle hover:border-sidebar-active transition-colors cursor-pointer group relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-rotten"></div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-h3 text-headline-h3 group-hover:text-link transition-colors">Integration License</h4>
+<span class="text-label-md font-label-md text-on-surface">$12,500</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-meta-sm text-rotten font-bold">Needs Follow-up</span>
+<span class="text-[10px] text-outline">•</span>
+<span class="text-meta-sm text-on-surface-variant">Stalled 4 days</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Panel: Activity Feed & Notes -->
+<div class="space-y-section">
+<!-- Notes Composer -->
+<div class="bg-surface-container-lowest border border-border rounded-xl shadow-sm overflow-hidden">
+<div class="flex border-b border-border bg-surface-subtle">
+<button class="px-4 py-3 text-label-md font-label-md text-primary border-b-2 border-primary bg-surface-container-lowest">Activity Notes</button>
+<button class="px-4 py-3 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low">Task</button>
+<button class="px-4 py-3 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low">Log Call</button>
+</div>
+<div class="p-gap-lg">
+<textarea class="w-full h-24 p-3 border border-border rounded-lg text-body-md focus:outline-none focus:ring-2 focus:ring-sidebar-active resize-none mb-3 bg-surface" placeholder="Write a note or @mention a teammate..."></textarea>
+<div class="flex justify-between items-center">
+<div class="flex gap-gap-sm">
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-[20px]">attach_file</span></button>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-[20px]">alternate_email</span></button>
+<button class="p-1.5 text-on-surface-variant hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined text-[20px]">mood</span></button>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-hover shadow-sm transition-all">Save Note</button>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="space-y-gap-lg">
+<div class="flex justify-between items-center">
+<h3 class="font-headline-h2 text-headline-h2">Activity History</h3>
+<div class="flex gap-2">
+<button class="p-2 border border-border rounded hover:bg-surface-subtle"><span class="material-symbols-outlined text-[18px]">filter_list</span></button>
+</div>
+</div>
+<div class="relative pl-8 space-y-gap-lg">
+<!-- Timeline Line -->
+<div class="absolute left-3.5 top-2 bottom-0 w-[2px] bg-border"></div>
+<!-- Activity Item 1 -->
+<div class="relative">
+<div class="absolute -left-8 w-7 h-7 bg-won rounded-full flex items-center justify-center text-white ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">phone</span>
+</div>
+<div class="bg-surface-container-lowest border border-border p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-body-md font-body-md"><span class="font-bold">You</span> logged a call with <span class="font-bold">Alex Marshall</span></p>
+<p class="text-meta-sm text-on-surface-variant">Today at 10:45 AM</p>
+</div>
+<span class="text-badge-xs font-badge-xs bg-surface-container-high px-2 py-0.5 rounded uppercase">Call Outcome: Positive</span>
+</div>
+<div class="p-3 bg-surface-subtle rounded-lg border-l-4 border-won text-body-md italic text-on-surface-variant">
+                                    "Alex is interested in the custom enterprise pricing. Asked for a demo next Thursday at 2 PM. Seems motivated to close before EOY."
+                                </div>
+</div>
+</div>
+<!-- Activity Item 2 -->
+<div class="relative">
+<div class="absolute -left-8 w-7 h-7 bg-sidebar-active rounded-full flex items-center justify-center text-white ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">mail</span>
+</div>
+<div class="bg-surface-container-lowest border border-border p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<div>
+<p class="text-body-md font-body-md"><span class="font-bold">Marketing Team</span> sent email "Q4 Product Updates"</p>
+<p class="text-meta-sm text-on-surface-variant">Yesterday at 4:12 PM</p>
+</div>
+<span class="text-badge-xs font-badge-xs bg-surface-container-high px-2 py-0.5 rounded uppercase">Opened 3 times</span>
+</div>
+</div>
+</div>
+<!-- Activity Item 3 -->
+<div class="relative">
+<div class="absolute -left-8 w-7 h-7 bg-tertiary rounded-full flex items-center justify-center text-white ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">task</span>
+</div>
+<div class="bg-surface-container-lowest border border-border p-4 rounded-xl shadow-sm">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-body-md font-body-md"><span class="font-bold">You</span> completed task: <span class="line-through text-on-surface-variant">Send integration document</span></p>
+<p class="text-meta-sm text-on-surface-variant">2 days ago</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Item 4 -->
+<div class="relative">
+<div class="absolute -left-8 w-7 h-7 bg-secondary rounded-full flex items-center justify-center text-white ring-4 ring-background">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">person_add</span>
+</div>
+<div class="bg-surface-container-lowest border border-border p-4 rounded-xl shadow-sm">
+<p class="text-body-md font-body-md"><span class="font-bold">Alex Marshall</span> was added to CRM from LinkedIn Import</p>
+<p class="text-meta-sm text-on-surface-variant">Oct 12, 2023</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Quick Action Button (Suppressed on Detail Screen per Instructions) -->
+<!-- Determined suppression of FAB on "Details" screen per instructions. -->
+<script>
+        // Micro-interactions for activity cards
+        document.querySelectorAll('.activity-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.classList.add('shadow-md');
+                item.style.transform = 'translateY(-2px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.classList.remove('shadow-md');
+                item.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+</body></html>

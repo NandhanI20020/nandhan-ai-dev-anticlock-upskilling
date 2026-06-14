@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activities List - SalesKit CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#eae7e7",
+                    "secondary-container": "#b1b2fd",
+                    "tertiary": "#a13742",
+                    "on-surface": "#1c1b1b",
+                    "secondary-fixed-dim": "#c1c1ff",
+                    "on-tertiary-fixed": "#40000b",
+                    "secondary-fixed": "#e1dfff",
+                    "on-secondary-fixed": "#111055",
+                    "on-error-container": "#93000a",
+                    "inverse-primary": "#63dd97",
+                    "on-secondary-container": "#414285",
+                    "tertiary-fixed": "#ffdada",
+                    "on-primary-fixed-variant": "#00522e",
+                    "tertiary-container": "#c04f59",
+                    "inverse-surface": "#313030",
+                    "surface-variant": "#e5e2e1",
+                    "secondary": "#56579c",
+                    "rotten": "#FB923C",
+                    "warning": "#F59E0B",
+                    "lost": "#DC2626",
+                    "on-tertiary-fixed-variant": "#84222e",
+                    "on-surface-variant": "#3d4a40",
+                    "surface": "#fcf9f8",
+                    "won": "#16A34A",
+                    "on-background": "#1c1b1b",
+                    "primary-container": "#00864f",
+                    "surface-container-low": "#f6f3f2",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#63dd97",
+                    "on-primary-container": "#f6fff5",
+                    "outline-variant": "#bccabd",
+                    "tertiary-fixed-dim": "#ffb3b5",
+                    "link": "#226FCA",
+                    "border": "#E5E5E5",
+                    "surface-tint": "#006d3f",
+                    "outline": "#6d7a6f",
+                    "primary-hover": "#088A52",
+                    "banner": "#F0EFFF",
+                    "background": "#fcf9f8",
+                    "primary-fixed": "#80fab1",
+                    "surface-bright": "#fcf9f8",
+                    "primary": "#006a3e",
+                    "on-primary-fixed": "#002110",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed-variant": "#3e3f82",
+                    "inverse-on-surface": "#f3f0ef",
+                    "surface-container": "#f0eded",
+                    "surface-dim": "#dcd9d9",
+                    "on-tertiary": "#ffffff",
+                    "surface-subtle": "#F5F5F5",
+                    "sidebar-active": "#6F6EE8",
+                    "on-error": "#ffffff",
+                    "danger": "#E15A51",
+                    "surface-container-highest": "#e5e2e1",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#fffbff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-page": "32px",
+                    "sidebar-width": "60px",
+                    "gap-md": "12px",
+                    "subnav-width": "220px",
+                    "kanban-col-min": "220px",
+                    "gap-xs": "4px",
+                    "base": "4px",
+                    "gap-lg": "16px",
+                    "kanban-col-max": "260px",
+                    "gap-sm": "8px",
+                    "section": "24px"
+            },
+            "fontFamily": {
+                    "headline-h1": ["Inter"],
+                    "headline-h2": ["Inter"],
+                    "meta-sm": ["Inter"],
+                    "headline-h1-mobile": ["Inter"],
+                    "badge-xs": ["Inter"],
+                    "headline-h3": ["Inter"],
+                    "label-md": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                    "headline-h1-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "badge-xs": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                    "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        /* Custom Table Styling */
+        .activity-table tr { border-bottom: 1px solid #E5E5E5; }
+        .activity-table tr:hover { background-color: #F5F5F5; }
+        .activity-table th { text-align: left; padding: 12px 16px; color: #3d4a40; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
+        .activity-table td { padding: 12px 16px; vertical-align: middle; }
+        
+        .tab-active { color: #006a3e; border-bottom: 2px solid #006a3e; font-weight: 600; }
+        .pill-active { background-color: #56579c; color: white; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- Shared SideNavBar Shell -->
+<nav class="fixed left-0 top-0 h-full w-[60px] flex flex-col bg-secondary border-r border-outline-variant items-center py-4 gap-gap-lg z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<div class="flex flex-col gap-gap-md flex-1 items-center">
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Pipeline">
+<span class="material-symbols-outlined">view_kanban</span>
+</a>
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Deals">
+<span class="material-symbols-outlined">handshake</span>
+</a>
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Contacts">
+<span class="material-symbols-outlined">group</span>
+</a>
+<a class="relative p-2 text-on-secondary bg-sidebar-active rounded-lg transition-colors" href="#" title="Activities">
+<span class="material-symbols-outlined">event_available</span>
+<!-- Notification Badge requested -->
+<span class="absolute top-1 right-1 w-2 h-2 bg-danger rounded-full ring-2 ring-secondary"></span>
+</a>
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Forecast">
+<span class="material-symbols-outlined">trending_up</span>
+</a>
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Reports">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+</div>
+<div class="flex flex-col gap-gap-md items-center mt-auto pb-4">
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Help">
+<span class="material-symbols-outlined">help</span>
+</a>
+<a class="p-2 text-secondary-fixed hover:text-on-secondary transition-colors" href="#" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-[60px]">
+<!-- Shared TopNavBar Shell -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 bg-surface border-b border-border flex justify-between items-center px-margin-page z-40">
+<div class="flex items-center gap-gap-lg">
+<h1 class="font-headline-h2 text-headline-h2 text-on-surface font-bold">Activities</h1>
+<!-- View Toggle: List/Calendar -->
+<div class="flex bg-surface-container rounded-lg p-0.5 ml-4">
+<button class="px-3 py-1 text-label-md font-label-md rounded-md bg-white shadow-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">list</span> List
+                    </button>
+<button class="px-3 py-1 text-label-md font-label-md rounded-md text-on-surface-variant hover:bg-surface-container-high flex items-center gap-1 transition-all">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span> Calendar
+                    </button>
+</div>
+</div>
+<div class="flex items-center gap-gap-lg">
+<div class="hidden md:flex items-center bg-surface-container-low px-3 py-1.5 rounded-lg border border-border w-64">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-full placeholder-outline-variant" placeholder="Search activities..." type="text"/>
+</div>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-1.5 h-1.5 bg-danger rounded-full"></span>
+</button>
+<button class="bg-primary hover:bg-primary-hover text-on-primary px-4 py-1.5 rounded-lg font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]">add</span> Add Activity
+                </button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-border bg-surface-container">
+<img alt="User Profile" data-alt="Close-up portrait of a professional male salesperson with a confident and friendly expression, wearing a navy blue tailored suit. The lighting is soft and corporate, set against a blurred modern office background with subtle glass reflections and warm tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2dQlB281jEqWZwKDFGQ8tjrgUjDExL9Ie6ngQAr9g0cwAfFlZXQJ9MPATVOvIiNSmsKdq1dhma4d2q0R3EJUI6y9xwaIRUOCnI0VXaajup2PqlTcsHIZ6soUOlIr2d3d03uSJcgGAXthuHBkNYGMf_u0dqNbIXDay8Q8089Pwj57daulMw9zR4-xcbOX-jFGxhMGvQPsioB0_VZp4oeDjltr2McGDSFKbT_WB-P_g6fgfBZLVoLVEWAisgosg_wTEkiDWb1taFxU"/>
+</div>
+</div>
+</header>
+<!-- View Content -->
+<div class="mt-14 p-margin-page">
+<!-- Filter Section -->
+<div class="flex flex-col gap-gap-lg mb-8">
+<!-- Time Tabs -->
+<div class="flex border-b border-border gap-8">
+<button class="pb-3 text-label-md font-label-md tab-active transition-all">To-do</button>
+<button class="pb-3 text-label-md font-label-md text-danger font-bold flex items-center gap-1">
+                        Overdue <span class="bg-danger text-white px-1.5 rounded-full text-[10px]">12</span>
+</button>
+<button class="pb-3 text-label-md font-label-md text-on-surface-variant hover:text-on-surface">Today</button>
+<button class="pb-3 text-label-md font-label-md text-on-surface-variant hover:text-on-surface">Tomorrow</button>
+<button class="pb-3 text-label-md font-label-md text-on-surface-variant hover:text-on-surface">This week</button>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-meta-sm font-meta-sm text-outline-variant mr-2">Filter by:</span>
+<button class="px-4 py-1 rounded-full text-label-md font-label-md pill-active shadow-sm">All</button>
+<button class="px-4 py-1 rounded-full text-label-md font-label-md bg-white border border-border hover:bg-surface-subtle transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-link">call</span> Call
+                    </button>
+<button class="px-4 py-1 rounded-full text-label-md font-label-md bg-white border border-border hover:bg-surface-subtle transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-won">groups</span> Meeting
+                    </button>
+<button class="px-4 py-1 rounded-full text-label-md font-label-md bg-white border border-border hover:bg-surface-subtle transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-sidebar-active">task_alt</span> Task
+                    </button>
+<button class="px-4 py-1 rounded-full text-label-md font-label-md bg-white border border-border hover:bg-surface-subtle transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-rotten">mail</span> Email
+                    </button>
+<button class="px-4 py-1 rounded-full text-label-md font-label-md bg-white border border-border hover:bg-surface-subtle transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-danger">timer</span> Deadline
+                    </button>
+</div>
+</div>
+<!-- Activity Table Container -->
+<div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+<table class="w-full activity-table border-collapse">
+<thead class="bg-surface-subtle">
+<tr>
+<th class="w-10"></th>
+<th class="w-12">Type</th>
+<th>Subject</th>
+<th>Related Link</th>
+<th>Due Date</th>
+<th class="w-10 text-right"></th>
+</tr>
+</thead>
+<tbody class="text-body-md font-body-md">
+<!-- Overdue Item -->
+<tr class="group">
+<td class="text-center">
+<input class="rounded-[2px] border-outline-variant text-primary focus:ring-primary h-4 w-4 cursor-pointer" type="checkbox"/>
+</td>
+<td>
+<div class="w-8 h-8 rounded-lg bg-danger/10 flex items-center justify-center text-danger">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-semibold text-danger">Follow up on Enterprise Proposal</span>
+<span class="text-meta-sm font-meta-sm text-outline">High Priority - Urgent response needed</span>
+</div>
+</td>
+<td>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">handshake</span>
+<a class="text-link hover:underline" href="#">Global Tech Expansion</a>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="text-danger font-bold">Yesterday, 4:00 PM</span>
+<span class="text-[10px] font-bold text-danger uppercase">Overdue</span>
+</div>
+</td>
+<td class="text-right">
+<button class="opacity-0 group-hover:opacity-100 p-1 hover:bg-surface-container rounded transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Normal Item (Today) -->
+<tr class="group">
+<td class="text-center">
+<input class="rounded-[2px] border-outline-variant text-primary focus:ring-primary h-4 w-4 cursor-pointer" type="checkbox"/>
+</td>
+<td>
+<div class="w-8 h-8 rounded-lg bg-link/10 flex items-center justify-center text-link">
+<span class="material-symbols-outlined text-[20px]">call</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Introductory Discovery Call</span>
+<span class="text-meta-sm font-meta-sm text-outline">Confirming technical requirements</span>
+</div>
+</td>
+<td>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">person</span>
+<a class="text-link hover:underline" href="#">Sarah Jenkins (CTO)</a>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="text-on-surface">Today, 2:30 PM</span>
+<span class="text-[10px] font-semibold text-warning uppercase">In 2 hours</span>
+</div>
+</td>
+<td class="text-right">
+<button class="opacity-0 group-hover:opacity-100 p-1 hover:bg-surface-container rounded transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Meeting Item -->
+<tr class="group">
+<td class="text-center">
+<input class="rounded-[2px] border-outline-variant text-primary focus:ring-primary h-4 w-4 cursor-pointer" type="checkbox"/>
+</td>
+<td>
+<div class="w-8 h-8 rounded-lg bg-won/10 flex items-center justify-center text-won">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Quarterly Review Meeting</span>
+<span class="text-meta-sm font-meta-sm text-outline">Reviewing pipeline health and forecasts</span>
+</div>
+</td>
+<td>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">business</span>
+<a class="text-link hover:underline" href="#">Apex Corp.</a>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="text-on-surface">Today, 5:00 PM</span>
+<span class="text-[10px] font-semibold text-outline uppercase">Upcoming</span>
+</div>
+</td>
+<td class="text-right">
+<button class="opacity-0 group-hover:opacity-100 p-1 hover:bg-surface-container rounded transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Task Item (Overdue) -->
+<tr class="group">
+<td class="text-center">
+<input class="rounded-[2px] border-outline-variant text-primary focus:ring-primary h-4 w-4 cursor-pointer" type="checkbox"/>
+</td>
+<td>
+<div class="w-8 h-8 rounded-lg bg-sidebar-active/10 flex items-center justify-center text-sidebar-active">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-semibold text-danger">Prepare Q4 Roadmap Presentation</span>
+<span class="text-meta-sm font-meta-sm text-outline">Needs input from the product team</span>
+</div>
+</td>
+<td>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">handshake</span>
+<a class="text-link hover:underline" href="#">Strategic Partnership</a>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="text-danger font-bold">Aug 14, 9:00 AM</span>
+<span class="text-[10px] font-bold text-danger uppercase">3 days ago</span>
+</div>
+</td>
+<td class="text-right">
+<button class="opacity-0 group-hover:opacity-100 p-1 hover:bg-surface-container rounded transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Deadline Item -->
+<tr class="group">
+<td class="text-center">
+<input class="rounded-[2px] border-outline-variant text-primary focus:ring-primary h-4 w-4 cursor-pointer" type="checkbox"/>
+</td>
+<td>
+<div class="w-8 h-8 rounded-lg bg-danger/10 flex items-center justify-center text-danger">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Contract Signature Deadline</span>
+<span class="text-meta-sm font-meta-sm text-outline">Project "Starlight" final phase</span>
+</div>
+</td>
+<td>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">business</span>
+<a class="text-link hover:underline" href="#">Solaris Group</a>
+</div>
+</td>
+<td>
+<div class="flex flex-col">
+<span class="text-on-surface">Tomorrow, 12:00 PM</span>
+<span class="text-[10px] font-semibold text-outline uppercase">24h remaining</span>
+</div>
+</td>
+<td class="text-right">
+<button class="opacity-0 group-hover:opacity-100 p-1 hover:bg-surface-container rounded transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination/Footer of list -->
+<div class="px-6 py-4 flex items-center justify-between bg-surface-container-lowest">
+<span class="text-meta-sm font-meta-sm text-outline">Showing 1 to 5 of 24 activities</span>
+<div class="flex gap-2">
+<button class="px-3 py-1 border border-border rounded text-label-md font-label-md hover:bg-surface-subtle disabled:opacity-50" disabled="">Previous</button>
+<button class="px-3 py-1 border border-border rounded text-label-md font-label-md hover:bg-surface-subtle bg-surface-container-high">1</button>
+<button class="px-3 py-1 border border-border rounded text-label-md font-label-md hover:bg-surface-subtle">2</button>
+<button class="px-3 py-1 border border-border rounded text-label-md font-label-md hover:bg-surface-subtle">3</button>
+<button class="px-3 py-1 border border-border rounded text-label-md font-label-md hover:bg-surface-subtle">Next</button>
+</div>
+</div>
+</div>
+<!-- Bento Summary Cards -->
+<div class="mt-section grid grid-cols-1 md:grid-cols-3 gap-gap-lg">
+<div class="p-6 bg-white border border-border rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-h3 text-headline-h3">Completion Rate</h3>
+<span class="material-symbols-outlined text-won">check_circle</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-on-surface">84%</span>
+<span class="text-won text-meta-sm font-meta-sm mb-1.5 flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +5%
+                        </span>
+</div>
+<p class="text-meta-sm font-meta-sm text-outline mt-1">From last 30 days</p>
+</div>
+<div class="p-6 bg-white border border-border rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-h3 text-headline-h3">Response Time</h3>
+<span class="material-symbols-outlined text-link">schedule</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-on-surface">1.2h</span>
+<span class="text-danger text-meta-sm font-meta-sm mb-1.5 flex items-center">
+<span class="material-symbols-outlined text-[14px]">trending_up</span> +12m
+                        </span>
+</div>
+<p class="text-meta-sm font-meta-sm text-outline mt-1">Average across all activities</p>
+</div>
+<div class="p-6 bg-white border border-border rounded-xl shadow-sm border-l-4 border-l-danger">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-h3 text-headline-h3 text-danger">Urgent Tasks</h3>
+<span class="material-symbols-outlined text-danger">warning</span>
+</div>
+<div class="flex items-end gap-2">
+<span class="text-3xl font-bold text-danger">12</span>
+</div>
+<p class="text-meta-sm font-meta-sm text-outline mt-1">Requires immediate attention</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for mobile/context -->
+<button class="fixed bottom-8 right-8 h-14 w-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary-hover active:scale-90 transition-all z-50 md:hidden">
+<span class="material-symbols-outlined">add</span>
+</button>
+<script>
+        // Micro-interaction for checkbox highlighting
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const row = this.closest('tr');
+                if (this.checked) {
+                    row.style.backgroundColor = '#f0fff5';
+                    row.querySelector('.font-semibold').style.textDecoration = 'line-through';
+                    row.querySelector('.font-semibold').style.opacity = '0.5';
+                } else {
+                    row.style.backgroundColor = '';
+                    row.querySelector('.font-semibold').style.textDecoration = 'none';
+                    row.querySelector('.font-semibold').style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body></html>

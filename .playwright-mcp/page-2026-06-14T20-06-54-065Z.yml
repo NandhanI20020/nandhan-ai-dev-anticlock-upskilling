@@ -1,0 +1,94 @@
+- generic [ref=e1]:
+  - navigation [ref=e3]:
+    - menu [ref=e4]:
+      - menuitem "home" [ref=e5] [cursor=pointer]:
+        - link "home" [ref=e6]:
+          - /url: /setup-guide
+          - img [ref=e7]
+      - menuitem "Setup guide" [ref=e9] [cursor=pointer]:
+        - link "Setup guide" [ref=e10]:
+          - /url: /setup-guide
+          - generic [ref=e11]: Setup guide
+          - img [ref=e12]
+      - menuitem "Contacts" [ref=e14] [cursor=pointer]:
+        - link "Contacts" [ref=e15]:
+          - /url: /contacts
+          - generic [ref=e16]: Contacts
+          - img [ref=e17]
+      - menuitem "Activities" [ref=e19] [cursor=pointer]:
+        - link "Activities" [ref=e20]:
+          - /url: /activities
+          - generic [ref=e21]: Activities
+          - img [ref=e22]
+      - menuitem "Deals" [ref=e24] [cursor=pointer]:
+        - link "Deals" [ref=e25]:
+          - /url: /deals-default
+          - generic [ref=e26]: Deals
+          - img [ref=e27]
+      - menuitem "Leads" [ref=e29] [cursor=pointer]:
+        - link "Leads" [ref=e30]:
+          - /url: /leads
+          - generic [ref=e31]: Leads
+          - img [ref=e32]
+      - menuitem "Insights" [ref=e35] [cursor=pointer]:
+        - link "Insights" [ref=e36]:
+          - /url: /progress/insights
+          - generic [ref=e37]: Insights
+          - img [ref=e38]
+      - menuitem "Sales Inbox" [ref=e40] [cursor=pointer]:
+        - link "Sales Inbox" [ref=e41]:
+          - /url: /mail
+          - generic [ref=e42]: Sales Inbox
+          - img [ref=e43]
+      - menuitem "More" [ref=e46] [cursor=pointer]:
+        - button "More" [ref=e47]:
+          - img [ref=e48]
+  - generic [ref=e50]:
+    - banner [ref=e51]:
+      - generic [ref=e52]:
+        - button "menu-toggle" [ref=e54] [cursor=pointer]:
+          - img [ref=e55]
+        - generic [ref=e57]:
+          - heading "Contacts" [level=1] [ref=e58]
+          - generic [ref=e59]: /
+          - heading "People" [level=1] [ref=e60]
+      - generic [ref=e61]:
+        - button "Quick add" [ref=e65] [cursor=pointer]:
+          - img [ref=e66]
+        - button [disabled] [ref=e69]:
+          - img [ref=e71]
+      - generic [ref=e73]:
+        - button "My apps" [disabled] [ref=e75]:
+          - img [ref=e76]
+        - button "Quick Help loading…" [disabled] [ref=e78]:
+          - img [ref=e79]
+        - button "Loading" [disabled] [ref=e83]:
+          - img [ref=e84]
+        - button "NV" [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: NV
+    - generic [ref=e89]:
+      - generic [ref=e91]:
+        - menu [ref=e92]:
+          - menuitem "People" [ref=e93] [cursor=pointer]:
+            - link "People" [ref=e94]:
+              - /url: /persons/list
+              - img [ref=e95]
+              - text: People
+          - menuitem "Organizations" [ref=e97] [cursor=pointer]:
+            - link "Organizations" [ref=e98]:
+              - /url: /organizations/list
+              - img [ref=e99]
+              - text: Organizations
+          - menuitem "Contacts timeline" [ref=e101] [cursor=pointer]:
+            - link "Contacts timeline" [ref=e102]:
+              - /url: /persons/timeline
+              - img [ref=e103]
+              - text: Contacts timeline
+          - menuitem "Merge duplicates" [ref=e105] [cursor=pointer]:
+            - link "Merge duplicates" [ref=e106]:
+              - /url: /settings/duplicates
+              - img [ref=e107]
+              - text: Merge duplicates
+          - menuitem [ref=e109]
+        - button "change" [ref=e110] [cursor=pointer]
+      - main [ref=e111]

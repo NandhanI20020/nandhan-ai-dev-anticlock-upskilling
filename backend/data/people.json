@@ -1,0 +1,12 @@
+[
+  { "id": "person-001", "name": "Sarah Jenkins",  "email": "sarah@acmecorp.com",          "phone": "+1-555-0101", "jobTitle": "VP Engineering",     "orgId": "org-001", "ownerId": "user-1", "createdAt": "2026-01-05T00:00:00Z" },
+  { "id": "person-002", "name": "Mark Torres",    "email": "mark@techflow.io",             "phone": "+1-555-0202", "jobTitle": "CTO",                 "orgId": "org-002", "ownerId": "user-1", "createdAt": "2026-01-10T00:00:00Z" },
+  { "id": "person-003", "name": "Elena Vasquez",  "email": "elena@globalventures.com",     "phone": "+1-555-0303", "jobTitle": "CEO",                 "orgId": "org-003", "ownerId": "user-2", "createdAt": "2026-01-12T00:00:00Z" },
+  { "id": "person-004", "name": "James Carter",   "email": "james@brightsolutions.io",     "phone": "+1-555-0404", "jobTitle": "Head of Sales",       "orgId": "org-004", "ownerId": "user-1", "createdAt": "2026-01-15T00:00:00Z" },
+  { "id": "person-005", "name": "Priya Sharma",   "email": "priya@nexgenlabs.com",         "phone": "+1-555-0505", "jobTitle": "Co-founder",          "orgId": "org-005", "ownerId": "user-2", "createdAt": "2026-01-20T00:00:00Z" },
+  { "id": "person-006", "name": "David Kim",      "email": "david@summitpartners.com",     "phone": "+1-555-0606", "jobTitle": "Managing Director",   "orgId": "org-006", "ownerId": "user-1", "createdAt": "2026-02-01T00:00:00Z" },
+  { "id": "person-007", "name": "Lisa Chen",      "email": "lisa@pinnaclesys.com",         "phone": "+1-555-0707", "jobTitle": "VP Products",         "orgId": "org-007", "ownerId": "user-2", "createdAt": "2026-02-05T00:00:00Z" },
+  { "id": "person-008", "name": "Robert Walsh",   "email": "robert@databridge.co",         "phone": "+1-555-0808", "jobTitle": "CIO",                 "orgId": "org-008", "ownerId": "user-1", "createdAt": "2026-02-10T00:00:00Z" },
+  { "id": "person-009", "name": "Nina Patel",     "email": "nina@cloudscale.io",           "phone": "+1-555-0909", "jobTitle": "Engineering Lead",    "orgId": "org-009", "ownerId": "user-2", "createdAt": "2026-02-15T00:00:00Z" },
+  { "id": "person-010", "name": "Tom Bradley",    "email": "tom@frontierdynamics.com",     "phone": "+1-555-1001", "jobTitle": "COO",                 "orgId": "org-010", "ownerId": "user-1", "createdAt": "2026-02-20T00:00:00Z" }
+]

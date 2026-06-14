@@ -1,0 +1,64 @@
+- generic [ref=e1]:
+  - navigation [ref=e3]:
+    - menu [ref=e4]:
+      - menuitem "home" [ref=e5] [cursor=pointer]:
+        - link "home" [ref=e6]:
+          - /url: /setup-guide
+          - img [ref=e7]
+      - menuitem "Setup guide" [ref=e9] [cursor=pointer]:
+        - link "Setup guide" [ref=e10]:
+          - /url: /setup-guide
+          - generic [ref=e11]: Setup guide
+          - img [ref=e12]
+      - menuitem "Contacts" [ref=e14] [cursor=pointer]:
+        - link "Contacts" [ref=e15]:
+          - /url: /contacts
+          - generic [ref=e16]: Contacts
+          - img [ref=e17]
+      - menuitem "Activities" [ref=e20] [cursor=pointer]:
+        - link "Activities" [ref=e21]:
+          - /url: /activities
+          - generic [ref=e22]: Activities
+          - img [ref=e23]
+      - menuitem "Deals" [ref=e25] [cursor=pointer]:
+        - link "Deals" [ref=e26]:
+          - /url: /deals-default
+          - generic [ref=e27]: Deals
+          - img [ref=e28]
+      - menuitem "Leads" [ref=e30] [cursor=pointer]:
+        - link "Leads" [ref=e31]:
+          - /url: /leads
+          - generic [ref=e32]: Leads
+          - img [ref=e33]
+      - menuitem "Insights" [ref=e36] [cursor=pointer]:
+        - link "Insights" [ref=e37]:
+          - /url: /progress/insights
+          - generic [ref=e38]: Insights
+          - img [ref=e39]
+      - menuitem "Sales Inbox" [ref=e41] [cursor=pointer]:
+        - link "Sales Inbox" [ref=e42]:
+          - /url: /mail
+          - generic [ref=e43]: Sales Inbox
+          - img [ref=e44]
+      - menuitem "More" [ref=e47] [cursor=pointer]:
+        - button "More" [ref=e48]:
+          - img [ref=e49]
+  - generic [ref=e51]:
+    - banner [ref=e52]:
+      - heading "Activities" [level=1] [ref=e55]
+      - generic [ref=e56]:
+        - button "Quick add" [ref=e60] [cursor=pointer]:
+          - img [ref=e61]
+        - button [disabled] [ref=e64]:
+          - img [ref=e66]
+      - generic [ref=e68]:
+        - button "My apps" [disabled] [ref=e70]:
+          - img [ref=e71]
+        - button "Quick Help loading…" [disabled] [ref=e73]:
+          - img [ref=e74]
+        - button "Loading" [disabled] [ref=e78]:
+          - img [ref=e79]
+        - button "NV" [ref=e82] [cursor=pointer]:
+          - generic [ref=e83]: NV
+    - main [ref=e85]:
+      - img [ref=e89]

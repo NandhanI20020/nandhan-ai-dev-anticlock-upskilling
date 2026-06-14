@@ -1,0 +1,18 @@
+[
+  {
+    "id": "pipeline-001",
+    "name": "Sales Pipeline",
+    "isDefault": true,
+    "ownerId": "user-1",
+    "stageIds": ["stage-001", "stage-002", "stage-003", "stage-004", "stage-005"],
+    "createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "id": "pipeline-002",
+    "name": "Enterprise Pipeline",
+    "isDefault": false,
+    "ownerId": "user-1",
+    "stageIds": ["stage-006", "stage-007", "stage-008", "stage-009", "stage-010"],
+    "createdAt": "2026-01-15T00:00:00Z"
+  }
+]

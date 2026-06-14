@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20; font-size: 20px; }
+        .chevron-bar-segment {
+            clip-path: polygon(95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%, 0% 0%);
+            margin-left: -4px;
+        }
+        .chevron-bar-segment:first-child { clip-path: polygon(95% 0%, 100% 50%, 95% 100%, 0% 100%, 0% 50%, 0% 0%); margin-left: 0; }
+        .chevron-bar-segment:last-child { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 5% 50%, 0% 0%); }
+        
+        .activity-feed-line::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            bottom: 0;
+            width: 1px;
+            background-color: #E5E5E5;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "surface-container-high": "#eae7e7",
+                "secondary-container": "#b1b2fd",
+                "tertiary": "#a13742",
+                "on-surface": "#1c1b1b",
+                "secondary-fixed-dim": "#c1c1ff",
+                "on-tertiary-fixed": "#40000b",
+                "secondary-fixed": "#e1dfff",
+                "on-secondary-fixed": "#111055",
+                "on-error-container": "#93000a",
+                "inverse-primary": "#63dd97",
+                "on-secondary-container": "#414285",
+                "tertiary-container": "#c04f59",
+                "inverse-surface": "#313030",
+                "surface-variant": "#e5e2e1",
+                "secondary": "#56579c",
+                "rotten": "#FB923C",
+                "warning": "#F59E0B",
+                "lost": "#DC2626",
+                "won": "#16A34A",
+                "on-background": "#1c1b1b",
+                "primary-container": "#00864f",
+                "surface-container-low": "#f6f3f2",
+                "on-primary": "#ffffff",
+                "primary-fixed-dim": "#63dd97",
+                "on-primary-container": "#f6fff5",
+                "outline-variant": "#bccabd",
+                "tertiary-fixed-dim": "#ffb3b5",
+                "link": "#226FCA",
+                "border": "#E5E5E5",
+                "surface-tint": "#006d3f",
+                "outline": "#6d7a6f",
+                "primary-hover": "#088A52",
+                "background": "#fcf9f8",
+                "primary": "#006a3e",
+                "on-secondary": "#ffffff",
+                "sidebar-active": "#6F6EE8",
+                "danger": "#E15A51",
+                "surface-subtle": "#F5F5F5"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+              },
+              "spacing": {
+                "margin-page": "32px",
+                "sidebar-width": "60px",
+                "gap-md": "12px",
+                "subnav-width": "220px",
+                "gap-xs": "4px",
+                "base": "4px",
+                "gap-lg": "16px",
+                "gap-sm": "8px",
+                "section": "24px"
+              },
+              "fontFamily": {
+                "headline-h1": ["Inter"],
+                "headline-h2": ["Inter"],
+                "meta-sm": ["Inter"],
+                "headline-h3": ["Inter"],
+                "label-md": ["Inter"],
+                "body-md": ["Inter"]
+              },
+              "fontSize": {
+                "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- Global Side Navigation -->
+<nav class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<div class="flex flex-col gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-on-secondary bg-sidebar-active rounded-lg transition-all scale-95 active:scale-90">
+<span class="material-symbols-outlined">view_kanban</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors">
+<span class="material-symbols-outlined">group</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors">
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-[60px]">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 border-b border-border bg-surface flex justify-between items-center px-margin-page z-40">
+<div class="flex items-center gap-gap-md">
+<span class="font-headline-h2 text-headline-h2 text-on-surface font-bold">SalesKit CRM</span>
+<div class="h-6 w-px bg-border mx-2"></div>
+<div class="flex items-center gap-2 bg-surface-container-low px-3 py-1 rounded border border-border">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-md font-label-md w-64" placeholder="Search deals..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-lg">
+<button class="bg-primary text-on-primary px-4 py-1.5 rounded text-label-md font-label-md hover:bg-primary-hover transition-all">Add Deal</button>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">notifications</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary">apps</span>
+<img alt="User" class="w-8 h-8 rounded-full border border-border" data-alt="A professional headshot of a corporate sales executive, medium-range shot, soft office lighting, modern glass office background, clean aesthetic, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnh9cFJnlJ5Sw6r54dVaEr_HWtwVHKQNmC3TDRFVsScQECIuYtENX7fbC3Nh875RFuZa95nHwTy1298HEBosDJRCfSyveS_6D0CEtdJu1RzWB2_dGasaeEuK_cJvxGCc0fAa3w16ZYw-XwUJqjLigThVJetsk-9cmK3-5OgRx3SI3QjPI1nDb4w3dxcasTBBK_7-tN29WSxIn4eOTjPZkhBFMWbaS3J6AbpM0jwxG7X79hmOQWgeJVMuySKK47zfLzgw0r2YY492g"/>
+</div>
+</div>
+</header>
+<!-- Deal Detail Content -->
+<div class="mt-14 p-margin-page">
+<!-- Deal Header -->
+<div class="flex justify-between items-start mb-section">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-1">
+<input class="bg-transparent border-none font-headline-h1 text-headline-h1 p-0 focus:ring-0 w-full max-w-2xl border-b border-transparent hover:border-border" type="text" value="Enterprise SaaS Modernization - Acme Corp"/>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary">edit</span>
+</div>
+<div class="flex items-center gap-4 text-meta-sm font-meta-sm text-outline">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">business</span>
+<span>Acme Corp Holdings</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">person</span>
+<span>Sarah Jenkins</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-gap-md">
+<button class="bg-won text-on-primary px-6 py-2 rounded-lg font-headline-h3 flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">check_circle</span> Won
+                    </button>
+<button class="bg-lost text-on-primary px-6 py-2 rounded-lg font-headline-h3 flex items-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined">cancel</span> Lost
+                    </button>
+<div class="ml-4 border-l pl-4 flex items-center gap-3">
+<div class="text-right">
+<div class="text-meta-sm font-label-md text-outline">Owner</div>
+<div class="text-label-md font-headline-h3">Marcus Thorne</div>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary/20" data-alt="A portrait of a male business owner in his 30s, friendly smile, corporate casual attire, bright professional environment, cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVPnduBys_2SySEEyheMjHkSjP8WvuUwOnRQvQkOXplRuz39DjnHjpdQV3xiG_ZBaoSbiahipDcc5B4RkNefuNtdmKLaJs0TE_0fT0z2aIxIg4iCnJFxUZX4S7OISoH51y3YXXXC-4oMFuAV9pNfC48PxoNxZa8UanNOxuYbQqolWSOQkW5soux-vm0QAHwsCNe--Oiw5wiXoE9uxkNPRCXb7w7a7YHvySuP7DhBedqklp5g2eNoGd3kGU5f4HR0HteOEqSoDUjR4"/>
+</div>
+</div>
+</div>
+<!-- Stage Progress Bar -->
+<div class="flex w-full h-10 mb-section">
+<div class="chevron-bar-segment flex-1 bg-primary/20 text-primary-hover flex items-center justify-center font-label-md text-label-md">
+                    Lead In
+                </div>
+<div class="chevron-bar-segment flex-1 bg-primary/20 text-primary-hover flex items-center justify-center font-label-md text-label-md">
+                    Contact Made
+                </div>
+<div class="chevron-bar-segment flex-1 bg-won text-on-primary flex items-center justify-center font-label-md text-label-md shadow-md z-10">
+                    Proposal Made
+                </div>
+<div class="chevron-bar-segment flex-1 bg-surface-container text-outline flex items-center justify-center font-label-md text-label-md">
+                    Negotiation
+                </div>
+<div class="chevron-bar-segment flex-1 bg-surface-container text-outline flex items-center justify-center font-label-md text-label-md">
+                    Closing
+                </div>
+</div>
+<!-- Main Split Layout -->
+<div class="grid grid-cols-12 gap-section">
+<!-- Left Column: Summary -->
+<div class="col-span-5 flex flex-col gap-section">
+<!-- Deal Information Card -->
+<div class="bg-surface-container-lowest border border-border rounded-xl shadow-sm p-gap-lg">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-h3 text-headline-h3">Deal Information</h3>
+<span class="material-symbols-outlined text-outline cursor-pointer">settings</span>
+</div>
+<div class="space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-meta-sm font-label-md text-outline block mb-1">Value</label>
+<div class="text-headline-h2 text-primary">$125,000.00</div>
+</div>
+<div>
+<label class="text-meta-sm font-label-md text-outline block mb-1">Close Date</label>
+<div class="text-headline-h2">Nov 24, 2024</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="text-meta-sm font-label-md text-outline block mb-1">Probability</label>
+<div class="text-headline-h2 text-warning">65%</div>
+</div>
+<div>
+<label class="text-meta-sm font-label-md text-outline block mb-1">Lead Source</label>
+<div class="text-headline-h2">Referral</div>
+</div>
+</div>
+</div>
+</div>
+<!-- People & Organization -->
+<div class="bg-surface-container-lowest border border-border rounded-xl shadow-sm overflow-hidden">
+<div class="p-gap-lg border-b border-border flex justify-between items-center">
+<h3 class="font-headline-h3 text-headline-h3">People &amp; Organization</h3>
+<button class="text-primary font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">add</span> Add
+                            </button>
+</div>
+<div class="divide-y divide-border">
+<div class="p-gap-lg flex items-center gap-4 hover:bg-surface-subtle transition-colors cursor-pointer group">
+<div class="w-10 h-10 bg-secondary-container rounded-full flex items-center justify-center font-bold text-on-secondary-container">SJ</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-headline-h3 group-hover:text-primary transition-colors">Sarah Jenkins</div>
+<div class="text-meta-sm text-outline">CTO, Acme Corp</div>
+</div>
+<div class="flex gap-2">
+<span class="material-symbols-outlined text-outline hover:text-primary">mail</span>
+<span class="material-symbols-outlined text-outline hover:text-primary">call</span>
+</div>
+</div>
+<div class="p-gap-lg flex items-center gap-4 hover:bg-surface-subtle transition-colors cursor-pointer group">
+<div class="w-10 h-10 bg-surface-container-high rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">business</span>
+</div>
+<div class="flex-1">
+<div class="font-headline-h3 text-headline-h3 group-hover:text-primary transition-colors">Acme Corp Holdings</div>
+<div class="text-meta-sm text-outline">San Francisco, CA</div>
+</div>
+<span class="material-symbols-outlined text-outline">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Activity -->
+<div class="col-span-7 flex flex-col gap-section">
+<!-- Activity Tab Bar & Action -->
+<div class="bg-surface-container-lowest border border-border rounded-xl shadow-sm">
+<div class="flex border-b border-border">
+<button class="px-6 py-4 font-headline-h3 text-headline-h3 text-primary border-b-2 border-primary transition-all">Activity</button>
+<button class="px-6 py-4 font-headline-h3 text-headline-h3 text-on-surface-variant hover:bg-surface-subtle transition-all">Notes</button>
+<button class="px-6 py-4 font-headline-h3 text-headline-h3 text-on-surface-variant hover:bg-surface-subtle transition-all">Email</button>
+<button class="px-6 py-4 font-headline-h3 text-headline-h3 text-on-surface-variant hover:bg-surface-subtle transition-all">Files</button>
+</div>
+<div class="p-4">
+<div class="flex gap-2 mb-4">
+<button class="flex-1 flex flex-col items-center gap-1 p-3 border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary">call</span>
+<span class="text-meta-sm font-label-md">Call</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 p-3 border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary">calendar_today</span>
+<span class="text-meta-sm font-label-md">Meeting</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 p-3 border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary">task</span>
+<span class="text-meta-sm font-label-md">Task</span>
+</button>
+<button class="flex-1 flex flex-col items-center gap-1 p-3 border border-border rounded-lg hover:border-primary hover:bg-primary/5 transition-all group">
+<span class="material-symbols-outlined text-outline group-hover:text-primary">mail</span>
+<span class="text-meta-sm font-label-md">Email</span>
+</button>
+</div>
+<textarea class="w-full border border-border rounded-lg p-3 text-body-md font-body-md focus:ring-2 focus:ring-sidebar-active focus:border-transparent min-h-[80px] resize-none" placeholder="Write a note or log an activity..."></textarea>
+<div class="flex justify-end mt-3">
+<button class="bg-primary text-on-primary px-4 py-2 rounded font-label-md text-label-md hover:bg-primary-hover transition-all">Log Activity</button>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<div class="space-y-0 activity-feed-line relative">
+<!-- Upcoming Item -->
+<div class="relative pl-12 pb-6">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-warning flex items-center justify-center text-white z-10 shadow-sm">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="bg-surface-container-low border-l-4 border-warning p-4 rounded-r-lg shadow-sm">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-h3 text-headline-h3">Follow-up Call</h4>
+<span class="text-meta-sm text-warning font-bold">TODAY, 2:00 PM</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">Discuss proposal details and technical implementation with Sarah and her team.</p>
+<div class="mt-3 flex gap-2">
+<button class="bg-primary text-on-primary px-3 py-1 rounded text-meta-sm font-label-md">Complete</button>
+<button class="bg-surface border border-border px-3 py-1 rounded text-meta-sm font-label-md">Reschedule</button>
+</div>
+</div>
+</div>
+<!-- Past Activity: Call -->
+<div class="relative pl-12 pb-6">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-surface-container-high border border-border flex items-center justify-center text-outline z-10">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div class="bg-surface-container-lowest border border-border p-4 rounded-lg">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-h3 text-headline-h3">Call Log - Initial Scope</h4>
+<span class="text-meta-sm text-outline">Oct 24, 2024</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">The client is interested in the enterprise tier. Main pain points are legacy system latency and lack of API support. Sarah confirmed budget is approved for Q4.</p>
+<div class="mt-2 flex items-center gap-2 text-meta-sm text-outline">
+<span class="material-symbols-outlined text-[14px]">history</span>
+<span>Duration: 14m 20s</span>
+</div>
+</div>
+</div>
+<!-- Past Activity: Stage Change -->
+<div class="relative pl-12 pb-6">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary z-10">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<div class="p-2">
+<p class="text-body-md font-body-md">
+<span class="font-bold">Marcus Thorne</span> moved deal to <span class="text-primary font-bold">Proposal Made</span>
+<span class="text-meta-sm text-outline ml-2">Oct 22, 2024</span>
+</p>
+</div>
+</div>
+<!-- Past Activity: Email -->
+<div class="relative pl-12">
+<div class="absolute left-0 top-0 w-10 h-10 rounded-full bg-surface-container-high border border-border flex items-center justify-center text-outline z-10">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="bg-surface-container-lowest border border-border p-4 rounded-lg">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-h3 text-headline-h3">RE: Project Roadmap Discussion</h4>
+<span class="text-meta-sm text-outline">Oct 21, 2024</span>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant italic overflow-hidden text-ellipsis line-clamp-2">"Hi Marcus, thank you for sending over the documentation. We've reviewed the security protocols and..."</p>
+<button class="mt-2 text-link text-meta-sm font-label-md">View Email</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for Tasks -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined !text-3xl">add</span>
+</button>
+</div>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if(this.classList.contains('bg-primary')) {
+                    const ripple = document.createElement('span');
+                    ripple.className = 'absolute inset-0 bg-white/20 animate-ping rounded-full pointer-events-none';
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 500);
+                }
+            });
+        });
+
+        // Stage bar interaction
+        document.querySelectorAll('.chevron-bar-segment').forEach(seg => {
+            seg.addEventListener('mouseenter', function() {
+                if(!this.classList.contains('bg-won')) {
+                    this.style.backgroundColor = 'rgba(0, 106, 62, 0.1)';
+                }
+            });
+            seg.addEventListener('mouseleave', function() {
+                if(!this.classList.contains('bg-won') && !this.classList.contains('bg-primary/20')) {
+                    this.style.backgroundColor = '';
+                }
+            });
+        });
+    </script>
+</body></html>

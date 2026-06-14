@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SalesKit CRM - Forecast View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#b1b2fd",
+                        "tertiary": "#a13742",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#c1c1ff",
+                        "on-tertiary-fixed": "#40000b",
+                        "secondary-fixed": "#e1dfff",
+                        "on-secondary-fixed": "#111055",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#63dd97",
+                        "on-secondary-container": "#414285",
+                        "tertiary-fixed": "#ffdada",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#c04f59",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#56579c",
+                        "rotten": "#FB923C",
+                        "warning": "#F59E0B",
+                        "lost": "#DC2626",
+                        "on-tertiary-fixed-variant": "#84222e",
+                        "on-surface-variant": "#3d4a40",
+                        "surface": "#fcf9f8",
+                        "won": "#16A34A",
+                        "on-background": "#1c1b1b",
+                        "primary-container": "#00864f",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#63dd97",
+                        "on-primary-container": "#f6fff5",
+                        "outline-variant": "#bccabd",
+                        "tertiary-fixed-dim": "#ffb3b5",
+                        "link": "#226FCA",
+                        "border": "#E5E5E5",
+                        "surface-tint": "#006d3f",
+                        "outline": "#6d7a6f",
+                        "primary-hover": "#088A52",
+                        "banner": "#F0EFFF",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#80fab1",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#006a3e",
+                        "on-primary-fixed": "#002110",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3e3f82",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0eded",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "surface-subtle": "#F5F5F5",
+                        "sidebar-active": "#6F6EE8",
+                        "on-error": "#ffffff",
+                        "danger": "#E15A51",
+                        "surface-container-highest": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fffbff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "sidebar-width": "60px",
+                        "gap-md": "12px",
+                        "subnav-width": "220px",
+                        "kanban-col-min": "220px",
+                        "gap-xs": "4px",
+                        "base": "4px",
+                        "gap-lg": "16px",
+                        "kanban-col-max": "260px",
+                        "gap-sm": "8px",
+                        "section": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-h1": ["Inter"],
+                        "headline-h2": ["Inter"],
+                        "meta-sm": ["Inter"],
+                        "headline-h1-mobile": ["Inter"],
+                        "badge-xs": ["Inter"],
+                        "headline-h3": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-h1-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "badge-xs": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; }
+        .forecast-grid {
+            display: grid;
+            grid-template-columns: 280px repeat(3, 1fr);
+            min-height: calc(100vh - 110px);
+        }
+        .chevron-bar-active {
+            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%, 5% 50%);
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[60px] flex flex-col bg-secondary border-r border-outline-variant items-center py-4 gap-gap-lg z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-extrabold tracking-tighter">SK</span>
+</div>
+<nav class="flex flex-col gap-gap-md w-full items-center">
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">view_kanban</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">handshake</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">group</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-on-secondary bg-sidebar-active rounded-lg scale-95 active:scale-90 shadow-sm" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">analytics</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-gap-md w-full items-center pb-4">
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined">help</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 border-b border-border bg-surface flex justify-between items-center px-margin-page z-40">
+<div class="flex items-center gap-gap-lg">
+<span class="font-headline-h2 text-headline-h2 text-on-surface font-bold">SalesKit CRM</span>
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-subtle border-none rounded-lg text-body-md focus:ring-2 focus:ring-sidebar-active/30 w-64 transition-all group-hover:w-80" placeholder="Search deals, contacts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded-lg">
+<span class="material-symbols-outlined text-[20px]">apps</span>
+</button>
+</div>
+<button class="bg-primary hover:bg-primary-hover text-on-primary px-4 py-1.5 rounded-lg font-label-md text-label-md transition-all active:scale-95">
+                Add Deal
+            </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-border">
+<img alt="Current User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3uoGZ-ufT-VjqGhC0-_Mr9cBiMK7J-ORisa7AcUnkt45unWEdCcbjDQO9UAItrCQjDX1htWo4w3CbKg-ufIm8D2_i0C4ad_zebhkDXmHv5kakRuJtWmf3IEsIBlWHXoelGdtZPSUhfw8Q7qZAs5nu_kqaMDFx22Ehh5atktedWrRmXSJ1vSYZfilHkkD3lEULh6i0J-or-TR1H2a8wXtcxX503UYdjLvezfLf3N4VTg4cxzrf9Sbj2S07YnA7cq3v7GkXfcqOEMY"/>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="pt-14 ml-[60px] min-h-screen">
+<!-- Sub-Header / Controls -->
+<div class="px-margin-page py-6 border-b border-border bg-white flex justify-between items-end">
+<div>
+<nav class="flex items-center gap-2 text-meta-sm text-on-surface-variant mb-2">
+<span>Forecast</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Q4 Pipeline</span>
+</nav>
+<h1 class="font-headline-h1 text-headline-h1 text-on-surface flex items-center gap-3">
+                    Forecast View
+                    <span class="bg-primary-container/10 text-primary px-2 py-0.5 rounded font-badge-xs text-badge-xs uppercase tracking-wider">Live</span>
+</h1>
+</div>
+<div class="flex items-center gap-3 bg-surface-subtle p-1 rounded-lg">
+<button class="px-4 py-1.5 rounded text-label-md font-label-md text-on-surface-variant hover:bg-white/50">Month</button>
+<button class="px-4 py-1.5 rounded text-label-md font-label-md text-on-surface bg-white shadow-sm">Quarter</button>
+<button class="px-4 py-1.5 rounded text-label-md font-label-md text-on-surface-variant hover:bg-white/50">Year</button>
+</div>
+</div>
+<!-- Forecast Grid Body -->
+<div class="forecast-grid relative overflow-x-auto">
+<!-- Side Metadata Column -->
+<div class="bg-white border-r border-border sticky left-0 z-20">
+<div class="h-20 border-b border-border flex items-center px-4 bg-surface-subtle/30">
+<span class="font-headline-h3 text-headline-h3 text-on-surface-variant">Owner / Team</span>
+</div>
+<div class="divide-y divide-border">
+<!-- Owner Row 1 -->
+<div class="h-24 px-4 flex flex-col justify-center bg-white group hover:bg-surface-subtle transition-colors">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-secondary flex items-center justify-center font-bold text-[12px]">JD</div>
+<span class="font-headline-h3 text-headline-h3">James D.</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-meta-sm text-on-surface-variant">Quota: $250,000</span>
+<span class="text-meta-sm font-bold text-won">112%</span>
+</div>
+</div>
+<!-- Owner Row 2 -->
+<div class="h-24 px-4 flex flex-col justify-center bg-white group hover:bg-surface-subtle transition-colors">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim text-primary flex items-center justify-center font-bold text-[12px]">SL</div>
+<span class="font-headline-h3 text-headline-h3">Sarah L.</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-meta-sm text-on-surface-variant">Quota: $300,000</span>
+<span class="text-meta-sm font-bold text-warning">84%</span>
+</div>
+</div>
+<!-- Owner Row 3 -->
+<div class="h-24 px-4 flex flex-col justify-center bg-white group hover:bg-surface-subtle transition-colors">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim text-tertiary flex items-center justify-center font-bold text-[12px]">MR</div>
+<span class="font-headline-h3 text-headline-h3">Michael R.</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-meta-sm text-on-surface-variant">Quota: $150,000</span>
+<span class="text-meta-sm font-bold text-primary">98%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- This Month Column -->
+<div class="relative border-r border-border">
+<div class="h-20 border-b border-border flex flex-col justify-center px-6 bg-white sticky top-0 z-10">
+<span class="text-meta-sm text-on-surface-variant uppercase font-bold tracking-widest">This Month</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-h2 text-headline-h2">$412,500</span>
+<span class="text-meta-sm text-won flex items-center"><span class="material-symbols-outlined text-[14px]">arrow_upward</span>12%</span>
+</div>
+</div>
+<!-- Visualization Area -->
+<div class="divide-y divide-border">
+<div class="h-24 px-4 flex items-center bg-surface-subtle/10 relative overflow-hidden">
+<!-- Deal Bars -->
+<div class="w-full h-10 bg-white border border-border/50 rounded-lg shadow-sm flex items-center px-3 gap-3 relative z-10 group cursor-pointer hover:border-sidebar-active/40">
+<div class="w-2 h-2 rounded-full bg-won"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-bold text-on-surface leading-none">Enterprise Expansion</span>
+<span class="text-[10px] text-on-surface-variant">Closing Oct 24 • $85k</span>
+</div>
+<div class="ml-auto w-32 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-won h-full w-4/5"></div>
+</div>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-won/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="h-24 px-4 flex items-center bg-surface-subtle/10">
+<div class="w-full h-10 bg-white border border-border/50 rounded-lg shadow-sm flex items-center px-3 gap-3 group cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-primary-container"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-bold text-on-surface leading-none">Global Tech Hub</span>
+<span class="text-[10px] text-on-surface-variant">Closing Oct 29 • $120k</span>
+</div>
+<div class="ml-auto w-32 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full w-2/3"></div>
+</div>
+</div>
+</div>
+<div class="h-24 px-4 flex items-center bg-surface-subtle/10">
+<div class="w-full h-10 bg-white border border-border/50 rounded-lg shadow-sm flex items-center px-3 gap-3 group cursor-pointer">
+<div class="w-2 h-2 rounded-full bg-warning"></div>
+<div class="flex flex-col">
+<span class="text-label-md font-bold text-on-surface leading-none">Nordic Integration</span>
+<span class="text-[10px] text-on-surface-variant">Closing Oct 31 • $45k</span>
+</div>
+<div class="ml-auto w-32 bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-warning h-full w-1/4"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Next Month Column -->
+<div class="relative border-r border-border">
+<div class="h-20 border-b border-border flex flex-col justify-center px-6 bg-white sticky top-0 z-10">
+<span class="text-meta-sm text-on-surface-variant uppercase font-bold tracking-widest">Next Month</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-h2 text-headline-h2">$285,000</span>
+</div>
+</div>
+<div class="divide-y divide-border">
+<div class="h-24 px-4 flex items-center bg-surface-subtle/10">
+<!-- Horizontal Bar Layout -->
+<div class="w-1/2 h-8 bg-sidebar-active/10 border-l-4 border-sidebar-active rounded-r-lg flex items-center px-3 group cursor-pointer hover:bg-sidebar-active/20">
+<span class="text-label-md text-sidebar-active font-bold">Cloud Migration • $50k</span>
+</div>
+</div>
+<div class="h-24 px-4 flex items-center bg-surface-subtle/10 gap-2">
+<div class="w-[40%] h-8 bg-primary/10 border-l-4 border-primary rounded-r-lg flex items-center px-3">
+<span class="text-label-md text-primary font-bold">Data Suite • $32k</span>
+</div>
+<div class="w-[45%] h-8 bg-tertiary-container/10 border-l-4 border-tertiary-container rounded-r-lg flex items-center px-3">
+<span class="text-label-md text-tertiary-container font-bold">App Dev • $90k</span>
+</div>
+</div>
+<div class="h-24 px-4 flex flex-col justify-center bg-surface-subtle/10 gap-2">
+<div class="w-3/4 h-6 bg-surface-container-high/50 border border-border rounded flex items-center px-2">
+<span class="text-[11px] text-on-surface-variant italic">Weighted Forecast: $112,000</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Month 3 Column -->
+<div class="relative">
+<div class="h-20 border-b border-border flex flex-col justify-center px-6 bg-white sticky top-0 z-10">
+<span class="text-meta-sm text-on-surface-variant uppercase font-bold tracking-widest">Month 3</span>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-h2 text-headline-h2">$140,000</span>
+<span class="text-meta-sm text-on-surface-variant">(Projected)</span>
+</div>
+</div>
+<div class="divide-y divide-border">
+<div class="h-24 flex items-center justify-center text-meta-sm text-on-surface-variant opacity-40 italic">
+                        No deals scheduled
+                    </div>
+<div class="h-24 px-4 flex items-center bg-surface-subtle/10">
+<div class="w-[90%] h-8 bg-outline-variant/20 border-l-4 border-outline-variant rounded-r-lg flex items-center px-3">
+<span class="text-label-md text-on-surface-variant font-bold">Renewal Cycle A • $140k</span>
+</div>
+</div>
+<div class="h-24 flex items-center justify-center text-meta-sm text-on-surface-variant opacity-40 italic">
+                        No deals scheduled
+                    </div>
+</div>
+</div>
+</div>
+<!-- Float Action Tooltip / Summary -->
+<div class="fixed bottom-8 right-8 flex flex-col items-end gap-4 pointer-events-none">
+<div class="bg-on-surface text-surface px-6 py-4 rounded-xl shadow-2xl pointer-events-auto flex flex-col gap-2 max-w-sm border border-white/10 backdrop-blur-md">
+<div class="flex justify-between items-center border-b border-white/10 pb-2">
+<span class="text-label-md font-bold">Quarterly Health</span>
+<span class="material-symbols-outlined text-won">check_circle</span>
+</div>
+<p class="text-meta-sm opacity-80">You are currently at 94% of your Q4 target. Close 2 more "High Probability" deals to reach 100%.</p>
+<div class="h-2 bg-white/10 rounded-full overflow-hidden">
+<div class="bg-won h-full w-[94%] shadow-[0_0_10px_rgba(22,163,74,0.5)]"></div>
+</div>
+</div>
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[28px]">insights</span>
+</button>
+</div>
+</main>
+<script>
+        // Micro-interactions for horizontal bars
+        document.querySelectorAll('.forecast-grid .h-24 .group').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                el.classList.add('shadow-md');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('shadow-md');
+            });
+        });
+
+        // Simple smooth scroll for horizontal container if needed
+        const grid = document.querySelector('.forecast-grid');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        grid.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - grid.offsetLeft;
+            scrollLeft = grid.scrollLeft;
+        });
+        grid.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+        grid.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+        grid.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - grid.offsetLeft;
+            const walk = (x - startX) * 2;
+            grid.scrollLeft = scrollLeft - walk;
+        });
+    </script>
+</body></html>

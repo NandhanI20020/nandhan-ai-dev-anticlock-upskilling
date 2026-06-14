@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacts | SalesKit CRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#eae7e7",
+                        "secondary-container": "#b1b2fd",
+                        "tertiary": "#a13742",
+                        "on-surface": "#1c1b1b",
+                        "secondary-fixed-dim": "#c1c1ff",
+                        "on-tertiary-fixed": "#40000b",
+                        "secondary-fixed": "#e1dfff",
+                        "on-secondary-fixed": "#111055",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#63dd97",
+                        "on-secondary-container": "#414285",
+                        "tertiary-fixed": "#ffdada",
+                        "on-primary-fixed-variant": "#00522e",
+                        "tertiary-container": "#c04f59",
+                        "inverse-surface": "#313030",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#56579c",
+                        "rotten": "#FB923C",
+                        "warning": "#F59E0B",
+                        "lost": "#DC2626",
+                        "on-tertiary-fixed-variant": "#84222e",
+                        "on-surface-variant": "#3d4a40",
+                        "surface": "#fcf9f8",
+                        "won": "#16A34A",
+                        "on-background": "#1c1b1b",
+                        "primary-container": "#00864f",
+                        "surface-container-low": "#f6f3f2",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#63dd97",
+                        "on-primary-container": "#f6fff5",
+                        "outline-variant": "#bccabd",
+                        "tertiary-fixed-dim": "#ffb3b5",
+                        "link": "#226FCA",
+                        "border": "#E5E5E5",
+                        "surface-tint": "#006d3f",
+                        "outline": "#6d7a6f",
+                        "primary-hover": "#088A52",
+                        "banner": "#F0EFFF",
+                        "background": "#fcf9f8",
+                        "primary-fixed": "#80fab1",
+                        "surface-bright": "#fcf9f8",
+                        "primary": "#006a3e",
+                        "on-primary-fixed": "#002110",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#3e3f82",
+                        "inverse-on-surface": "#f3f0ef",
+                        "surface-container": "#f0eded",
+                        "surface-dim": "#dcd9d9",
+                        "on-tertiary": "#ffffff",
+                        "surface-subtle": "#F5F5F5",
+                        "sidebar-active": "#6F6EE8",
+                        "on-error": "#ffffff",
+                        "danger": "#E15A51",
+                        "surface-container-highest": "#e5e2e1",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#fffbff",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "sidebar-width": "60px",
+                        "gap-md": "12px",
+                        "subnav-width": "220px",
+                        "kanban-col-min": "220px",
+                        "gap-xs": "4px",
+                        "base": "4px",
+                        "gap-lg": "16px",
+                        "kanban-col-max": "260px",
+                        "gap-sm": "8px",
+                        "section": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-h1": ["Inter"],
+                        "headline-h2": ["Inter"],
+                        "meta-sm": ["Inter"],
+                        "headline-h3": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                        "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            font-size: 20px;
+        }
+        .sidebar-item-active {
+            background-color: #6F6EE8;
+            color: #ffffff;
+        }
+        .subnav-link-active {
+            background-color: #e1dfff;
+            color: #111055;
+            font-weight: 600;
+        }
+        /* Custom scrollbar for data density */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E5E5E5;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #bccabd;
+        }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- Immutable Sidebar Navigation (SideNavBar) -->
+<aside class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold select-none">SK</span>
+</div>
+<nav class="flex flex-col gap-gap-sm w-full items-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Pipeline">
+<span class="material-symbols-outlined">view_kanban</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Deals">
+<span class="material-symbols-outlined">handshake</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-on-secondary bg-sidebar-active scale-95 active:scale-90" title="Contacts">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Forecast">
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors scale-95 active:scale-90" title="Reports">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+</nav>
+<div class="mt-auto flex flex-col gap-gap-sm w-full items-center">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant mt-2">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhpB403HcBr3lodgfz146ODBI6sHDvhVKsftMjmNwDcir5D_I4w0bCrY3caezc60GZnDr9hnGBKh91Q0oabKIIO9qp4dpIJACIrNEeZKVAkLhGZXwWRVgH7enN5yN0LJLqWGTmpIP-zm3jgFXwHygsYQ-7wpv3rQhyfKyFXKZuzZzsk9FFxCwf1I1YlPi9jU4t61x6cyjL0JbJ2lQwp2xMGs7E4mT-_CMAzhDOEK4wLrry1lB2I9yBG6UVIuzctdctrD0ng1JADrE"/>
+</div>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 bg-surface border-b border-border flex justify-between items-center px-margin-page z-40">
+<div class="flex items-center gap-gap-lg">
+<h1 class="font-headline-h2 text-headline-h2 text-on-surface font-bold">SalesKit CRM</h1>
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border border-border rounded-lg text-label-md w-[300px] focus:outline-none focus:ring-2 focus:ring-secondary/50" placeholder="Search contacts..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-md">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-primary-hover transition-all">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                Add Deal
+            </button>
+</div>
+</header>
+<!-- Main Content Layout -->
+<main class="pt-14 pl-[60px] flex h-screen overflow-hidden">
+<!-- Left Sub-Navigation (Functional sub-menu) -->
+<nav class="w-[subnav-width] bg-surface-container-lowest border-r border-border p-4 flex flex-col gap-gap-xs overflow-y-auto">
+<h3 class="text-on-surface-variant font-label-md uppercase tracking-wider text-[11px] px-3 mb-2">Directory</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg subnav-link-active" href="#">
+<span class="material-symbols-outlined text-[20px]">person</span>
+<span class="font-label-md">People</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+<span class="font-label-md">Organizations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">schedule</span>
+<span class="font-label-md">Timeline</span>
+</a>
+<div class="my-4 border-t border-border mx-3"></div>
+<h3 class="text-on-surface-variant font-label-md uppercase tracking-wider text-[11px] px-3 mb-2">Tools</h3>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">call_merge</span>
+<span class="font-label-md">Merge Duplicates</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-subtle transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span class="font-label-md">Import Contacts</span>
+</a>
+</nav>
+<!-- Right Content Area (Canvas) -->
+<section class="flex-1 flex flex-col bg-background overflow-hidden">
+<!-- Contextual Toolbar -->
+<div class="px-margin-page py-4 flex flex-col gap-gap-md border-b border-border bg-surface-bright">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="font-headline-h1 text-headline-h1">People</h2>
+<p class="text-meta-sm text-on-surface-variant">3,492 contacts found across your organization</p>
+</div>
+<div class="flex gap-gap-sm">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-primary-hover shadow-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+                            + Person
+                        </button>
+<button class="bg-surface border border-border text-on-surface px-4 py-2 rounded-lg font-label-md flex items-center gap-2 hover:bg-surface-subtle transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- Filter Bar -->
+<div class="flex items-center gap-gap-sm mt-2">
+<button class="px-3 py-1 bg-secondary text-on-secondary rounded-full text-badge-xs flex items-center gap-1.5 shadow-sm">
+                        All Statuses
+                        <span class="material-symbols-outlined text-[14px]">expand_more</span>
+</button>
+<button class="px-3 py-1 bg-surface-container border border-border text-on-surface rounded-full text-badge-xs flex items-center gap-1.5 hover:bg-surface-container-high">
+                        Assigned To: Me
+                        <span class="material-symbols-outlined text-[14px]">cancel</span>
+</button>
+<button class="px-3 py-1 bg-surface-container border border-border text-on-surface rounded-full text-badge-xs flex items-center gap-1.5 hover:bg-surface-container-high">
+                        Added: Last 30 Days
+                        <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+</button>
+<div class="h-6 w-[1px] bg-border mx-2"></div>
+<button class="text-link font-label-md text-[12px] flex items-center gap-1 hover:underline">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+                        Advanced Filters
+                    </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="flex-1 overflow-auto bg-surface-subtle/30">
+<table class="w-full text-left border-collapse min-w-[900px]">
+<thead class="sticky top-0 bg-white border-b border-border z-10">
+<tr>
+<th class="px-6 py-3 font-label-md text-on-surface-variant w-[40px]">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant">Name</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant">Organization</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant">Email</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant">Phone</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant">Deals</th>
+<th class="px-6 py-3 font-label-md text-on-surface-variant text-right">Last Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border bg-white">
+<!-- Table Row 1 -->
+<tr class="hover:bg-surface-subtle group transition-colors cursor-pointer">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<img alt="Alexandra Collins" class="w-full h-full object-cover" data-alt="A professional headshot of a diverse female executive in her 30s with a warm and confident expression. She is wearing modern business attire against a soft-focus minimalist office backdrop. The lighting is bright and airy with high-key professional studio quality, matching a clean CRM interface aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeLvBX1mlo92OUO7iEZt-1mOAAp-fD90SU5i7hRYFTPXNk2bCXxf3Z2rPX6VMG_ZKdvot1FAj3I5m0k1MLqzz2Dgd1QUDl4Z1jOwtR8F5DE9p3tCGsdebw4Y004u2ifjoEq6wh9hYNIHzUi_4ePCbA7-DSsyE50ydkOK4B1Yiouq9LU1eGkBIIamR1-cPW9KBLeUpdYeX744Pno_IKV9Cm5WEOkn-67vz0JzkBdkmKfFmIr4Q3T8KP0j9jtc1gFZ1RTqI_5VB58jc"/>
+</div>
+<div>
+<p class="font-headline-h3 text-on-surface group-hover:text-link">Alexandra Collins</p>
+<p class="text-meta-sm text-on-surface-variant">Chief Marketing Officer</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface">Starlight Industries</td>
+<td class="px-6 py-4 text-body-md text-link">a.collins@starlight.io</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">+1 (555) 012-3456</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-0.5 bg-won/10 text-won text-badge-xs rounded-full border border-won/20">3 Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-meta-sm text-on-surface-variant">Called today</p>
+</td>
+</tr>
+<!-- Table Row 2 -->
+<tr class="hover:bg-surface-subtle group transition-colors cursor-pointer">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<img alt="Marcus Richardson" class="w-full h-full object-cover" data-alt="A close-up portrait of a male professional in his 40s wearing a charcoal blazer. He looks approachable and authoritative with a subtle smile. The image is set in a modern workspace with natural daylighting and soft depth of field. The overall visual style is corporate, reliable, and high-contrast to suit a professional business directory." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxN1dJw8CcVWF52mIx4DTIFBFBD0WVqjOWAdyZ9xvAhB7dfD9dbJPSNfZTdF8gP7Nr_lIZVcHxVm3TGtPEv2eayKI4WnOdSYbQmWZr87Tg8xWJTbbd37SO6eAhONqMlHfpYX2heTcwzJHsF08wER4UUNUvc94VcUU-U7f38jyKaYSTxInCWSC8kwz2RudBPfiNGBML_ZcbbFeMlV7JwGBknvraTLNuXSXROCi40O5ECuRspzvD4ypOgl32-RkkdKlQU_UCXXMaAeU"/>
+</div>
+<div>
+<p class="font-headline-h3 text-on-surface group-hover:text-link">Marcus Richardson</p>
+<p class="text-meta-sm text-on-surface-variant">Technical Lead</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface">DataNexus Corp</td>
+<td class="px-6 py-4 text-body-md text-link">m.richardson@datanexus.com</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">+1 (555) 987-6543</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-0.5 bg-surface-container-high text-on-surface-variant text-badge-xs rounded-full">0 Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-meta-sm text-warning font-medium">Overdue: Email</p>
+</td>
+</tr>
+<!-- Table Row 3 -->
+<tr class="hover:bg-surface-subtle group transition-colors cursor-pointer">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<img alt="Elena Vostok" class="w-full h-full object-cover" data-alt="Professional studio portrait of an elegant woman with a sharp business focus. She is styled in a deep blue suit, conveying leadership and intelligence. The lighting is sophisticated and directional, creating high-definition clarity without harsh shadows. The color palette is composed of cool whites and professional navies to align with a corporate CRM aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoqQuNFqaHhx9oDUX231q_8dZ4ymWc_bHNGC09zhoNhOhszJRa0229n8TiQ6dylIL0s1_BpdxOAeCttBDCaU6gqxGs_tF91DtC_ncVql-2_9cvswHEhes4SybB1KEqkb0zEt1bvOQoOgLvcc2einsjyQxDBqGbnMzHz2Ihux2FP7gg1HT5zDWkmsg_UYc3AO81loacerfCNbXWeo1VaIt-2IDfpX0cQofc89k-mqsyVaMe-j8y0xAUXJvKybRSP7oU7WCBVm1RWGQ"/>
+</div>
+<div>
+<p class="font-headline-h3 text-on-surface group-hover:text-link">Elena Vostok</p>
+<p class="text-meta-sm text-on-surface-variant">VP of Operations</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface">Hyperion Logistics</td>
+<td class="px-6 py-4 text-body-md text-link">elena.v@hyperion.com</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">+44 20 7946 0958</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-0.5 bg-rotten/10 text-rotten text-badge-xs rounded-full border border-rotten/20">1 Rotten</span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-meta-sm text-on-surface-variant">Emailed 2 days ago</p>
+</td>
+</tr>
+<!-- Table Row 4 -->
+<tr class="hover:bg-surface-subtle group transition-colors cursor-pointer">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<img alt="David Zhang" class="w-full h-full object-cover" data-alt="A portrait of a male tech professional in his late 20s, showing a friendly and competent demeanor. He is in a modern, light-filled architectural setting that suggests a vibrant startup environment. The visual style is crisp and modern with a focus on neutral tones and professional clarity, perfectly suited for a high-performance CRM contact list." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqmgeDeOxpC6tnRha_cs_ThwLUgKCWwrHi7y-0HSccPlVAdfoEsolBP0Ek9zpa9SLYpYnd6AWyKABYhItU5aTa78ylKNaKjvehLtVesgzy071R-5MyTeZemi42Tj0OClGv34VK81uyVbgSMtxQZtoKkDxPe0vAcUnDfVFMNUS9175Ss3f8R_EAeJk0YcPomjfXtTdIKOKNfm-V1gn7E5wHCYlC55OyIIvXLuiucBTdOZ-o1rfjXj48473c_Kne9P7KYPf8hNR36o0"/>
+</div>
+<div>
+<p class="font-headline-h3 text-on-surface group-hover:text-link">David Zhang</p>
+<p class="text-meta-sm text-on-surface-variant">Product Manager</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface">FutureStack App</td>
+<td class="px-6 py-4 text-body-md text-link">dzhang@futurestack.co</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">+1 (555) 234-5678</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-0.5 bg-won/10 text-won text-badge-xs rounded-full border border-won/20">1 Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-meta-sm text-on-surface-variant">Note added yesterday</p>
+</td>
+</tr>
+<!-- Table Row 5 -->
+<tr class="hover:bg-surface-subtle group transition-colors cursor-pointer">
+<td class="px-6 py-4">
+<input class="rounded border-outline-variant text-secondary focus:ring-secondary" type="checkbox"/>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex items-center justify-center">
+<img alt="Sarah Jenkins" class="w-full h-full object-cover" data-alt="Detailed professional portrait of a senior female leader in a creative industry. She has an expressive, visionary look and is framed by soft, warm lighting in a sophisticated office studio. The style is highly detailed and realistic, emphasizing professional trustworthiness and executive presence within a clean, light-mode CRM interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5Qgpd1VnQhAvVNwy7Ipfexx5D5INzRb6LOqewpcG8Z6iDbp4qWdXce2aa21EffKvdYlazKVgwyCvT944ECgBtTUP3p3mgWgUAjrwnOtqi9oWrb9tFCgYhdTEeFKx4Io-sxDWcNKn_eUoGoyEJGkSi6EnqzeGZqMT6L8nSyzTfofKQqdJPkzgAFpv2CI_pl3mtwGZf6UMVpZ19Ntr3rnwqU2DlxLCwKDhNwUGqgRreeRg-6Y4_Oqypw7y4HBntUUWwcAr4rNLose4"/>
+</div>
+<div>
+<p class="font-headline-h3 text-on-surface group-hover:text-link">Sarah Jenkins</p>
+<p class="text-meta-sm text-on-surface-variant">Procurement Director</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-body-md text-on-surface">Global Reach Co.</td>
+<td class="px-6 py-4 text-body-md text-link">sarah.j@globalreach.com</td>
+<td class="px-6 py-4 text-body-md text-on-surface-variant">+1 (555) 345-6789</td>
+<td class="px-6 py-4">
+<span class="px-2.5 py-0.5 bg-surface-container-high text-on-surface-variant text-badge-xs rounded-full">0 Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<p class="text-meta-sm text-on-surface-variant">New contact</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer Pagination -->
+<footer class="h-12 bg-surface border-t border-border px-6 flex items-center justify-between">
+<div class="text-meta-sm text-on-surface-variant">
+                    Showing 1 to 25 of 3,492 contacts
+                </div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border text-on-surface-variant hover:bg-surface-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-secondary text-on-secondary text-label-md">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-transparent hover:border-border text-on-surface-variant text-label-md">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-transparent hover:border-border text-on-surface-variant text-label-md">3</button>
+<span class="px-1 text-on-surface-variant self-center">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-transparent hover:border-border text-on-surface-variant text-label-md">140</button>
+</div>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-border text-on-surface-variant hover:bg-surface-subtle transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</footer>
+</section>
+</main>
+<!-- Micro-interaction Scripts -->
+<script>
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('click', (e) => {
+                if (e.target.type !== 'checkbox') {
+                    // Logic for navigating to contact details would go here
+                    console.log('Navigating to contact...');
+                }
+            });
+        });
+
+        // Simple checkbox toggle logic for "Select All" functionality
+        const headerCheckbox = document.querySelector('thead input[type="checkbox"]');
+        const rowCheckboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+
+        headerCheckbox?.addEventListener('change', (e) => {
+            rowCheckboxes.forEach(cb => cb.checked = e.target.checked);
+        });
+    </script>
+</body></html>

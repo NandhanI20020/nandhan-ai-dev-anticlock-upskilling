@@ -14,23 +14,11 @@ The secondary goal is to experience Claude Code's advanced features in context: 
 
 ## Phase 1: Environment Setup
 
-### 1a. Configure Playwright MCP
-- Install: `npm install -g @playwright/mcp` ✅ done (v0.0.76)
-- Add to `C:\Users\<you>\.claude\settings.json` ✅ done:
-  ```json
-  {
-    "mcpServers": {
-      "playwright": {
-        "command": "npx",
-        "args": ["@playwright/mcp", "--browser", "chrome", "--caps", "vision", "--save-session", "--output-dir", "<project>/PRDs/screenshots"],
-        "type": "stdio"
-      }
-    }
-  }
-  ```
-- Headed (visible browser) is the **default** — no extra flag needed.
-- `--caps vision` enables screenshot capture so Claude can see the browser.
-- `--save-session` persists the Pipedrive login across Claude Code sessions.
+### 1a. Configure Playwright
+- ~~`@playwright/mcp` npm package~~ — switched to official Claude plugin
+- Install: `claude plugin install playwright@claude-plugins-official` ✅ done (user scope)
+- Uses accessibility tree rather than vision model — screenshots still available via tool call
+- No separate `settings.json` MCP entry needed; activated at session start
 
 ### 1b. Initialize Project Structure
 ```
@@ -54,7 +42,7 @@ pipedrive-speckit/
 
 ---
 
-## Phase 2: Pipedrive Research via Playwright
+## Phase 2: Pipedrive Research via Playwright ✅
 
 Use the Playwright MCP to open `https://level-stamp.pipedrive.com`, pause for manual login, then systematically navigate and screenshot:
 
@@ -71,11 +59,11 @@ Use the Playwright MCP to open `https://level-stamp.pipedrive.com`, pause for ma
 | Modals & forms | Add deal/contact form, field types |
 | Filter/search UI | Filter panel, chips, search bar |
 
-Output: `PRDs/research-notes.md` with screenshots referenced
+Output: `PRDs/research-notes.md` with screenshots referenced ✅ (10 screens, `PRDs/screenshots/`)
 
 ---
 
-## Phase 3: PRD #1 — UX PRD (for Google Stitch)
+## Phase 3: PRD #1 — UX PRD (for Google Stitch) ✅
 
 **File:** `PRDs/prd-01-ux.md`
 **Target:** Google Stitch (stitch.withgoogle.com) — AI design tool that generates UI from text descriptions.

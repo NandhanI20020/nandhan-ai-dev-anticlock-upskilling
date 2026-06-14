@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Organizations | SalesKit CRM</title>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E5E5E5;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #bccabd;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#eae7e7",
+                      "secondary-container": "#b1b2fd",
+                      "tertiary": "#a13742",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed-dim": "#c1c1ff",
+                      "on-tertiary-fixed": "#40000b",
+                      "secondary-fixed": "#e1dfff",
+                      "on-secondary-fixed": "#111055",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#63dd97",
+                      "on-secondary-container": "#414285",
+                      "tertiary-fixed": "#ffdada",
+                      "on-primary-fixed-variant": "#00522e",
+                      "tertiary-container": "#c04f59",
+                      "inverse-surface": "#313030",
+                      "surface-variant": "#e5e2e1",
+                      "secondary": "#56579c",
+                      "rotten": "#FB923C",
+                      "warning": "#F59E0B",
+                      "lost": "#DC2626",
+                      "on-tertiary-fixed-variant": "#84222e",
+                      "on-surface-variant": "#3d4a40",
+                      "surface": "#fcf9f8",
+                      "won": "#16A34A",
+                      "on-background": "#1c1b1b",
+                      "primary-container": "#00864f",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#63dd97",
+                      "on-primary-container": "#f6fff5",
+                      "outline-variant": "#bccabd",
+                      "tertiary-fixed-dim": "#ffb3b5",
+                      "link": "#226FCA",
+                      "border": "#E5E5E5",
+                      "surface-tint": "#006d3f",
+                      "outline": "#6d7a6f",
+                      "primary-hover": "#088A52",
+                      "banner": "#F0EFFF",
+                      "background": "#fcf9f8",
+                      "primary-fixed": "#80fab1",
+                      "surface-bright": "#fcf9f8",
+                      "primary": "#006a3e",
+                      "on-primary-fixed": "#002110",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#3e3f82",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-container": "#f0eded",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary": "#ffffff",
+                      "surface-subtle": "#F5F5F5",
+                      "sidebar-active": "#6F6EE8",
+                      "on-error": "#ffffff",
+                      "danger": "#E15A51",
+                      "surface-container-highest": "#e5e2e1",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#fffbff",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-page": "32px",
+                      "sidebar-width": "60px",
+                      "gap-md": "12px",
+                      "subnav-width": "220px",
+                      "kanban-col-min": "220px",
+                      "gap-xs": "4px",
+                      "base": "4px",
+                      "gap-lg": "16px",
+                      "kanban-col-max": "260px",
+                      "gap-sm": "8px",
+                      "section": "24px"
+              },
+              "fontFamily": {
+                      "headline-h1": ["Inter"],
+                      "headline-h2": ["Inter"],
+                      "meta-sm": ["Inter"],
+                      "headline-h1-mobile": ["Inter"],
+                      "badge-xs": ["Inter"],
+                      "headline-h3": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "headline-h1-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                      "badge-xs": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<nav class="flex flex-col items-center gap-gap-md w-full px-2">
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg active:scale-90" href="#" title="Pipeline">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg active:scale-90" href="#" title="Deals">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-on-secondary bg-sidebar-active rounded-lg transition-colors active:scale-90" href="#" title="Contacts">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg active:scale-90" href="#" title="Forecast">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg active:scale-90" href="#" title="Reports">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col items-center gap-gap-md w-full px-2">
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg active:scale-90" href="#" title="Settings">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg active:scale-90" href="#" title="Help">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 flex justify-between items-center px-margin-page border-b border-border bg-surface z-40">
+<div class="flex items-center gap-gap-lg flex-1">
+<span class="font-headline-h2 text-headline-h2 text-on-surface font-bold">SalesKit CRM</span>
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+<input class="w-full h-9 pl-9 pr-3 bg-surface-container-low border border-border rounded-lg text-label-md focus:ring-2 focus:ring-sidebar-active outline-none transition-all" placeholder="Search organizations..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-md">
+<button class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-all duration-200 rounded-full">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="h-6 w-[1px] bg-border mx-2"></div>
+<button class="h-9 px-4 bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-gap-sm hover:bg-primary-hover active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                Add Deal
+            </button>
+<img alt="Current User Avatar" class="w-8 h-8 rounded-full border border-border ml-2 cursor-pointer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqY5IqEsvuIfGdGTHQZzse-es0JPnjinQi0iO2KA_LNNT7p23rgEaTEfAsndEVsy3nFIKfbRwDPWyVfsbOaD6utqICMK4LrK41R0_-uTa0PEUo4MCg6q5fTXQt7mo_i8mtVyFCJaEJyVIUZ4HHh_oO9goyxIHiMNHf-XICJSYy08dQ3VNRA3Vpa_DJ1ICXe7ApoCGjnC30vKT1JdU6zbCFZEG77RuWvrBsQyCrpfwbOzA-86NP1ayACnXajQvsg8ySzvEqlYU2qJA"/>
+</div>
+</header>
+<!-- Main Content Area with Sub-nav -->
+<main class="pt-14 pl-[60px] flex h-screen overflow-hidden">
+<!-- Sub-navigation for Contacts/Organizations -->
+<nav class="w-[220px] bg-surface-container-lowest border-r border-border flex flex-col py-6 overflow-y-auto">
+<div class="px-6 mb-6">
+<h3 class="font-headline-h3 text-headline-h3 text-on-surface-variant uppercase tracking-wider text-[11px]">Contacts</h3>
+</div>
+<div class="flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-subtle transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+                    People
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-primary/10 text-primary transition-colors rounded-lg font-headline-h2 text-headline-h2" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="corporate_fare" style="font-variation-settings: 'FILL' 1;">corporate_fare</span>
+                    Organizations
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-subtle transition-colors rounded-lg font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="label">label</span>
+                    Labels
+                </a>
+</div>
+<div class="px-6 mt-8 mb-4">
+<h3 class="font-headline-h3 text-headline-h3 text-on-surface-variant uppercase tracking-wider text-[11px]">Filters</h3>
+</div>
+<div class="flex flex-col gap-1 px-3">
+<a class="flex items-center justify-between px-3 py-2 text-on-surface-variant hover:bg-surface-subtle rounded-lg font-label-md text-label-md" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="star">star</span>
+                        My Favorites
+                    </span>
+<span class="text-meta-sm text-on-surface-variant/60">12</span>
+</a>
+<a class="flex items-center justify-between px-3 py-2 text-on-surface-variant hover:bg-surface-subtle rounded-lg font-label-md text-label-md" href="#">
+<span class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+                        Recently Added
+                    </span>
+</a>
+</div>
+</nav>
+<!-- Table Content -->
+<section class="flex-1 flex flex-col overflow-hidden bg-white">
+<div class="px-margin-page py-6 flex justify-between items-center bg-white border-b border-border">
+<div>
+<h1 class="font-headline-h1 text-headline-h1">Organizations</h1>
+<p class="text-meta-sm text-on-surface-variant">Managing 1,248 accounts across all regions</p>
+</div>
+<div class="flex gap-gap-sm">
+<button class="h-9 px-4 bg-white border border-border text-on-surface font-label-md text-label-md rounded-lg flex items-center gap-gap-sm hover:bg-surface-subtle transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                        Filter
+                    </button>
+<button class="h-9 px-4 bg-primary text-on-primary font-label-md text-label-md rounded-lg flex items-center gap-gap-sm hover:bg-primary-hover transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="business_center">business_center</span>
+                        Add Organization
+                    </button>
+</div>
+</div>
+<div class="flex-1 overflow-auto custom-scrollbar">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead class="sticky top-0 bg-surface-container-low z-10 border-b border-border">
+<tr>
+<th class="pl-margin-page pr-4 py-3 font-headline-h3 text-headline-h3 text-on-surface-variant w-12">
+<input class="w-4 h-4 rounded border-outline focus:ring-sidebar-active text-sidebar-active" type="checkbox"/>
+</th>
+<th class="px-4 py-3 font-headline-h3 text-headline-h3 text-on-surface-variant">Name</th>
+<th class="px-4 py-3 font-headline-h3 text-headline-h3 text-on-surface-variant">Address</th>
+<th class="px-4 py-3 font-headline-h3 text-headline-h3 text-on-surface-variant">People</th>
+<th class="px-4 py-3 font-headline-h3 text-headline-h3 text-on-surface-variant">Deals</th>
+<th class="px-4 py-3 font-headline-h3 text-headline-h3 text-on-surface-variant">Owner</th>
+<th class="pr-margin-page pl-4 py-3 text-right w-12"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-subtle transition-colors">
+<td class="pl-margin-page pr-4 py-4">
+<input class="w-4 h-4 rounded border-outline focus:ring-sidebar-active text-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-border">
+<img alt="TechSphere" class="w-6 h-6 object-contain" data-alt="A professional tech company logo featuring abstract geometric lines and nodes, presented in a clean corporate style with deep blue and emerald green accents on a neutral white background to maintain CRM brand consistency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdgUg2VLt6Mgett4PhLFlZluILTJQzk3CrcHR4WFduwEk69TjjRuq7KtNIriyYqsPFREWXN0a9OOXP0S9iWuh1QvPtBfDfNjjTlYvpfRg_mSjuPdTZ_yeHPNLndZ49jh0veVM8g8PlsV5YnowpmPTpiamRIatV-wFfoL5qI2wNNAOds8sJFCHHNgdSAc4y7zAbB7qJyPUFOoA6fSGKv1vHypEBdS8UN4_GxRl9DsViiM7M9cLE6g85TDz6FxrsR6tn1i436KAuPHw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-h2 text-headline-h2 text-primary hover:underline cursor-pointer">TechSphere Solutions</span>
+<span class="text-meta-sm text-on-surface-variant">techsphere.io</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">124 Innovation Way, San Francisco, CA</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex -space-x-2">
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A headshot of a diverse professional woman in business casual attire with soft studio lighting and a neutral background, embodying a corporate yet approachable aesthetic for a CRM contact profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6L93qyJgWYnpKyk20ahhl_RcVJeKiQDunYl_ZnbEjowpRD4UrtQ2HXbHjrRzt3-tcWfjoXjTBDn05vF3wOzyptrf7fdbsorR5ewcW4NTbfJaqSDtT4ZH5eFMzNZ0Tt42zuf16eKDovu-p8qMcFbG51J9-7S2dQiWcUgJnzBMfzGDFBRb5Q464WNU4dZ-fXZuNnRbGKuqrPRXJp9HRg9wOw5P3JTvt6F9PLCI7K0jo0vuRoIL_BUzS_1-szjXFISIvhWpCUZZmt-Y"/>
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A headshot of a smiling young professional man in a sharp grey blazer, standing against a blurred modern office background with warm lighting, maintaining high-end corporate UI standards." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2a4l46jRFIQJ4rr6t5fJa-oGWjXMEUjkG4olOsbHrgXMtz_rrJY339_u_UDjxv4PuuiTGAMYi6GxTIQckR-xqYzPnm0pvWzconqkfKHJMKU5k1B3Une85XfrYBhNeOZiwPCzEtDUq6_7WbaNI8kS5xIroFvAdReZxuQmRt2H4QRogjuCFR5atjHNXxFZ6Tx-Jxk01QXGKT6y5OI81PSKmWz4GUnVh9RehxuZrnS6yLvx31C_7OSSRao6z1vDNwehm9ypxQPf2aic"/>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[9px] font-bold">+12</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-won/10 text-won rounded font-badge-xs text-badge-xs">4 Won</span>
+<span class="px-2 py-0.5 bg-sidebar-active/10 text-sidebar-active rounded font-badge-xs text-badge-xs">2 Open</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<img alt="Owner" class="w-6 h-6 rounded-full" data-alt="A professional headshot of a middle-aged male executive in a formal navy suit, exuding reliability and authority, set against a high-contrast minimalist studio backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJCWPCHewSrQCM-RJAAU6KI8RI-Q03Deaa4aYm7jDaz1Okr_vYXShdk9VURGVe1OcbTkEfNEhTeka9KPmjvrONTEtKKhrUlAYsH9bmQ8PHpE2GDO_k9B6EGUkA7ovHjwolbwMn6s0GWU4ONe8n_H4xTTtfQXv5stHjV_sR5F8955uAaUtylrATcjTs0H_-2PmpKrRLFNDtDCUBmZumAgWwRw8osrQMOV2d37igiHNJAqq-P9aPNdSHcRRyWYlIlxtcqf2KZIhl_Tg"/>
+<span class="font-label-md text-label-md">Marcus Knight</span>
+</div>
+</td>
+<td class="pr-margin-page pl-4 py-4 text-right">
+<button class="p-1 rounded-md hover:bg-surface-container-high opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-subtle transition-colors">
+<td class="pl-margin-page pr-4 py-4">
+<input class="w-4 h-4 rounded border-outline focus:ring-sidebar-active text-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-border">
+<img alt="Lumina Venture" class="w-6 h-6 object-contain" data-alt="A minimalist logo for a venture capital firm featuring a stylized sun or spark icon, rendered with sharp edges in a corporate navy and silver palette, ensuring a professional and high-performance visual style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9yhNPAve2NMFMepg8DrI6RUeEAzmrpU-Lh_ud1vOwwJtaHQTAMGVP_vBAR2v83Spbi8cDdD9JJ3kw0xkpszjgAV_qIdhvaGjO_oMgN3SEF23uJR5fkhGO2jPi7Nwm3ygKxMeziXYcVfaVa8IByailCzZFRaCtYQRH3bACKNpOdNpBXVu_cGCq3JSjVdCzVziqMpCwx7G5yCuSMG5sCTOUik3BUSgGFj2BccjKuyZqvp0QgshQ1-6nglXS2kcr5pgQKLSQsPsadgY"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-h2 text-headline-h2 text-primary hover:underline cursor-pointer">Lumina Venture Capital</span>
+<span class="text-meta-sm text-on-surface-variant">lumina.vc</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">500 Sand Hill Rd, Menlo Park, CA</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex -space-x-2">
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A professional headshot of a confident female analyst with a minimalist aesthetic, softly lit by daylight in a glass-walled office setting, adhering to a clean modern UI brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6TcAL6Gcwei0WdEUXhhpTYXUAcqkrABWHo4BE_-DuyGKN183sGNV-R2ddGbZ-klsJXskCKFB2vcupEhEErejrM0zA0iEmcSFju3Z4tHXJkvcKYfYcUaexWULE1r0VJkRtR4zxwHrLPwsvDJ4EVEqZv2ArJhWO3FAoLsTE0lt3JfqwNB3XHM_8KPB_KllOmtfa_hLNCwuCykomKuKN5ji_IzYZj6m6S6IN_E-muCHCnL2eDVRisWjBoy_iQk8EWJUF0Y1F4RLslrc"/>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[9px] font-bold">+4</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-rotten/10 text-rotten rounded font-badge-xs text-badge-xs">1 Rotten</span>
+<span class="px-2 py-0.5 bg-sidebar-active/10 text-sidebar-active rounded font-badge-xs text-badge-xs">1 Open</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<img alt="Owner" class="w-6 h-6 rounded-full" data-alt="A professional portrait of a senior account manager in a crisp white shirt, clean-shaven, looking directly at the camera with a friendly and trustworthy expression, minimalist lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPqINrqnWyTJ3qO4f-5DR64GEQ1cjO2Hin-N0JQpa_QSZqRWWyjeQLXB-bXqpqFHrLH_P_eOlGzz_jHklXbxWgZJv6-mZCubrnhQo0QwzLk-m3BXV6OzXTOQj_4yLXVroZFOxDygGhT91om_lDDwdN3x3B6GvQDHCkAEkHosi0wNm1rE31K5BJxCZTJe5e4CIa3nAfA-0Qdh6z7ptCwnRRQqBWxaXamqr5o_jcDsdSlvSXCRF3NDC7nQwXwlF6YLYqHZfALbINTLc"/>
+<span class="font-label-md text-label-md">Sarah Tan</span>
+</div>
+</td>
+<td class="pr-margin-page pl-4 py-4 text-right">
+<button class="p-1 rounded-md hover:bg-surface-container-high opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="group hover:bg-surface-subtle transition-colors">
+<td class="pl-margin-page pr-4 py-4">
+<input class="w-4 h-4 rounded border-outline focus:ring-sidebar-active text-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-border">
+<img alt="Onyx Corp" class="w-6 h-6 object-contain" data-alt="A modern corporate logo for Onyx Corp featuring a bold, blocky letter O with internal geometric patterns in deep grey and lavender, symbolizing stability and technological innovation in a CRM context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeOO0sZMSP9oFEyZujvFaMgOzLXgXeWh44tTJBedW1z2qKJ-xe766pBJVEmoTeWDNMhdwCjAwYzW4rCNJZ7fshyZ2Xbri4oEWZq33i9KcwX6B2L6QyCVr95CterSNnoWcBs95h5jE4Z7QO3SBjV8Bj9Wjhs7rFAID6dJpzyYuIQlKhhqLUUaUIk0woAwMMBEwcKcZgoLZ_xjlDMFitUSHTz9oYKJLBqbP5eP8jKWAJ4UleQo0b10N7zWPOd5khToiKgnziZ0qbq4k"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-h2 text-headline-h2 text-primary hover:underline cursor-pointer">Onyx Global Corp</span>
+<span class="text-meta-sm text-on-surface-variant">onyxglobal.com</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">Level 42, 120 Collins St, Melbourne, VIC</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex -space-x-2">
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A professional headshot of an Asian male marketing specialist wearing modern glasses, captured in a bright minimalist workspace with natural lighting for a clean CRM interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhWGOWXROD-NW6560QCMpcKZFulGGki4u29rla0FTeIXsE4DXPBLSc4UDEVlCVhZe37PTGHOPUoq0XnbNJOjqfGUviVxhkZSiTKoTIHd0IwPLzNCyKTgpvDvDEAckXxryDPo2EeR7ZZCqI0aHDS85JXRVIgRKt2HZFje371VBNPyubyUJJDE1-szMUzskIgiD779Dzw5UB5UYFsIRq5Gs3YP1d91MxSv9jjAa1icPi8MG6vp2s2swwYHi8zXX5dBNKBH0gASNUD24"/>
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A high-quality studio headshot of a business woman with a bright, professional smile, wearing a professional navy blazer that coordinates with the corporate branding of the CRM software." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbIqf_2QJGZUC8Mq7zit_APXq9lbHUv0xzAaE3AUQbVjC8VOqmWMADmhU1yZuwjqnlePJu8JQ2EdYzfhEdIBadMdwsdnhO6_Uo2RRrEJ2QPwRNvfOQB1xp9HUHVAcZfdYm5VpqXHfzNH6LsyjvDor8QqC_-K7Z2SjwPHGGcTmaAsXT-X3WqD_TYl5wD8u7SusvEwpQdayIX0tzYPTmvoh-jtDhL3FwKLkbkLOyMdgaB3PtA2883D65_J05igadct_uEv6t8jGxU4E"/>
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A professional portrait of a senior consultant in business casual attire, soft bokeh office background, bright and even lighting that emphasizes a trustworthy persona within a CRM application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbLyqATPFe7vyoUIyflIPvEuZjXDot5ira_FigTZkzDRmTpeMyFf9s21moC3Mut1uSFj8UgO60hp6VLBRrlWGwNNYugCVShqVEQ2ELWXJ_1vT89FC5qz5R_IdNQW9ga9fjbvrBaw1SwMhNZoh9KGnu6iY0j22tkefJ27tEY3nZjse3mFimP40gl00KrMOdpnJvAGPMTmEnkIq85TbiOISbQ0LVJv7djMVAVERAFRMx5uecWdk6lBS7EcpsczSpbfWWXMXFeJgaY_E"/>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[9px] font-bold">+28</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-sidebar-active/10 text-sidebar-active rounded font-badge-xs text-badge-xs">3 Open</span>
+<span class="px-2 py-0.5 bg-lost/10 text-lost rounded font-badge-xs text-badge-xs">2 Lost</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<img alt="Owner" class="w-6 h-6 rounded-full" data-alt="A professional headshot of a male sales executive in a tailored charcoal suit, presenting an image of high performance and reliability, against a clean white backdrop suitable for a modern CRM dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs31-MKl_P1D6l4uVhGA7MmEkt5e184mHcORF07NKfkEickkGLxqlMcf47oklLf0sWUmC1nO5SU5CX9WpDCJwF7f9Fc21UwGRTrN_iNsqkbQWNLPMJOYWslxL98xW1TkivMD4-oc6F_QGPBEWOXB4iVsf7B5DCe_6VFCbpoJvdoyP0AEs_D6bNhtgH4xvGoWdmlOkxhfbsbCVLMKtZ8oGcMHBg6Sd4ikINQMsFP7ElENXeFSEjJnq3xCT6ciLiVW8TsFpjXHLa2HI"/>
+<span class="font-label-md text-label-md">Marcus Knight</span>
+</div>
+</td>
+<td class="pr-margin-page pl-4 py-4 text-right">
+<button class="p-1 rounded-md hover:bg-surface-container-high opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="group hover:bg-surface-subtle transition-colors">
+<td class="pl-margin-page pr-4 py-4">
+<input class="w-4 h-4 rounded border-outline focus:ring-sidebar-active text-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center border border-border">
+<img alt="AeroMod" class="w-6 h-6 object-contain" data-alt="An aerospace company logo featuring a sleek, minimalist wing or bird silhouette in metallic silver and emerald green, designed to convey speed and precision within a high-performance CRM environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg98wxRXkNsWRk2Irw6nphEhOrUok5Z7s_Sme20xElo6YSz9o_jVrObsaR8W9qooyoZRcE7E5brRdWXk-xZ5SnQzijfNfcAhE1LUtfmZTiaqwGzLM1R15g2Tf4kedIb7FsoDyVFRwHJ790SQaBGnDwwJLcjvGcdPfSAYl_P7Rd5M-I889WL41YxIw5NWhwbyxJ-2Fl6ZZzlp33vlKyd3B3lNxEC0ql5k1Yrcdot4OAHgkfJx-GjhUpV9EMmTAQYa5BYtvtdsOxing"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-h2 text-headline-h2 text-primary hover:underline cursor-pointer">AeroMod Industries</span>
+<span class="text-meta-sm text-on-surface-variant">aeromod.com</span>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="font-body-md text-body-md text-on-surface-variant">42 Skyline Blvd, Seattle, WA</span>
+</td>
+<td class="px-4 py-4">
+<div class="flex -space-x-2">
+<img alt="Team member" class="w-6 h-6 rounded-full border-2 border-white" data-alt="A studio portrait of a professional male engineer in a polo shirt, bright lighting, representing a technical contact within a modern corporate CRM." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbtWiVxeCjtx9hW9ZUqT-4EMT5f0HXKvPaZ_QZbGDCEvS-DTP7zpVMycGeU_SUk3o8mdhD9owQreqcEjxbQW8GMXoXeyBy3qBBKKEwgY4JOa982F7U9pWKc9B_yjjJ-XGdh63CqcpbTUqv0ss1JJT-8-cc7XiVAdnEpU0SEYJgzgH9K9F-gRq-bfoImv4AldOZCqEl3Sa78KEllzTzajytyJQ_-mF_R4w4Y2IN3N_q8851T5fhRodnj1ooWUa1WKMZci_5bWrfOKU"/>
+<div class="w-6 h-6 rounded-full border-2 border-white bg-surface-container-high flex items-center justify-center text-[9px] font-bold">+8</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 bg-won/10 text-won rounded font-badge-xs text-badge-xs">12 Won</span>
+</div>
+</td>
+<td class="px-4 py-4">
+<div class="flex items-center gap-2">
+<img alt="Owner" class="w-6 h-6 rounded-full" data-alt="A sharp professional headshot of a female account lead, wearing glasses and a business casual sweater, in a brightly lit modern office with a clean and minimal corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6bP7FVN0b_kI-LUEfiygUSwgVGQvhP7p1GiAPEhlGkIj8Dft5gm1lWfZv5f71SLYv3SwC0vBJCrgbxF_wwD0NkulQEDOs52Vm4JUqBVW6mHeLBNZzp_s_pFfn8uPTtM1oewNfrvrwufRvd4RBUtKISadQ2RkPH26T2J95K_OKT4pQd3bIlcyqHM2R19PRsuoth1dkLbyA-Cb9XweIYoicmhdQsyuX30pevtI-gCPokB_XAM-0sxz1i_zoExvTpPoEpjHhzxFVwQA"/>
+<span class="font-label-md text-label-md">Sarah Tan</span>
+</div>
+</td>
+<td class="pr-margin-page pl-4 py-4 text-right">
+<button class="p-1 rounded-md hover:bg-surface-container-high opacity-0 group-hover:opacity-100 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Footer / Pagination -->
+<footer class="h-14 px-margin-page border-t border-border bg-surface-container-low flex justify-between items-center">
+<span class="text-meta-sm text-on-surface-variant">Showing 1-10 of 1,248 organizations</span>
+<div class="flex items-center gap-gap-sm">
+<button class="w-8 h-8 flex items-center justify-center border border-border rounded-lg bg-white text-on-surface-variant hover:bg-surface-subtle disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-sidebar-active text-on-secondary font-label-md text-label-md">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container-high text-on-surface font-label-md text-label-md">125</button>
+</div>
+<button class="w-8 h-8 flex items-center justify-center border border-border rounded-lg bg-white text-on-surface-variant hover:bg-surface-subtle">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</footer>
+</section>
+</main>
+<!-- FAB (Contextual) - Highlighting primary task -->
+<button class="fixed bottom-8 right-8 w-14 h-14 bg-sidebar-active text-on-secondary rounded-full shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-50 group">
+<span class="material-symbols-outlined text-[28px]" data-icon="add">add</span>
+<span class="absolute right-full mr-4 bg-inverse-surface text-inverse-on-surface px-3 py-1.5 rounded-lg text-label-md opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">New Organization</span>
+</button>
+<script>
+        // Micro-interaction: Select All checkbox logic
+        const selectAll = document.querySelector('thead input[type="checkbox"]');
+        const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+
+        if (selectAll) {
+            selectAll.addEventListener('change', (e) => {
+                checkboxes.forEach(cb => {
+                    cb.checked = e.target.checked;
+                    const row = cb.closest('tr');
+                    if (e.target.checked) {
+                        row.classList.add('bg-primary/5');
+                    } else {
+                        row.classList.remove('bg-primary/5');
+                    }
+                });
+            });
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                const row = e.target.closest('tr');
+                if (e.target.checked) {
+                    row.classList.add('bg-primary/5');
+                } else {
+                    row.classList.remove('bg-primary/5');
+                }
+            });
+        });
+    </script>
+</body></html>

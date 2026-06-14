@@ -1,0 +1,8 @@
+[
+  { "id": "label-001", "name": "Hot Lead",  "color": "#EF4444" },
+  { "id": "label-002", "name": "VIP",       "color": "#8B5CF6" },
+  { "id": "label-003", "name": "At Risk",   "color": "#F97316" },
+  { "id": "label-004", "name": "New",       "color": "#3B82F6" },
+  { "id": "label-005", "name": "Cold",      "color": "#6B7280" },
+  { "id": "label-006", "name": "Partner",   "color": "#10B981" }
+]

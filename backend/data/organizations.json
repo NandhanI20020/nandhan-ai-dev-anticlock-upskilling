@@ -1,0 +1,12 @@
+[
+  { "id": "org-001", "name": "Acme Corp",        "phone": "+1-555-0100", "address": "123 Main St, New York, NY 10001", "website": "https://acmecorp.com",      "ownerId": "user-1", "labels": ["Enterprise"], "createdAt": "2026-01-05T00:00:00Z" },
+  { "id": "org-002", "name": "TechFlow Inc",      "phone": "+1-555-0200", "address": "456 Market St, San Francisco, CA 94102", "website": "https://techflow.io",       "ownerId": "user-1", "labels": ["SaaS"],        "createdAt": "2026-01-10T00:00:00Z" },
+  { "id": "org-003", "name": "Global Ventures",   "phone": "+1-555-0300", "address": "789 Oak Ave, Chicago, IL 60601",           "website": "https://globalventures.com","ownerId": "user-2", "labels": ["Enterprise", "VIP"], "createdAt": "2026-01-12T00:00:00Z" },
+  { "id": "org-004", "name": "Bright Solutions",  "phone": "+1-555-0400", "address": "321 Pine St, Austin, TX 78701",            "website": "https://brightsolutions.io","ownerId": "user-1", "labels": ["SMB"],         "createdAt": "2026-01-15T00:00:00Z" },
+  { "id": "org-005", "name": "NexGen Labs",       "phone": "+1-555-0500", "address": "654 Elm St, Seattle, WA 98101",            "website": "https://nexgenlabs.com",   "ownerId": "user-2", "labels": ["Startup"],     "createdAt": "2026-01-20T00:00:00Z" },
+  { "id": "org-006", "name": "Summit Partners",   "phone": "+1-555-0600", "address": "987 Cedar Rd, Boston, MA 02101",           "website": "https://summitpartners.com","ownerId": "user-1", "labels": ["Enterprise"],  "createdAt": "2026-02-01T00:00:00Z" },
+  { "id": "org-007", "name": "Pinnacle Systems",  "phone": "+1-555-0700", "address": "147 Maple Dr, Denver, CO 80201",           "website": "https://pinnaclesys.com",  "ownerId": "user-2", "labels": ["SaaS"],        "createdAt": "2026-02-05T00:00:00Z" },
+  { "id": "org-008", "name": "DataBridge Co",     "phone": "+1-555-0800", "address": "258 Walnut Ave, Miami, FL 33101",          "website": "https://databridge.co",    "ownerId": "user-1", "labels": ["SMB"],         "createdAt": "2026-02-10T00:00:00Z" },
+  { "id": "org-009", "name": "CloudScale Ltd",    "phone": "+1-555-0900", "address": "369 Birch Blvd, Portland, OR 97201",       "website": "https://cloudscale.io",    "ownerId": "user-2", "labels": ["Startup", "SaaS"], "createdAt": "2026-02-15T00:00:00Z" },
+  { "id": "org-010", "name": "Frontier Dynamics", "phone": "+1-555-1000", "address": "741 Spruce St, Atlanta, GA 30301",         "website": "https://frontierdynamics.com","ownerId": "user-1", "labels": ["Enterprise"], "createdAt": "2026-02-20T00:00:00Z" }
+]

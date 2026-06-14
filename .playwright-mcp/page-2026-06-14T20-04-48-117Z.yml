@@ -1,0 +1,88 @@
+- generic [active]:
+  - generic [ref=e1]:
+    - navigation [ref=e3]:
+      - menu [ref=e4]:
+        - menuitem "home" [ref=e5] [cursor=pointer]:
+          - link "home" [ref=e6]:
+            - /url: /setup-guide
+            - img [ref=e7]
+        - menuitem "Setup guide" [ref=e9] [cursor=pointer]:
+          - link "Setup guide" [ref=e10]:
+            - /url: /setup-guide
+            - generic [ref=e11]: Setup guide
+            - img [ref=e12]
+        - menuitem "Contacts" [ref=e14] [cursor=pointer]:
+          - link "Contacts" [ref=e15]:
+            - /url: /persons/list/user/everyone
+            - generic [ref=e16]: Contacts
+            - img [ref=e17]
+        - menuitem "Activities" [ref=e20] [cursor=pointer]:
+          - link "Activities" [ref=e21]:
+            - /url: /activities/list/user/everyone
+            - generic [ref=e22]: Activities
+            - generic [ref=e24]: "1"
+            - img [ref=e25]
+        - menuitem "Deals" [ref=e27] [cursor=pointer]:
+          - link "Deals" [ref=e28]:
+            - /url: /deals
+            - generic [ref=e29]: Deals
+            - img [ref=e30]
+        - menuitem "Leads" [ref=e32] [cursor=pointer]:
+          - link "Leads" [ref=e33]:
+            - /url: /leads/inbox
+            - generic [ref=e34]: Leads
+            - img [ref=e35]
+        - menuitem "Insights" [ref=e38] [cursor=pointer]:
+          - link "Insights" [ref=e39]:
+            - /url: /progress/insights
+            - generic [ref=e40]: Insights
+            - img [ref=e41]
+        - menuitem "Sales Inbox" [ref=e43] [cursor=pointer]:
+          - link "Sales Inbox" [ref=e44]:
+            - /url: /mail
+            - generic [ref=e45]: Sales Inbox
+            - img [ref=e46]
+        - menuitem "More" [ref=e49] [cursor=pointer]:
+          - button "More" [ref=e50]:
+            - img [ref=e51]
+    - generic [ref=e56]:
+      - generic [ref=e60]:
+        - generic [ref=e63]:
+          - text: Hi, Nandhan Venkadesh, you can change plans to explore different features and find your ideal fit.
+          - generic [ref=e64] [cursor=pointer]: Compare plans
+        - button [ref=e66] [cursor=pointer]:
+          - img [ref=e67]
+      - banner [ref=e68]:
+        - generic [ref=e69]:
+          - heading "Deals" [level=1] [ref=e71]
+          - img "Info" [ref=e73]
+        - generic [ref=e74]:
+          - generic [ref=e78]:
+            - textbox "Search Pipedrive" [ref=e79]
+            - img
+          - button "Quick add" [ref=e82] [cursor=pointer]:
+            - img [ref=e83]
+          - button [ref=e86] [cursor=pointer]:
+            - img [ref=e88]
+        - generic [ref=e90]:
+          - list [ref=e93]:
+            - listitem [ref=e94] [cursor=pointer]:
+              - button [ref=e96]:
+                - img [ref=e97]
+          - button "Quick Help" [ref=e98] [cursor=pointer]:
+            - img [ref=e99]
+          - button "Notifications" [ref=e103] [cursor=pointer]:
+            - img [ref=e104]
+          - button "NV" [ref=e107] [cursor=pointer]:
+            - generic [ref=e108]: NV
+      - main [ref=e110]:
+        - generic [ref=e113]:
+          - img [ref=e114]
+          - generic [ref=e116]:
+            - heading "Something went wrong" [level=2] [ref=e117]
+            - generic [ref=e119]:
+              - text: Please try again. If this keeps happening,
+              - link "contact support" [ref=e120] [cursor=pointer]:
+                - /url: mailto:support@pipedrive.com
+              - text: .
+  - img

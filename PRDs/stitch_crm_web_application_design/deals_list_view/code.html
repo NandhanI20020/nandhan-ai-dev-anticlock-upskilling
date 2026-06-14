@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SalesKit CRM - Deals List</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            display: inline-block;
+            line-height: 1;
+            width: 1em;
+            height: 1em;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fcf9f8;
+            color: #1c1b1b;
+        }
+        .chevron-bar-segment {
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
+            margin-right: -4px;
+        }
+        .chevron-bar-segment:first-child {
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#eae7e7",
+                      "secondary-container": "#b1b2fd",
+                      "tertiary": "#a13742",
+                      "on-surface": "#1c1b1b",
+                      "secondary-fixed-dim": "#c1c1ff",
+                      "on-tertiary-fixed": "#40000b",
+                      "secondary-fixed": "#e1dfff",
+                      "on-secondary-fixed": "#111055",
+                      "on-error-container": "#93000a",
+                      "inverse-primary": "#63dd97",
+                      "on-secondary-container": "#414285",
+                      "tertiary-fixed": "#ffdada",
+                      "on-primary-fixed-variant": "#00522e",
+                      "tertiary-container": "#c04f59",
+                      "inverse-surface": "#313030",
+                      "surface-variant": "#e5e2e1",
+                      "secondary": "#56579c",
+                      "rotten": "#FB923C",
+                      "warning": "#F59E0B",
+                      "lost": "#DC2626",
+                      "on-tertiary-fixed-variant": "#84222e",
+                      "on-surface-variant": "#3d4a40",
+                      "surface": "#fcf9f8",
+                      "won": "#16A34A",
+                      "on-background": "#1c1b1b",
+                      "primary-container": "#00864f",
+                      "surface-container-low": "#f6f3f2",
+                      "on-primary": "#ffffff",
+                      "primary-fixed-dim": "#63dd97",
+                      "on-primary-container": "#f6fff5",
+                      "outline-variant": "#bccabd",
+                      "tertiary-fixed-dim": "#ffb3b5",
+                      "link": "#226FCA",
+                      "border": "#E5E5E5",
+                      "surface-tint": "#006d3f",
+                      "outline": "#6d7a6f",
+                      "primary-hover": "#088A52",
+                      "banner": "#F0EFFF",
+                      "background": "#fcf9f8",
+                      "primary-fixed": "#80fab1",
+                      "surface-bright": "#fcf9f8",
+                      "primary": "#006a3e",
+                      "on-primary-fixed": "#002110",
+                      "on-secondary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed-variant": "#3e3f82",
+                      "inverse-on-surface": "#f3f0ef",
+                      "surface-container": "#f0eded",
+                      "surface-dim": "#dcd9d9",
+                      "on-tertiary": "#ffffff",
+                      "surface-subtle": "#F5F5F5",
+                      "sidebar-active": "#6F6EE8",
+                      "on-error": "#ffffff",
+                      "danger": "#E15A51",
+                      "surface-container-highest": "#e5e2e1",
+                      "error": "#ba1a1a",
+                      "on-tertiary-container": "#fffbff",
+                      "error-container": "#ffdad6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-page": "32px",
+                      "sidebar-width": "60px",
+                      "gap-md": "12px",
+                      "subnav-width": "220px",
+                      "kanban-col-min": "220px",
+                      "gap-xs": "4px",
+                      "base": "4px",
+                      "gap-lg": "16px",
+                      "kanban-col-max": "260px",
+                      "gap-sm": "8px",
+                      "section": "24px"
+              },
+              "fontFamily": {
+                      "headline-h1": ["Inter"],
+                      "headline-h2": ["Inter"],
+                      "meta-sm": ["Inter"],
+                      "badge-xs": ["Inter"],
+                      "headline-h3": ["Inter"],
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-h1": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-h2": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "meta-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                      "badge-xs": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                      "headline-h3": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "label-md": ["13px", {"lineHeight": "18px", "fontWeight": "500"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background">
+<!-- Sidebar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full w-[60px] flex flex-col items-center py-4 gap-gap-lg bg-secondary border-r border-outline-variant z-50">
+<div class="mb-4">
+<span class="font-headline-h2 text-headline-h2 text-on-secondary font-bold">SK</span>
+</div>
+<nav class="flex flex-col gap-gap-md w-full items-center">
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="view_kanban">view_kanban</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-on-secondary bg-sidebar-active rounded-lg scale-95 active:scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="handshake">handshake</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary hover:bg-sidebar-active/50 transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-gap-md w-full items-center">
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center text-secondary-fixed hover:text-on-secondary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-[60px] min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 w-[calc(100%-60px)] h-14 bg-surface border-b border-border flex justify-between items-center px-margin-page z-40">
+<div class="flex items-center gap-gap-lg">
+<h1 class="font-headline-h2 text-headline-h2 text-on-surface font-bold">SalesKit CRM</h1>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-surface-container-low border border-border rounded-lg text-body-md focus:outline-none focus:ring-2 focus:ring-sidebar-active w-64 h-9" placeholder="Search deals..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-gap-lg">
+<div class="flex gap-gap-sm">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-primary-hover transition-colors flex items-center gap-2 h-9">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+                    Add Deal
+                </button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-border">
+<img alt="Current User Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCljT5gT_jyetjX5fvjIpUYUoUhWyOvWZWzfIylEXxdAYJOUy2SIt07sm9g3RLWYFHxNqExx-y5e79SJld_GeuE0mqJaeyr1ctDGIiviywSzKNNaZ6HrNGNdOnEzyqGkibMpqi6eKJ2jS12vga_9CsJ7g0RJ2WmgQAJU_j2qf0aocSSXtv07n3vH-dLiXCcWePB8oLfeVXxTkFWRu2zRzAIjXrVhpzuTmLKmfBfb4ThQFppICi2CFQ6nypIx7EZKeJT3n2vYszIr_Q"/>
+</div>
+</div>
+</header>
+<!-- Page Header / Toolbar -->
+<section class="mt-14 px-margin-page pt-6 pb-4 bg-white">
+<div class="flex justify-between items-end">
+<div class="flex flex-col gap-1">
+<h2 class="font-headline-h1 text-headline-h1 text-on-surface">Deals</h2>
+<nav class="flex gap-gap-lg mt-2">
+<a class="text-on-surface-variant font-label-md text-label-md py-2 border-b-2 border-transparent hover:text-primary transition-all" href="#">Pipeline</a>
+<a class="text-primary font-bold font-label-md text-label-md py-2 border-b-2 border-primary" href="#">List</a>
+</nav>
+</div>
+<div class="flex items-center gap-gap-lg mb-2">
+<!-- Quick Filters -->
+<div class="flex bg-surface-container-low p-1 rounded-lg border border-border">
+<button class="px-3 py-1.5 text-label-md font-label-md rounded bg-white shadow-sm text-primary">All</button>
+<button class="px-3 py-1.5 text-label-md font-label-md rounded text-on-surface-variant hover:text-on-surface">Open</button>
+<button class="px-3 py-1.5 text-label-md font-label-md rounded text-on-surface-variant hover:text-on-surface">Won</button>
+<button class="px-3 py-1.5 text-label-md font-label-md rounded text-on-surface-variant hover:text-on-surface">Lost</button>
+<button class="px-3 py-1.5 text-label-md font-label-md rounded text-on-surface-variant hover:text-on-surface border-l border-border/50 ml-1">My deals</button>
+</div>
+<div class="h-8 w-px bg-border"></div>
+<button class="flex items-center gap-2 px-3 py-1.5 border border-border rounded-lg text-label-md font-label-md text-on-surface hover:bg-surface-subtle transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                        Filters
+                    </button>
+<button class="flex items-center gap-2 px-3 py-1.5 border border-border rounded-lg text-label-md font-label-md text-on-surface hover:bg-surface-subtle transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="file_download">file_download</span>
+                        Export
+                    </button>
+</div>
+</div>
+</section>
+<!-- Data Table Container -->
+<section class="flex-grow px-margin-page pb-10">
+<div class="bg-white border border-border rounded-lg shadow-sm overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-subtle">
+<tr>
+<th class="p-4 w-10">
+<input class="rounded border-outline-variant text-sidebar-active focus:ring-sidebar-active" type="checkbox"/>
+</th>
+<th class="p-4 font-headline-h3 text-headline-h3 text-on-surface-variant border-b border-border">Title</th>
+<th class="p-4 font-headline-h3 text-headline-h3 text-on-surface-variant border-b border-border">Value</th>
+<th class="p-4 font-headline-h3 text-headline-h3 text-on-surface-variant border-b border-border">Stage</th>
+<th class="p-4 font-headline-h3 text-headline-h3 text-on-surface-variant border-b border-border">Organization</th>
+<th class="p-4 font-headline-h3 text-headline-h3 text-on-surface-variant border-b border-border">Owner</th>
+<th class="p-4 font-headline-h3 text-headline-h3 text-on-surface-variant border-b border-border">Expected close</th>
+<th class="p-4 w-10 border-b border-border"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border">
+<!-- Row 1: Overdue/Rotten -->
+<tr class="hover:bg-surface-subtle group transition-colors">
+<td class="px-4 py-3 relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-rotten"></div>
+<input class="rounded border-outline-variant text-sidebar-active focus:ring-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-headline-h3 text-headline-h3 text-on-surface">500 Licenses - Cloud Infra</span>
+<span class="font-meta-sm text-meta-sm text-rotten flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="warning">warning</span>
+                                        Rotten (14 days)
+                                    </span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">$125,000</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-0.5">
+<div class="w-6 h-3 bg-primary-fixed rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-primary-fixed rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-primary rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<span class="font-meta-sm text-meta-sm ml-2 text-on-surface-variant">Proposal</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">TechNova Solutions</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<img alt="Alex Rivers avatar" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL8ZVIkzQSCIdd24iRULF4uDPEQvS9srciBD2buEWwQ461CJIH-uM-Tws4jdC5v3xN3zM1QjG_6D0w8dECTuVTgpDaJCqQDSP7QEkh2nbCJ2H0lC5eftBUX2yjcOgMCTpmPf8P9kmKCnljg-bU3Tv3lLaN1eX2fgNa8Q9vwywra1toVeenEXoK7Zrzc6NaTjqB6RB2K1MyujLJOfU5gckS7mftuoe1S04H-FOCH_1fdHgia58W_H4dIayCcpnoeaaHT0qXnybMNBQ"/>
+<span class="font-body-md text-body-md text-on-surface">Alex Rivers</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Nov 12, 2024</td>
+<td class="px-4 py-3">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-outline hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-subtle group transition-colors">
+<td class="px-4 py-3">
+<input class="rounded border-outline-variant text-sidebar-active focus:ring-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-headline-h3 text-headline-h3 text-on-surface">Enterprise Tier Expansion</span>
+<span class="font-meta-sm text-meta-sm text-outline">Lead ID: 9482</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">$45,000</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-0.5">
+<div class="w-6 h-3 bg-primary rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<span class="font-meta-sm text-meta-sm ml-2 text-on-surface-variant">Qualified</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Lumina Corp</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<img alt="Marcus Chen avatar" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3IT0s5IH45U5jcgMkKLhU9wKyAxZ4B1Y8MDotOMTSTOqEAqkgjSOaAjD0cxWyPBPXRnvrVm_U2D6ivD-lh1VquWvcyjLC0S7B2lcR8gLzeyJoqiLGsMFrSHIDE06wqwQK4m58jUrcdCCu5uYt67hiRWzN2LiIPvTCEv5GhGQf95DxwWD7byNEzCz6eUApmfQtZ7c7awFYPuA0AKUXPO68IK1hoBpUwMNb4a8QIx3UyWWndYLHZ1b1MKS4udS2ZHwhXuKBAtKKlT0"/>
+<span class="font-body-md text-body-md text-on-surface">Marcus Chen</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Dec 05, 2024</td>
+<td class="px-4 py-3">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-outline hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3: Won Status -->
+<tr class="hover:bg-surface-subtle group transition-colors">
+<td class="px-4 py-3">
+<input class="rounded border-outline-variant text-sidebar-active focus:ring-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-headline-h3 text-headline-h3 text-on-surface">Security Audit Service</span>
+<span class="font-badge-xs text-badge-xs bg-won/10 text-won px-1.5 py-0.5 rounded w-fit mt-1">WON</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">$12,800</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-0.5">
+<div class="w-6 h-3 bg-won/80 rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-won/80 rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-won/80 rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-won/80 rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-won/80 rounded-sm chevron-bar-segment"></div>
+<span class="font-meta-sm text-meta-sm ml-2 text-won font-bold">Closed</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Apex Financial</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<img alt="Sarah Connor avatar" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbUD7v_uKZN5QEUQtvTGtS9rpKPgnl1kf3ySidoTxz1gTxF4aAR7unD5d503YjqsmyIHmmoeYhSs99HTOcvJ5sCfEbQ0pcbrhtU2gR3VW-pIPGKFz0LLUZBrMf0b0En5acLVNhzvSEtNRJyMmr6KgVnx0XHfSNwVIjVR5PRBkagIThcvgJyEmGpno2E4t5QuMabNZdREmgYQ9N584woXIVJeewIfWu0xdySuhG-igpc-aO-zuZMEWL3QuhyrTp2Bnm0ZHaE7C-1dg"/>
+<span class="font-body-md text-body-md text-on-surface">Sarah Connor</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Oct 28, 2024</td>
+<td class="px-4 py-3">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-outline hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-subtle group transition-colors">
+<td class="px-4 py-3">
+<input class="rounded border-outline-variant text-sidebar-active focus:ring-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-headline-h3 text-headline-h3 text-on-surface">Data Migration Support</span>
+<span class="font-meta-sm text-meta-sm text-outline">Lead ID: 9501</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">$82,000</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-0.5">
+<div class="w-6 h-3 bg-primary-fixed rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-primary-fixed rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-primary-fixed rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-primary rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<span class="font-meta-sm text-meta-sm ml-2 text-on-surface-variant">Contracting</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Global Logistics Ltd</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<img alt="Alex Rivers avatar" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5v0IcKcprj0lNjPDaPYO5k6DaJlQMiYfihtZCDeAue0wX5jWoGHNNmuoOcM-9XyRpmoUEyABuF1jFVZwwHCG_pWFQEkv68RPNTuIo5owAlzKaT-IAelylbqEc3e4szjTDq9RL8wcMBcoRen5Vh8szf4UIrV-iIMJYeALR-o7K1qJMtG1yaQNk2J92Jw0gFNBxkL2GTsou1gnVYphBj1Y2Oamg9NYYhi0Z9EWEhRVwD76QSh3umdTz48JpiAU-2z82yHvPC1yFX9s"/>
+<span class="font-body-md text-body-md text-on-surface">Alex Rivers</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Jan 15, 2025</td>
+<td class="px-4 py-3">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-outline hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5: Lost Status -->
+<tr class="hover:bg-surface-subtle group transition-colors">
+<td class="px-4 py-3 relative">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-lost"></div>
+<input class="rounded border-outline-variant text-sidebar-active focus:ring-sidebar-active" type="checkbox"/>
+</td>
+<td class="px-4 py-3">
+<div class="flex flex-col">
+<span class="font-headline-h3 text-headline-h3 text-on-surface">API Integration Project</span>
+<span class="font-badge-xs text-badge-xs bg-lost/10 text-lost px-1.5 py-0.5 rounded w-fit mt-1">LOST</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">$24,500</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-0.5 grayscale opacity-50">
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<div class="w-6 h-3 bg-surface-container-high rounded-sm chevron-bar-segment"></div>
+<span class="font-meta-sm text-meta-sm ml-2">Archived</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Swift Systems</td>
+<td class="px-4 py-3">
+<div class="flex items-center gap-2">
+<img alt="Marcus Chen avatar" class="w-6 h-6 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7XNbdNc6rBXhMdquCi9aYi8gN09QnySyHk2CLBswkAuzYVCei8doySaGjGX8m-VFys-jy3knWb-r7-SQtnXR-BfvpFjpHvPz7YGVrdJ9ngNeqQtq8CYhnxmdpn13RlVs60lTfbimcaExGSaO7E9iU1LbmeuK07d-0NYsa2JSJfB56Zso6m-psgWqYc4CtQ9jv12p8gv3nTibBSrYsucBCQkBPu_gTnn_ex_yVkktu9AhKKv9kj11MGNJaA0mfPNFbRJHEab9J974"/>
+<span class="font-body-md text-body-md text-on-surface">Marcus Chen</span>
+</div>
+</td>
+<td class="px-4 py-3 font-body-md text-body-md text-on-surface">Nov 01, 2024</td>
+<td class="px-4 py-3">
+<button class="opacity-0 group-hover:opacity-100 transition-opacity p-1 text-outline hover:text-on-surface">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination Footer -->
+<div class="px-margin-page py-4 bg-surface-subtle flex justify-between items-center border-t border-border">
+<span class="font-meta-sm text-meta-sm text-on-surface-variant">Showing 1-15 of 248 deals</span>
+<div class="flex items-center gap-gap-md">
+<button class="p-1 border border-border rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span>
+</button>
+<div class="flex gap-1">
+<button class="w-7 h-7 flex items-center justify-center font-label-md text-label-md bg-primary text-on-primary rounded">1</button>
+<button class="w-7 h-7 flex items-center justify-center font-label-md text-label-md hover:bg-surface-container-low rounded">2</button>
+<button class="w-7 h-7 flex items-center justify-center font-label-md text-label-md hover:bg-surface-container-low rounded">3</button>
+<span class="px-1">...</span>
+<button class="w-7 h-7 flex items-center justify-center font-label-md text-label-md hover:bg-surface-container-low rounded">17</button>
+</div>
+<button class="p-1 border border-border rounded hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Action Button (FAB) contextually hidden or shown on dashboard? Prompt says Deals List. 
+             In Pipedrive-like, FAB is rarely on list but we'll include for 'Add Deal' accessibility -->
+<button class="fixed bottom-margin-page right-margin-page w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg hover:bg-primary-hover active:scale-95 transition-all flex items-center justify-center z-50 md:hidden">
+<span class="material-symbols-outlined text-[24px]" data-icon="add">add</span>
+</button>
+</main>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', (e) => {
+                if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON' && !e.target.closest('button')) {
+                    // Simulating deal detail opening
+                    row.classList.add('bg-secondary-fixed/30');
+                    setTimeout(() => row.classList.remove('bg-secondary-fixed/30'), 300);
+                }
+            });
+        });
+
+        // Search highlight simulation
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('input', (e) => {
+            if(e.target.value.length > 2) {
+                searchInput.classList.add('border-primary');
+            } else {
+                searchInput.classList.remove('border-primary');
+            }
+        });
+    </script>
+</body></html>
