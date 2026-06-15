@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import labelsData from '../data/labels.json';
 import pipelinesRouter from './routes/pipelines';
 import dealsRouter from './routes/deals';
 import notesRouter from './routes/notes';
@@ -24,7 +25,7 @@ app.use('/api/deals', dealsRouter);
 app.use('/api/notes', notesRouter);
 app.use('/api/saved-views', savedViewsRouter);
 app.use('/api/people', peopleRouter);
-app.use('/api/labels', peopleRouter);
+app.get('/api/labels', (_req, res) => res.json(labelsData));
 app.use('/api/organizations', organizationsRouter);
 app.use('/api/activities', activitiesRouter);
 app.use('/api/insights', insightsRouter);

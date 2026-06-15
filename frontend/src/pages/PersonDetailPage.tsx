@@ -26,7 +26,7 @@ export default function PersonDetailPage() {
         <div className="px-6 py-4 flex gap-5">
           <div className="w-72 shrink-0 flex flex-col gap-4">
             <PersonContactPanel person={person} />
-            <LabelPicker personId={person.id} currentLabelIds={person.labelIds ?? []} />
+            <LabelPicker personId={person.id} labelIds={person.labelIds ?? []} />
           </div>
           <div className="flex-1 min-w-0">
             <PersonActivityFeed personId={person.id} />

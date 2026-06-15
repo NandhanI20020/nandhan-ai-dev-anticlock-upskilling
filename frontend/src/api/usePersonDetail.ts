@@ -67,7 +67,7 @@ export function useLabels() {
   return useQuery<{ id: string; name: string; color: string }[]>({
     queryKey: ['labels'],
     queryFn: async () => {
-      const res = await fetch(`${BASE}/labels/labels`);
+      const res = await fetch(`${BASE}/labels`);
       if (!res.ok) return [];
       return res.json();
     },
